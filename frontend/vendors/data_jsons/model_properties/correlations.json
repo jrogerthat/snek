@@ -1,0 +1,80 @@
+{   "could_pull_from_API": true,
+    "interface_components":null,
+    "averageOutcome": 28.339643050297457,
+    "correlations": [
+        {
+            "correlationToOutcome": 0.14993547006684593,
+            "fieldName": "age"
+        },
+        {
+            "correlationToOutcome": 0.12734849436348805,
+            "fieldName": "mi_fchd"
+        },
+        {
+            "correlationToOutcome": 0.09596136812381661,
+            "fieldName": "cvd"
+        },
+        {
+            "correlationToOutcome": 0.06439274175829457,
+            "fieldName": "anychd"
+        },
+        {
+            "correlationToOutcome": 0.05519292923218,
+            "fieldName": "sysbp"
+        },
+        {
+            "correlationToOutcome": 0.04001101837815302,
+            "fieldName": "prevhyp"
+        },
+        {
+            "correlationToOutcome": 0.03939864675017235,
+            "fieldName": "hospmi"
+        },
+        {
+            "correlationToOutcome": 0.023264888660402105,
+            "fieldName": "diabp"
+        },
+        {
+            "correlationToOutcome": 0.022018944716310163,
+            "fieldName": "sex"
+        },
+        {
+            "correlationToOutcome": 0.012303250122369214,
+            "fieldName": "bmi"
+        },
+        {
+            "correlationToOutcome": 0.007765911316334639,
+            "fieldName": "totchol"
+        },
+        {
+            "correlationToOutcome": 0.007080893648957587,
+            "fieldName": "cigpday"
+        },
+        {
+            "correlationToOutcome": 0.0036005692435865377,
+            "fieldName": "angina"
+        },
+        {
+            "correlationToOutcome": 0.001799649985187668,
+            "fieldName": "glucose"
+        },
+        {
+            "correlationToOutcome": 0.000926446854069396,
+            "fieldName": "hyperten"
+        },
+        {
+            "correlationToOutcome": 0.0007915780078333601,
+            "fieldName": "heartrte"
+        },
+        {
+            "correlationToOutcome": 0.0002699168608099045,
+            "fieldName": "bpmeds"
+        },
+        {
+            "correlationToOutcome": -0.00040345860563584246,
+            "fieldName": "randid"
+        }
+    ],
+    "rowCount": 3698,
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LD0KAM/histories/9B4B0000000Cuk5KAC/summary"
+}

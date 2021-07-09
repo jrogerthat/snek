@@ -1,0 +1,262 @@
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": true,
+    "interface_components": null,
+    "id": "9B4B0000000Cuk5KAC",
+    "label": "Farmingham Study",
+    "setup": {
+        "name": "Farmingham Study",
+        "transformations": [],
+        "modelConfiguration": {
+            "modelAlgType": "GLM"
+        },
+        "overrides": {
+            "fields": [
+                {
+                    "type": "number",
+                    "name": "glucose",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "number",
+                    "name": "totchol",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "number",
+                    "name": "randid",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "number",
+                    "name": "diabp",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "number",
+                    "name": "sysbp",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "number",
+                    "name": "age",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "number",
+                    "name": "cigpday",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "number",
+                    "name": "heartrte",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "number",
+                    "name": "bmi",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "mi_fchd",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "death",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevhyp",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevchd",
+                    "includeOther": false,
+                    "values": [
+                        {
+                            "name": "Yes",
+                            "displayName": "Yes",
+                            "count": 194,
+                            "ignored": true
+                        }
+                    ],
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "angina",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "sex",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "hospmi",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "stroke",
+                    "includeOther": false,
+                    "values": [
+                        {
+                            "name": "Yes",
+                            "displayName": "Yes",
+                            "count": 415,
+                            "ignored": true
+                        }
+                    ],
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "bpmeds",
+                    "includeOther": false,
+                    "values": [
+                        {
+                            "name": "Yes",
+                            "displayName": "Yes",
+                            "count": 144,
+                            "ignored": true
+                        }
+                    ],
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "cvd",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "cursmoke",
+                    "ignored": true,
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevstrk",
+                    "includeOther": false,
+                    "values": [
+                        {
+                            "name": "Yes",
+                            "displayName": "Yes",
+                            "count": 32,
+                            "ignored": true
+                        }
+                    ],
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevap",
+                    "ignored": true,
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevmi",
+                    "ignored": true,
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "diabetes",
+                    "includeOther": false,
+                    "values": [
+                        {
+                            "name": "Yes",
+                            "displayName": "Yes",
+                            "count": 121,
+                            "ignored": true
+                        }
+                    ],
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "hyperten",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                },
+                {
+                    "type": "text",
+                    "name": "anychd",
+                    "uniqueEquivalent": false,
+                    "protected": false,
+                    "highCardinality": false
+                }
+            ],
+            "outcome": {
+                "name": "death",
+                "displayName": "death",
+                "type": "text",
+                "goal": "MAXIMIZE",
+                "success": "Yes",
+                "failure": "No",
+                "predictionType": "Binary"
+            },
+            "transformations": [],
+            "modelConfiguration": {
+                "modelAlgType": "GLM"
+            }
+        }
+    },
+    "status": "Success",
+    "url": "/services/data/v52.0/smartdatadiscovery/analyses/9B4B0000000Cuk5KAC"
+}

@@ -1,0 +1,15 @@
+{
+    "folders":[
+        "model_properties",
+        "ds_pipeline_properties",
+        "search_space_properties",
+        "data_properties",
+        "interface_components",
+        "automated_reporting_processes",
+        "analysis_properties",
+        "user_action_properties",
+        "oversight_processes",
+        "computational_processes",
+        "verification_processes"
+    ]
+}

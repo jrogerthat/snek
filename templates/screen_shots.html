@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Index</title>
+
+  {{ stylesheet_pack('app') }}
+</head>
+<body>
+
+<div class="jumbotron py-5">
+  <div class="container">
+    <h1 class="display-3">Stills from App</h1>
+    <!-- <p>This is the future home of artifact surfacing.</p> -->
+
+    <div class="d-flex justify-content-center">
+        <table style="width: 100%">
+            {% for element in data %}
+             <tr>
+                <th><a href="#">{{ element }}</a></th>
+              </tr>
+            {% endfor %}
+            </table>
+    </div>
+
+  </div>
+</div>
+
+{{ javascript_pack('interface_components', attrs='charset="UTF-8"') }}
+
+</body>
+</html>

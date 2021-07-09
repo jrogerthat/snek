@@ -1,0 +1,6 @@
+{   "pipeline_stages": ["analysis/model"],
+    "api_output": "data_jsons/model_properties/model_breakdown.json",
+    "png_paths":[
+        "images/model_evaluation/overall_performance.png"
+    ]
+}

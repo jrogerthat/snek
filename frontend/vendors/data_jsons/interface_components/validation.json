@@ -1,0 +1,6 @@
+{   "pipeline_stages": ["analysis/model"],
+    "api_output": "data_jsons/model_properties/validation.json",
+    "png_paths":[
+        "images/model_evaluation/cross_validation_table.png"
+    ]
+}

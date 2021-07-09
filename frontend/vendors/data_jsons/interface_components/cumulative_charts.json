@@ -1,0 +1,7 @@
+{   "pipeline_stages": ["analysis/model"],
+    "api_output": null,
+    "png_paths":[
+        "images/model_evaluation/cumulative_capture_chart.png",
+        "images/model_evaluation/cumulative_gains_chart.png"
+    ]
+}

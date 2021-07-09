@@ -1,0 +1,14 @@
+{   "pipeline_stages": ["preparation/profile","analysis/explore"],
+    "api_output": "data_jsons/model_properties/factors.json",
+    "least" : {
+        "png_paths":[
+            "images/occur/occur_least.png"
+        ]
+    },
+    "most":{
+        "png_paths":[
+            "images/occur/occur_most.png"
+        ]
+    }
+   
+}

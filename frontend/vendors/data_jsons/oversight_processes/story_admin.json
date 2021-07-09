@@ -1,0 +1,27 @@
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "createdBy": {
+        "id": "005B0000006wvarIAA",
+        "name": "Admin User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+    },
+    "createdDate": "2021-06-28T15:20:51.000Z",
+    "folder": {
+        "id": "00lB0000000TKYMIA4",
+        "label": "Artifact Trace",
+        "url": "/services/data/v52.0/wave/folders/00lB0000000TKYMIA4"
+    },
+    "historiesUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LD0KAM/histories",
+    "id": "1Y3B00000004LD0KAM",
+    "label": "Farmingham Study",
+    "lastModifiedBy": {
+        "id": "005B0000006wvarIAA",
+        "name": "Admin User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+    },
+    "lastModifiedDate": "2021-06-28T20:42:22.000Z",
+    "runId": "9B4B0000000Cuk5KAC",
+    "status": "Success",
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LD0KAM"
+}
