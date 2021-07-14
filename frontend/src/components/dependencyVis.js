@@ -30,21 +30,23 @@ function buildArc (d, artifactGroup) {
 function nodeHoverInteraction(nodeGroups){
 
     nodeGroups.on('mouseover', (event, d)=>{
-        
         d3.select(event.target).classed('hover', true);
         d3.select(event.target).attr('r', 15);
         d3.selectAll('.dependent-arc').filter(f=> {
             return f.Source ===  d.id || f.Target === d.id;
         }).classed('hover', true);
-
-
+        d3.selectAll('.dependent-arc').filter(f=> {
+            return f.Source !=  d.id && f.Target != d.id;
+        }).classed('non-hover', true);
     }).on('mouseout', (event, d)=>{
-        
         d3.select(event.target).classed('hover', false);
         d3.select(event.target).attr('r', radius);
         d3.selectAll('.dependent-arc').filter(f=> {
             return f.Source ===  d.id || f.Target === d.id;
         }).classed('hover', false);
+        d3.selectAll('.dependent-arc').filter(f=> {
+            return f.Source !=  d.id && f.Target != d.id;
+        }).classed('non-hover',false);
     })
 
 }
@@ -52,12 +54,14 @@ function nodeHoverInteraction(nodeGroups){
 export function renderDependencyVis(nodes){
 
     const svg = d3.select('#container').select('#wrapper').select('svg');
+    let visWrap = svg.append('g');
+    visWrap.attr('transform', 'translate(5,0)');
     let artData = d3Array.groups(nodes, d=> d.Stage);
 
-    let arcGroup = svg.append('g').classed('arc-wrap', true);
+    let arcGroup = visWrap.append('g').classed('arc-wrap', true);
     arcGroup.attr('transform', 'translate(0, 200)');
 
-    let stages = svg.selectAll('g.stage').data(artData).join('g').attr('class', d=> d[0]).classed('stage', true);
+    let stages = visWrap.selectAll('g.stage').data(artData).join('g').attr('class', d=> d[0]).classed('stage', true);
     let step = stages.selectAll('g.step').data(d=> d3Array.groups(d[1], g=> g.Step)).join('g').attr('class', d=> d[0]).classed('step', true);
     let artifactGroup = step.selectAll('g.artifact').data(d=> d[1]).join('g').classed('artifact', true);
     let artifactCircle = artifactGroup.selectAll('circle').data(d=> [d]).join('circle').attr('r', radius).attr('cx', 10).attr('cy', 10);

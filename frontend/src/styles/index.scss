@@ -92,12 +92,12 @@ font-family: Montserrat;
   padding: 10px;
 }
 
-circle.hover{
-  scale: 2;
-}
 path.hover{
   stroke-opacity: 1 !important;
-  stroke-width: 4px !important;
+  stroke-width: 2px !important;
+}
+path.non-hover{
+  stroke-opacity: .2 !important;
 }
 
 
