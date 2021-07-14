@@ -1,9 +1,15 @@
 //$primary: red;
 
 @import "./bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;600&display=swap');
+
+*{
+  box-sizing: border-box;
+}
 
 body{
 background-color: #2b2b2b;
+font-family: Montserrat;
 }
 
 #toolbar{
@@ -12,6 +18,7 @@ background-color: #2b2b2b;
   border-bottom: .25px solid rgba(255, 255, 255, 0.2);
   color: #ADAAC0;
   padding-top: 10px;
+  font-size: small;
 
   ul{
     list-style-type: none;
@@ -19,8 +26,17 @@ background-color: #2b2b2b;
     justify-content: space-around;
     vertical-align: middle;
   }
+  input{
+    background-color: #2b2b2b;
+    color: #ADAAC0;
+    border: 1px solid #ADAAC0;
+    padding: 5px;
+    border-radius:10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
   a{
     text-decoration: none;
+    color:white;
   }
   .dropdown {
     position: relative;
@@ -41,8 +57,6 @@ background-color: #2b2b2b;
     display: block;
   }
 }
-
-
 
 .svg-wrap{
   width: 90%;
@@ -76,6 +90,14 @@ background-color: #2b2b2b;
 
 .folder{
   padding: 10px;
+}
+
+circle.hover{
+  scale: 2;
+}
+path.hover{
+  stroke-opacity: 1 !important;
+  stroke-width: 4px !important;
 }
 
 
