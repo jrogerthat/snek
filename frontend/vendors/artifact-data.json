@@ -241,7 +241,7 @@
     "Artifact Group": "Oversight Processes",
     "Artifact Type": "Analyst Info",
     "Source": "human/persona,system/input",
-    "Transmission Mode": "Boundry Crossing/H-M,Non-Boundary/H-H",
+    "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "single-value/textual,specification/visualization",
     "Task": "informing/descriptive,governing/assigning",
     "Dependencies": "2A"
@@ -254,7 +254,7 @@
     "Artifact Group": "Oversight Processes",
     "Artifact Type": "Approver Info",
     "Source": "human/persona,system/input",
-    "Transmission Mode": "Boundry Crossing/H-M,Non-Boundary/H-H",
+    "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "single-value/textual,specification/visualization",
     "Task": "governing/authorization",
     "Dependencies": "1B"

@@ -12,14 +12,23 @@ background-color: #2b2b2b;
 
 .svg-wrap{
   width: 90%;
+  height: 400px;
 }
 
 .svg-wrap circle.human{
   fill: red;
 }
 
+.svg-wrap path.human{
+  stroke: red;
+}
+
 .svg-wrap circle.machine{
   fill: #AEB6BF;
+}
+
+.svg-wrap path.machine{
+  stroke: #AEB6BF;
 }
 
 .jumbotron {
