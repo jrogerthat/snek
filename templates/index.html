@@ -7,7 +7,17 @@
   {{ stylesheet_pack('app') }}
 </head>
 <body>
-<div id="toolbar"></div>
+<div id="toolbar">
+  <ul><li><a href="https://github.com/jrogerthat/snek/issues">file a bug</a></li>
+    <li><input type="text" placeholder="Search for artifact.."></li>
+    <li><div class="dropdown">
+      <span>Mouse over me</span>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+      </div>
+    </div></li>
+  </ul>
+</div>
 <div class="jumbotron py-5">
   <div id="container">
     <div id="wrapper" class="d-flex justify-content-center"></div>

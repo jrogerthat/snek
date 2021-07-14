@@ -6,7 +6,7 @@ import "../components/sidebar";
 import * as dataF from "../../vendors/artifact-data.json";
 import * as artifactDependencies from "../../vendors/artifact-dependencies.json";
 
-const radius = 5;
+const radius = 9;
 
 let nodeFormat = dataF.map((m, i)=>{
   m.name = m['Artifact Type'];
@@ -35,9 +35,6 @@ let artifactCircle = artifactGroup.selectAll('circle').data(d=> [d]).join('circl
 artifactCircle.attr('class', d=> machineOrHuman(d));
 
 function buildArc (d) {
-  // d.source and d.target are the locations in graphData.links
-  // xScale takes a node name and finds its location on the x axis from 0 to width
-  // So start is the location in pixels of the start of the arc
  
   let startT = artifactGroup.filter(f=> f.id === d.Source);
   let endT = artifactGroup.filter(f=> f.id === d.Target);
@@ -58,37 +55,16 @@ function buildArc (d) {
         .join(' ');                // convert the bracketed array into a string
   return arcPath;
 };
- 
-// to create the arcs, we use graphData.links instead of graphData.nodes
-// arcGroup.selectAll("arcs")
-//  .data(graphData.links)
-//  .enter().append("path")
-//  .attr("d", d => buildArc(d))
-//   .style("fill", "none")            // no fill color for the arcs
-//   .attr("stroke", "black")          // make the arc's lines be black
      
-// let xScale = d3.scaleLinear()
-//   .domain([0, nodeFormat.length])
-//   .range([0, svg.node().getBoundingClientRect().width])
+let xScale = d3.scaleLinear()
+  .domain([0, nodeFormat.length])
+  .range([0, svg.node().getBoundingClientRect().width])
 
-// yScale = d3.scalePoint()
-//   .domain(nodeFormat.map(m=> m.name))
-//   .range([0, svg.node().getBoundingClientRect().height])
-
-// stages.attr('transform', (d, i)=> {
-//   return `translate(${d[1][0].posID * 13},10)`});
-
-// step.attr('transform', (d, i, n)=> {
-//   if(i === 0){
-//     return `translate(0,10)`
-//   }else{
-//     return `translate(${d3.select(n[i-1]).data()[0][1].length * 12}, 10)`;
-//   }
-// });
 artifactGroup.attr('transform', (d, i)=>{
-  return `translate(${d.posID * ((radius * 3) + 5)}, ${335})`;
+  return `translate(${xScale(d.posID)}, ${335})`;
+  //return `translate(${d.posID * ((radius * 3) + 5)}, ${335})`;
 });
-artifactGroup.attr('x', (d, i)=> d.posID * ((radius * 3) + 5))
+artifactGroup.attr('x', (d, i)=> xScale(d.posID))
              .attr('y', (d, i)=> (svg.node().getBoundingClientRect().height)-20);
 
 arcGroup.selectAll("arcs")

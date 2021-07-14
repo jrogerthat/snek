@@ -7,28 +7,65 @@ background-color: #2b2b2b;
 }
 
 #toolbar{
+  width: 100vw;
+  background-color: #2b2b2b;
+  border-bottom: .25px solid rgba(255, 255, 255, 0.2);
+  color: #ADAAC0;
+  padding-top: 10px;
 
+  ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    vertical-align: middle;
+  }
+  a{
+    text-decoration: none;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 }
+
+
 
 .svg-wrap{
   width: 90%;
+  max-width: 860px !important;
   height: 400px;
 }
 
 .svg-wrap circle.human{
-  fill: red;
+  fill: #ec2227;
 }
 
 .svg-wrap path.human{
-  stroke: red;
+  stroke: #ec2227;
+  stroke-opacity: .6;
 }
 
 .svg-wrap circle.machine{
-  fill: #AEB6BF;
+  fill: #ADAAC0;
 }
 
 .svg-wrap path.machine{
-  stroke: #AEB6BF;
+  stroke: #ADAAC0;
+  stroke-opacity: .6;
 }
 
 .jumbotron {
