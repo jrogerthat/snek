@@ -76,6 +76,11 @@ font-family: Montserrat;
   stroke-opacity: .6;
 }
 
+path.link{
+  fill: none;
+  opacity: .6;
+}
+
 .svg-wrap circle.machine{
   fill: #ADAAC0;
 }
@@ -97,29 +102,15 @@ font-family: Montserrat;
 
 path.hover{
   stroke-opacity: 1 !important;
+}
+path.hover.arc-dependent{
   stroke-width: 2px !important;
 }
 path.non-hover{
   stroke-opacity: .2 !important;
 }
 
-.node rect {
-  cursor: move;
-  fill-opacity: .9;
-  shape-rendering: crispEdges;
-}
 
-.node text {
-  pointer-events: none;
-  text-shadow: 0 1px 0 #fff;
-}
 
-.link {
-  fill: none;
-  stroke: #000;
-  stroke-opacity: .2;
-}
 
-.link:hover {
-  stroke-opacity: .5;
-}
+

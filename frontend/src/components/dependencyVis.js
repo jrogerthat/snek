@@ -2,6 +2,7 @@ import * as d3 from "d3";
 import * as d3Array from "d3-array";
 import * as artifactDependencies from "../../vendors/links/artifact-dependencies.json";
 import { machineOrHuman } from "../application/generalHelpers";
+import { nodeHoverInteraction } from "./nodes";
 
 const radius = 9;
 
@@ -26,30 +27,6 @@ function buildArc (d, artifactGroup) {
           .join(' ');                // convert the bracketed array into a string
     return arcPath;
   };
-
-function nodeHoverInteraction(nodeGroups){
-
-    nodeGroups.on('mouseover', (event, d)=>{
-        d3.select(event.target).classed('hover', true);
-        d3.select(event.target).attr('r', 15);
-        d3.selectAll('.dependent-arc').filter(f=> {
-            return f.Source ===  d.id || f.Target === d.id;
-        }).classed('hover', true);
-        d3.selectAll('.dependent-arc').filter(f=> {
-            return f.Source !=  d.id && f.Target != d.id;
-        }).classed('non-hover', true);
-    }).on('mouseout', (event, d)=>{
-        d3.select(event.target).classed('hover', false);
-        d3.select(event.target).attr('r', radius);
-        d3.selectAll('.dependent-arc').filter(f=> {
-            return f.Source ===  d.id || f.Target === d.id;
-        }).classed('hover', false);
-        d3.selectAll('.dependent-arc').filter(f=> {
-            return f.Source !=  d.id && f.Target != d.id;
-        }).classed('non-hover',false);
-    })
-
-}
 
 export function renderDependencyVis(nodes){
 
@@ -85,7 +62,7 @@ export function renderDependencyVis(nodes){
     .classed('dependent-arc', true);
 
     //ADDING INTERACTIVITY TO NODES
-    nodeHoverInteraction(artifactGroup);
+    nodeHoverInteraction(artifactGroup, 'dependent-arc');
 
 }
 

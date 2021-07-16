@@ -4,6 +4,46 @@ import { machineOrHuman } from "../application/generalHelpers";
 
 const radius = 9;
 
+export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
+
+    nodeGroups.on('mouseover', (event, d)=>{
+        
+        d3.select(event.target).classed('hover', true);
+        d3.select(event.target).attr('r', 15);
+        if(linkClass === 'link'){
+
+            d3.selectAll(`.${linkClass}`).filter(f=> {
+                return f.target.id === d.id;
+            }).classed('hover', true);
+    
+            d3.selectAll(`.${linkClass}`).filter(f=> {
+                return f.target.id != d.id;
+            }).classed('non-hover', true);
+
+        }else{
+
+            d3.selectAll(`.${linkClass}`).filter(f=> {
+                return f.Source ===  d.id || f.Target === d.id;
+            }).classed('hover', true);
+    
+            d3.selectAll(`.${linkClass}`).filter(f=> {
+                return f.Source !=  d.id && f.Target != d.id;
+            }).classed('non-hover', true);
+        }
+       
+    }).on('mouseout', (event, d)=>{
+        d3.select(event.target).classed('hover', false);
+        d3.select(event.target).attr('r', radius);
+        d3.selectAll(`.${linkClass}`).filter(f=> {
+            return f.Source ===  d.id || f.Target === d.id;
+        }).classed('hover', false);
+        d3.selectAll(`.${linkClass}`).filter(f=> {
+            return f.Source !=  d.id && f.Target != d.id;
+        }).classed('non-hover',false);
+    })
+
+}
+
 export function renderNodes(nodes){
     const svg = d3.select('#container').select('#wrapper').select('svg');
     let visWrap = svg.append('g');

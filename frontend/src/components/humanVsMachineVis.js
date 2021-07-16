@@ -3,6 +3,7 @@ import * as d3Array from "d3-array";
 import * as humanMachineLinks from "../../vendors/links/links-human-machine.json";
 import * as graphFile from "../../vendors/links/sankey.json";
 import { theSankey } from "../application/sankey";
+import { nodeHoverInteraction } from "./nodes";
 
 const radius = 9;
 
@@ -154,7 +155,7 @@ export function renderHumanVsMachine(nodes){
     });
 
    let sourcRects = humanMachineGroups.selectAll('rect').data(d=> d[1]).join('rect').attr('width', 10).attr('height', 8);
-   sourcRects.attr('fill', '#fff');
+   sourcRects.attr('opacity', 0);
    sourcRects.attr('y', (d, i)=> i * 10);
 
    /////ARCS
@@ -171,11 +172,9 @@ export function renderHumanVsMachine(nodes){
         let artifactNode = artifactGroup.filter(f=> f.id === d3.select(m).data()[0].target);
 
         let obTarget = {};
-        obTarget.x = artifactNode.attr('x');
-        obTarget.y = (svg.node().getBoundingClientRect().width * .7);//+artifactNode.attr('y') - 60;
+        obTarget.x = +artifactNode.attr('x') + 5;
+        obTarget.y = (svg.node().getBoundingClientRect().width * .7) + 6;
         obTarget.id = artifactNode.data()[0].id;
-
-        console.log(obTarget)
 
        return {source: obSource, target: obTarget};
    });
@@ -184,13 +183,22 @@ export function renderHumanVsMachine(nodes){
     .source( d => [d.source.x, d.source.y] )
     .target( d => [d.target.y, d.target.x] );
 
-    var link = svg.select('.secondary-vis').select('.arc-wrap').append("g")
+    var link = svg.select('.secondary-vis').select('.arc-wrap')//.append("g")
     .selectAll(".link")
     .data(linkData)
     .join("path")
     .attr("class", "link")
     .attr("d", linkG )
     .style("stroke-width", 10);
+
+    link.filter(f=> f.source.id === 'Human').classed('human', true);
+    link.filter(f=> f.source.id === 'Machine').classed('machine', true);
+
+    link.on('mouseover', ()=>{
+
+    });
+
+    nodeHoverInteraction(artifactGroup, 'link');
 
 
 }
