@@ -200,5 +200,32 @@ export function renderHumanVsMachine(nodes){
 
     nodeHoverInteraction(artifactGroup, 'link');
 
+    let stageLabels = d3.select('#container').select('.svg-wrap').selectAll('.stage');
+    let lineGen = d3.line();
+
+    stageLabels.nodes().map(m=>{
+        let svgHeight = d3.select('svg').node().getBoundingClientRect().width * .74;
+        
+        let nodeD = d3.select(m).data()[0][1];
+        
+        let start = yScale(nodeD[0].posID);
+
+        let data = [
+            [svgHeight, start], 
+            [svgHeight, (start + (yScale(nodeD.length)) - 10)]];
+        
+        let pathData = lineGen(data);
+        let wrap = d3.select(m).append('g').classed('label-wrap', true);
+
+        wrap.append('path')
+            .attr('d', pathData)
+            .attr('stroke-width', .5)
+            .attr('stroke', '#fff');
+
+        wrap.append('text').text(d=> d[0])
+        .style('text-anchor', 'start')
+        .style('fill', '#fff')
+        .attr('transform', `translate(${(svgHeight + 15)}, ${(start + (yScale(nodeD.length) * .45))})`);
+    });
 
 }

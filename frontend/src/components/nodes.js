@@ -60,7 +60,7 @@ export function renderNodes(nodes){
 
     let xScale = d3.scaleLinear()
         .domain([0, nodes.length])
-        .range([0, svg.node().getBoundingClientRect().width])
+        .range([0, (svg.node().getBoundingClientRect().width - 100)])
     
     artifactGroup.attr('transform', (d, i)=>{
         return `translate(${xScale(d.posID)}, ${335})`;

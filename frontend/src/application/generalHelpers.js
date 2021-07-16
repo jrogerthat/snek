@@ -18,6 +18,7 @@ export function machineOrHuman(d){
       d3.select('.dropdown').selectAll('.dropdown-content').selectAll('p').on('click', (event, d)=>{
         d3.select('.dropdown').select('span').text(d3.select(event.target).text());
         d3.select('#wrapper').select('svg').selectAll('.secondary-vis').selectAll('*').remove();
+        d3.selectAll('.label-wrap').remove();
         dropdownDictionary[d3.select(event.target).text()](nodes);
       });
   }

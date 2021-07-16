@@ -36,6 +36,8 @@ export function renderDependencyVis(nodes){
     arcGroup.attr('transform', 'translate(0, 200)');
     let svg = d3.select('#container').select('svg');
 
+    console.log(nodes.length, svg.node().getBoundingClientRect().width);
+
     let xScale = d3.scaleLinear()
         .domain([0, nodes.length])
         .range([0, svg.node().getBoundingClientRect().width])
@@ -51,18 +53,48 @@ export function renderDependencyVis(nodes){
                 .attr('y', (d, i)=> (svg.node().getBoundingClientRect().height)-20);
     
     arcGroup.selectAll("arcs")
-    .data(artifactDependencies.map(m=> {
-        let startT = artifactGroup.filter(f=> f.id === m.Source);
-        m.data = startT.data()[0];
-        return m}))
-    .join("path")
-    .attr("d", d => buildArc(d, artifactGroup))
-    .style("fill", "none")            // no fill color for the arcs
-    .attr('class', d=> machineOrHuman(d.data))
-    .classed('dependent-arc', true);
+        .data(artifactDependencies.map(m=> {
+            let startT = artifactGroup.filter(f=> f.id === m.Source);
+            m.data = startT.data()[0];
+            return m}))
+        .join("path")
+        .attr("d", d => buildArc(d, artifactGroup))
+        .style("fill", "none")            // no fill color for the arcs
+        .attr('class', d=> machineOrHuman(d.data))
+        .classed('dependent-arc', true);
 
     //ADDING INTERACTIVITY TO NODES
     nodeHoverInteraction(artifactGroup, 'dependent-arc');
+
+    let stageLabels = d3.select('#container').select('.svg-wrap').selectAll('.stage');
+    let lineGen = d3.line();
+
+    stageLabels.nodes().map(m=>{
+        let svgHeight = d3.select('svg').node().getBoundingClientRect().height * .53;
+        
+        let nodeD = d3.select(m).data()[0][1];
+        
+        let start = xScale(nodeD[0].posID);
+
+        let data = [
+            [start, svgHeight], 
+            [(start + (xScale(nodeD.length)) - 10), svgHeight]];
+        
+        let pathData = lineGen(data);
+        let wrap = d3.select(m).append('g').classed('label-wrap', true);
+
+        wrap.append('path')
+            .attr('d', pathData)
+            .attr('stroke-width', .5)
+            .attr('stroke', '#fff');
+
+        wrap.append('text').text(d=> d[0])
+        .style('text-anchor', 'start')
+        .style('fill', '#fff')
+        .attr('transform', `translate(${(start + (xScale(nodeD.length) * .45))},${(svgHeight + 15)}), rotate(40)`);
+    });
+
+
 
 }
 
