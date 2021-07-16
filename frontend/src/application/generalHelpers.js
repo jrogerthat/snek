@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import { renderDependencyVis } from "../components/dependencyVis";
+import { renderHumanVsMachine } from "../components/humanVsMachineVis";
 
 export function machineOrHuman(d){
     if(d['Transmission Mode'] === "Boundry Crossing/M-H" || d['Transmission Mode'] === "Non-Boundary/M-M"){ return "machine"}
@@ -9,15 +10,14 @@ export function machineOrHuman(d){
   }
 
   const dropdownDictionary = {
-      'Human vs Machine' : ()=> console.log('Human vs Machine'),
+      'Human vs Machine' : renderHumanVsMachine,
       'Artifact Dependencies' : renderDependencyVis
   }
 
   export function dropDownInteraction(nodes){
-      //console.log('drop down loaded', d3.select('.dropdown').selectAll('.dropdown-content').selectAll('p'))
       d3.select('.dropdown').selectAll('.dropdown-content').selectAll('p').on('click', (event, d)=>{
         d3.select('.dropdown').select('span').text(d3.select(event.target).text());
-        d3.select('#wrapper').select('svg').selectAll('*').remove();
+        d3.select('#wrapper').select('svg').selectAll('.secondary-vis').selectAll('*').remove();
         dropdownDictionary[d3.select(event.target).text()](nodes);
       });
   }

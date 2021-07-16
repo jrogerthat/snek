@@ -1,0 +1,122 @@
+[
+  {
+    "source": "Human",
+    "subsource": 0,
+    "target": "1A"
+  },
+  {
+    "source": "Human",
+    "subsource": 1,
+    "target": "1B"
+  },
+  {
+    "source": "Human",
+    "subsource": 2,
+    "target": "2A"
+  },
+  {
+    "source": "Human",
+    "subsource": 3,
+    "target": "2B"
+  },
+  {
+    "source": "Machine",
+    "subsource":0,
+    "target": "4A"
+  },
+  {
+    "source": "Machine",
+    "subsource":1,
+    "target": "4B"
+  },
+  {
+    "source": "Human",
+    "subsource": 4,
+    "target": "4C"
+  },
+  {
+    "source": "Machine",
+    "subsource":2,
+    "target": "5A"
+  },
+  {
+    "source": "Human",
+    "subsource": 5,
+    "target": "5B"
+  },
+  {
+    "source": "Human",
+    "subsource": 6,
+    "target": "6A"
+  },
+  {
+    "source": "Human",
+    "subsource": 7,
+    "target": "6B"
+  },
+  {
+    "source": "Machine",
+    "subsource":3,
+    "target": "6C"
+  },
+  {
+    "source": "Machine",
+    "subsource":4,
+    "target": "6D"
+  },
+  {
+    "source": "Machine",
+    "subsource":5,
+    "target": "6E"
+  },
+  {
+    "source": "Machine",
+    "subsource":6,
+    "target": "6F"
+  },
+  {
+    "source": "Machine",
+    "subsource":7,
+    "target": "6G"
+  },
+  {
+    "source": "Human",
+    "subsource": 8,
+    "target": "6H"
+  },
+  {
+    "source": "Human",
+    "subsource": 9,
+    "target": "7A"
+  },
+  {
+    "source": "Human",
+    "subsource": 10,
+    "target": "7B"
+  },
+  {
+    "source": "Machine",
+    "subsource":8,
+    "target": "7C"
+  },
+  {
+    "source": "Machine",
+    "subsource":9,
+    "target": "8A"
+  },
+  {
+    "source": "Machine",
+    "subsource":10,
+    "target": "9A"
+  },
+  {
+    "source": "Human",
+    "subsource": 11,
+    "target": "10A"
+  },
+  {
+    "source": "Human",
+    "subsource": 12,
+    "target": "11A"
+  }
+]
