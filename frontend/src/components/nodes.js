@@ -4,6 +4,22 @@ import { machineOrHuman } from "../application/generalHelpers";
 
 const radius = 9;
 
+export function tooltip(event, d){
+    console.log(d);
+    
+    let tooltip = d3.select('#tooltip');
+    tooltip.style('opacity', 1);
+    tooltip.style('top', `${event.clientY}px`).style('left', `${event.clientX + 30}px`);
+    tooltip.html(`
+    <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
+    <h4>${d['Artifact Type']}</h4>
+    <h6>${d['Artifact Group']}</h6>
+    <h6>${d['Transmission Mode']}</h6>
+    <h6>${d['Task']}</h6>
+
+    `)
+}
+
 export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
 
     nodeGroups.on('mouseover', (event, d)=>{
@@ -30,6 +46,8 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
                 return f.Source !=  d.id && f.Target != d.id;
             }).classed('non-hover', true);
         }
+
+        tooltip(event, d);
        
     }).on('mouseout', (event, d)=>{
         d3.select(event.target).classed('hover', false);
@@ -40,6 +58,7 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
         d3.selectAll(`.${linkClass}`).filter(f=> {
             return f.Source !=  d.id && f.Target != d.id;
         }).classed('non-hover',false);
+        d3.select('#tooltip').style('left', '-20px').style('top', '-20px').style('opacity', 0)
     });
 
 }
