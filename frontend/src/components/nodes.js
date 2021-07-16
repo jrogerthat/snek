@@ -40,7 +40,7 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
         d3.selectAll(`.${linkClass}`).filter(f=> {
             return f.Source !=  d.id && f.Target != d.id;
         }).classed('non-hover',false);
-    })
+    });
 
 }
 

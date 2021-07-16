@@ -154,6 +154,10 @@ export function renderHumanVsMachine(nodes){
         return `translate(${(svg.node().getBoundingClientRect().width * .1)}, ${(calcY)})`;
     });
 
+    let sourceLabels = humanMachineGroups.selectAll('text.source-label').data(d=> [d]).join('text').classed('source-label', true);
+    sourceLabels.text(d=> d[0])
+    sourceLabels.attr('transform', d=> `translate(-10, ${d[1].length * 5})`)
+
    let sourcRects = humanMachineGroups.selectAll('rect').data(d=> d[1]).join('rect').attr('width', 10).attr('height', 8);
    sourcRects.attr('opacity', 0);
    sourcRects.attr('y', (d, i)=> i * 10);
@@ -179,24 +183,20 @@ export function renderHumanVsMachine(nodes){
        return {source: obSource, target: obTarget};
    });
 
-   var linkG = d3.linkHorizontal()
-    .source( d => [d.source.x, d.source.y] )
-    .target( d => [d.target.y, d.target.x] );
+    var linkG = d3.linkHorizontal()
+        .source( d => [d.source.x, d.source.y] )
+        .target( d => [d.target.y, d.target.x] );
 
     var link = svg.select('.secondary-vis').select('.arc-wrap')//.append("g")
-    .selectAll(".link")
-    .data(linkData)
-    .join("path")
-    .attr("class", "link")
-    .attr("d", linkG )
-    .style("stroke-width", 10);
+        .selectAll(".link")
+        .data(linkData)
+        .join("path")
+        .attr("class", "link")
+        .attr("d", linkG )
+        .style("stroke-width", 10);
 
     link.filter(f=> f.source.id === 'Human').classed('human', true);
     link.filter(f=> f.source.id === 'Machine').classed('machine', true);
-
-    link.on('mouseover', ()=>{
-
-    });
 
     nodeHoverInteraction(artifactGroup, 'link');
 
