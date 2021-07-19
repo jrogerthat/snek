@@ -205,9 +205,7 @@ export function renderHumanVsMachine(nodes){
 
     stageLabels.nodes().map(m=>{
         let svgHeight = d3.select('svg').node().getBoundingClientRect().width * .74;
-        
         let nodeD = d3.select(m).data()[0][1];
-        
         let start = yScale(nodeD[0].posID);
 
         let data = [
@@ -222,10 +220,88 @@ export function renderHumanVsMachine(nodes){
             .attr('stroke-width', .5)
             .attr('stroke', '#fff');
 
-        wrap.append('text').text(d=> d[0])
+        let labels = wrap.append('text').text(d=> d[0])
         .style('text-anchor', 'start')
         .style('fill', '#fff')
         .attr('transform', `translate(${(svgHeight + 15)}, ${(start + (yScale(nodeD.length) * .45))})`);
+
+        labels.on('mouseover', (event, d)=> {
+          let artifacts = d3.select(event.target.parentNode.parentNode).selectAll('.artifact');
+          artifacts.selectAll('circle').attr('r', 12);
+          artifacts.data().map(m => {
+            d3.selectAll(`.link`).filter(f=> {
+              console.log('m', f, m.id)
+                return f.target.id === m.id;
+            }).classed('hover', true);
+    
+            // d3.selectAll(`.link`).filter(f=> {
+            //     return f.target.id != m.id;
+            // }).classed('non-hover', true);
+          })
+
+          }).on('mouseout', (event, d)=> {
+          let artifacts = d3.select(event.target.parentNode.parentNode).selectAll('.artifact');
+          artifacts.selectAll('circle').attr('r', radius)
+        })
+
     });
 
+    artifactGroup.on('click', (event, d)=> {
+      console.log('click!!', event, d);
+      let height = d3.select('svg').node().getBoundingClientRect().height;
+      let div = d3.select('#wrapper').append('div').classed('more-info', true);
+      div.style('height', `${height}px`);
+
+      let x = div.append('div').classed('exit', true);
+      x.append('text').text('x');
+      x.on('click', ()=> {
+        d3.select('.more-info').remove();
+      })
+
+      let h4 = div.append('h4').text(d['Artifact Type']);
+
+      let dataUl = div.append('ul');
+
+      let liData = Object.keys(d).filter(f=> f != "name" && f != "id" && f != "posID" && f != "Artifact Type" && f != "Source File");
+
+      let li = dataUl.selectAll('li').data(liData).join('li');
+      li.html(l=> `${l}: <span class="badge bg-secondary">${d[l]}</span>`);
+
+      // dataUl.append('li').html(`Stage: <span class="badge bg-secondary">${d.Stage}</span>`).data({'param': "Stage", 'what': d.Stage});
+      // dataUl.append('li').html(`Step: <span class="badge bg-secondary">${d.Step}</span>`);
+      // dataUl.append('li').html(`Task: <span class="badge bg-secondary">${d.Task}</span>`);
+      // dataUl.append('li').html(`Group: <span class="badge bg-secondary">${d['Artifact Group']}</span>`);
+      // dataUl.append('li').html(`Transmission Mode: <span class="badge bg-secondary">${d['Transmission Mode']}</span>`);
+      // dataUl.append('li').html(`Source: <span class="badge bg-secondary">${d.Source}</span>`);
+      // dataUl.append('li').html(`Format: <span class="badge bg-secondary">${d['Artifact Format']}</span>`);
+
+      li.selectAll('span').on('mouseover', (event, m)=> {
+        let param = d3.select(event.target.parentNode).data();
+        let what = d[param];
+        //console.log(param, what);
+        let shared = d3.selectAll('.artifact').filter(f=> f[param] === what).select('circle');
+        shared.classed('hover', true);
+        shared.attr('r', 12);
+        let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
+        notShared.classed('non-hover', true);
+        notShared.attr('opacity', .2);
+        d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', true)
+      }).on('mouseout', (event, m)=>{
+        let param = d3.select(event.target.parentNode).data();
+        let what = d[param];
+        let shared = d3.selectAll('.artifact').filter(f=> f[param] === what).select('circle');
+        shared.classed('hover', false);
+        shared.attr('r', radius);
+        let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
+        notShared.classed('non-hover', false);
+        notShared.attr('opacity', 1);
+        d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', false)
+      });
+
+      let button = div.append('button').classed('btn btn-secondary', true).text('See Artifact');
+      button.on('click', ()=> {
+        d3.json('static/vendors/data_jsons/json_directory.json').then((data)=> console.log(data));
+        
+        });
+    });
 }

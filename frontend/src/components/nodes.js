@@ -5,18 +5,20 @@ import { machineOrHuman } from "../application/generalHelpers";
 const radius = 9;
 
 export function tooltip(event, d){
-    console.log(d);
-    
+
     let tooltip = d3.select('#tooltip');
     tooltip.style('opacity', 1);
     tooltip.style('top', `${event.clientY}px`).style('left', `${event.clientX + 30}px`);
     tooltip.html(`
     <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
     <h4>${d['Artifact Type']}</h4>
-    <h6>${d['Artifact Group']}</h6>
-    <h6>${d['Transmission Mode']}</h6>
-    <h6>${d['Task']}</h6>
-
+    <br>
+    <ul>
+    <li><h6>${d['Artifact Group']}</h6></li>
+    <li><h6>${d['Transmission Mode']}</h6></li>
+    <li><h6>${d['Task']}</h6></li>
+    <li><h6>${d['Source']}</h6></li>
+    </ul>
     `)
 }
 
