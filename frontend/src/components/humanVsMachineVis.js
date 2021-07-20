@@ -225,29 +225,30 @@ export function renderHumanVsMachine(nodes){
         .style('fill', '#fff')
         .attr('transform', `translate(${(svgHeight + 15)}, ${(start + (yScale(nodeD.length) * .45))})`);
 
-        labels.on('mouseover', (event, d)=> {
-          let artifacts = d3.select(event.target.parentNode.parentNode).selectAll('.artifact');
-          artifacts.selectAll('circle').attr('r', 12);
-          artifacts.data().map(m => {
-            d3.selectAll(`.link`).filter(f=> {
-              console.log('m', f, m.id)
-                return f.target.id === m.id;
-            }).classed('hover', true);
-    
-            // d3.selectAll(`.link`).filter(f=> {
-            //     return f.target.id != m.id;
-            // }).classed('non-hover', true);
-          })
-
-          }).on('mouseout', (event, d)=> {
-          let artifacts = d3.select(event.target.parentNode.parentNode).selectAll('.artifact');
-          artifacts.selectAll('circle').attr('r', radius)
-        })
-
     });
+
+    let labels = d3.selectAll('.label-wrap');
+
+    labels.on('mouseover', (event, d)=> {
+      let artifacts = d3.select(event.target.parentNode.parentNode).selectAll('.artifact');
+      artifacts.selectAll('circle').attr('r', 12);
+      let ids = artifacts.data().map(m => m['Artifact ID']);
+
+      d3.selectAll('.link').filter(f=> ids.indexOf(ids.indexOf(f.target.id) > -1 )).classed('hover', true);
+
+      d3.selectAll('.link').filter(f=> ids.indexOf(f.target.id) === -1).classed('non-hover', true);
+
+      }).on('mouseout', (event, d)=> {
+      let artifacts = d3.select(event.target.parentNode.parentNode).selectAll('.artifact');
+      artifacts.selectAll('circle').attr('r', radius);
+      d3.selectAll('.link').classed('non-hover', false);
+      d3.selectAll('.link').classed('hover', false);
+    })
+
 
     artifactGroup.on('click', (event, d)=> {
       console.log('click!!', event, d);
+      d3.select('#wrapper').select('.more-info').remove(); 
       let height = d3.select('svg').node().getBoundingClientRect().height;
       let div = d3.select('#wrapper').append('div').classed('more-info', true);
       div.style('height', `${height}px`);
@@ -266,14 +267,6 @@ export function renderHumanVsMachine(nodes){
 
       let li = dataUl.selectAll('li').data(liData).join('li');
       li.html(l=> `${l}: <span class="badge bg-secondary">${d[l]}</span>`);
-
-      // dataUl.append('li').html(`Stage: <span class="badge bg-secondary">${d.Stage}</span>`).data({'param': "Stage", 'what': d.Stage});
-      // dataUl.append('li').html(`Step: <span class="badge bg-secondary">${d.Step}</span>`);
-      // dataUl.append('li').html(`Task: <span class="badge bg-secondary">${d.Task}</span>`);
-      // dataUl.append('li').html(`Group: <span class="badge bg-secondary">${d['Artifact Group']}</span>`);
-      // dataUl.append('li').html(`Transmission Mode: <span class="badge bg-secondary">${d['Transmission Mode']}</span>`);
-      // dataUl.append('li').html(`Source: <span class="badge bg-secondary">${d.Source}</span>`);
-      // dataUl.append('li').html(`Format: <span class="badge bg-secondary">${d['Artifact Format']}</span>`);
 
       li.selectAll('span').on('mouseover', (event, m)=> {
         let param = d3.select(event.target.parentNode).data();
