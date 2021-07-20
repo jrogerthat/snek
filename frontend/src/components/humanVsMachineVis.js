@@ -271,14 +271,21 @@ export function renderHumanVsMachine(nodes){
       li.selectAll('span').on('mouseover', (event, m)=> {
         let param = d3.select(event.target.parentNode).data();
         let what = d[param];
-        //console.log(param, what);
-        let shared = d3.selectAll('.artifact').filter(f=> f[param] === what).select('circle');
-        shared.classed('hover', true);
-        shared.attr('r', 12);
+        let shared = d3.selectAll('.artifact').filter(f=> f[param] === what)
+        let sharedCircle = shared.select('circle');
+        sharedCircle.classed('hover', true);
+        sharedCircle.attr('r', 12);
         let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
         notShared.classed('non-hover', true);
         notShared.attr('opacity', .2);
-        d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', true)
+        let selectedArt = d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', true);
+        let selectedIDs = shared.data().map(s=> s['Artifact ID']);
+        
+        d3.selectAll('.link').filter(f=> {
+        
+          return selectedIDs.indexOf(f.target.id) > -1}).classed('hover', true);
+        d3.selectAll('.link').filter(f=> selectedIDs.indexOf(f.target.id) === -1).classed('non-hover', true);
+
       }).on('mouseout', (event, m)=>{
         let param = d3.select(event.target.parentNode).data();
         let what = d[param];
@@ -288,7 +295,9 @@ export function renderHumanVsMachine(nodes){
         let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
         notShared.classed('non-hover', false);
         notShared.attr('opacity', 1);
-        d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', false)
+        d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', false);
+        d3.selectAll('.link').classed('hover', false);
+        d3.selectAll('.link').classed('not-hover', false);
       });
 
       let button = div.append('button').classed('btn btn-secondary', true).text('See Artifact');
