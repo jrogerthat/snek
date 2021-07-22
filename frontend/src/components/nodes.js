@@ -25,9 +25,12 @@ export function tooltip(event, d){
 export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
 
     nodeGroups.on('mouseover', (event, d)=>{
+        //.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false)
+        if(d3.select(event.target).classed('clicked-selected') === false){
+            d3.select(event.target).classed('hover', true);
+            d3.select(event.target).attr('r', 15);
+        }
         
-        d3.select(event.target).classed('hover', true);
-        d3.select(event.target).attr('r', 15);
         if(linkClass === 'link'){
 
             d3.selectAll(`.${linkClass}`).filter(f=> {
@@ -52,8 +55,10 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
         tooltip(event, d);
        
     }).on('mouseout', (event, d)=>{
+        if(d3.select(event.target).classed('clicked-selected') === false){
         d3.select(event.target).classed('hover', false);
         d3.select(event.target).attr('r', radius);
+        }
         d3.selectAll(`.${linkClass}`).filter(f=> {
             return f.Source ===  d.id || f.Target === d.id;
         }).classed('hover', false);

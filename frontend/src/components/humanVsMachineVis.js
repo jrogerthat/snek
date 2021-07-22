@@ -243,23 +243,32 @@ export function renderHumanVsMachine(nodes){
       artifacts.selectAll('circle').attr('r', radius);
       d3.selectAll('.link').classed('non-hover', false);
       d3.selectAll('.link').classed('hover', false);
-    })
-
+    });
 
     artifactGroup.on('click', (event, d)=> {
-      console.log('click!!', event, d);
+
+      d3.selectAll('.clicked-selected').each((f, i, n)=>{
+        console.log('f', f, n[i]);
+        d3.select(n[i]).attr('r', radius);
+        d3.select(n[i]).classed('click-selected', false);
+      });//.classed('click-selected', false);
+
+
+      let clickedSelected = d3.select(event.target);
+      clickedSelected.classed('clicked-selected', true);
+      clickedSelected.attr('r', 16);
+    
       d3.select('#wrapper').select('.more-info').remove(); 
       let height = d3.select('svg').node().getBoundingClientRect().height;
       let div = d3.select('#wrapper').append('div').classed('more-info', true);
       div.style('height', `${height}px`);
 
       let x = div.append('div').classed('exit', true);
-      // x.append('text').text('x');
-      // x.on('click', ()=> {
-      //   d3.select('.more-info').remove();
-      // })
-      // <i class="fas fa-times-circle"></i>
+
       x.append('i').attr('class', 'fas fa-times-circle');
+      x.on('click', ()=> {
+        d3.select('.more-info').remove();
+      });
 
       let h4 = div.append('h4').text(d['Artifact Type']);
 
@@ -275,8 +284,9 @@ export function renderHumanVsMachine(nodes){
         let what = d[param];
         let shared = d3.selectAll('.artifact').filter(f=> f[param] === what)
         let sharedCircle = shared.select('circle');
-        sharedCircle.classed('hover', true);
-        sharedCircle.attr('r', 12);
+     // console.log(sharedCircle.filter((f, i, n)=> d3.select(n[i])))
+        sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('hover', true);
+        sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).attr('r', 12);
         let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
         notShared.classed('non-hover', true);
         notShared.attr('opacity', .2);
@@ -292,10 +302,10 @@ export function renderHumanVsMachine(nodes){
         let param = d3.select(event.target.parentNode).data();
         let what = d[param];
         let shared = d3.selectAll('.artifact').filter(f=> f[param] === what).select('circle');
-        shared.classed('hover', false);
-        shared.attr('r', radius);
+        shared.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('hover', false);
+        shared.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).attr('r', radius);
         let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
-        notShared.classed('non-hover', false);
+        notShared.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('non-hover', false);
         notShared.attr('opacity', 1);
         d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', false);
         d3.selectAll('.link').classed('hover', false);
