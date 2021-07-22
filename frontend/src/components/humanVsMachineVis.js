@@ -254,10 +254,12 @@ export function renderHumanVsMachine(nodes){
       div.style('height', `${height}px`);
 
       let x = div.append('div').classed('exit', true);
-      x.append('text').text('x');
-      x.on('click', ()=> {
-        d3.select('.more-info').remove();
-      })
+      // x.append('text').text('x');
+      // x.on('click', ()=> {
+      //   d3.select('.more-info').remove();
+      // })
+      // <i class="fas fa-times-circle"></i>
+      x.append('i').attr('class', 'fas fa-times-circle');
 
       let h4 = div.append('h4').text(d['Artifact Type']);
 
