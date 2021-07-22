@@ -40,7 +40,7 @@ export function renderDependencyVis(nodes){
 
     let xScale = d3.scaleLinear()
         .domain([0, nodes.length])
-        .range([0, svg.node().getBoundingClientRect().width])
+        .range([0, svg.node().getBoundingClientRect().width - 100])
     
     artifactGroup
     .transition()
@@ -90,8 +90,9 @@ export function renderDependencyVis(nodes){
 
         wrap.append('text').text(d=> d[0])
         .style('text-anchor', 'start')
+        .style('font-size', '10px')
         .style('fill', '#fff')
-        .attr('transform', `translate(${(start + (xScale(nodeD.length) * .45))},${(svgHeight + 15)}), rotate(40)`);
+        .attr('transform', `translate(${(start + (xScale(nodeD.length) * .43))},${(svgHeight + 15)}), rotate(40)`);
     });
 
 
