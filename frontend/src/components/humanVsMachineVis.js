@@ -158,30 +158,30 @@ export function renderHumanVsMachine(nodes){
     sourceLabels.text(d=> d[0])
     sourceLabels.attr('transform', d=> `translate(-10, ${d[1].length * 5})`)
 
-   let sourcRects = humanMachineGroups.selectAll('rect').data(d=> d[1]).join('rect').attr('width', 10).attr('height', 8);
-   sourcRects.attr('opacity', 0);
-   sourcRects.attr('y', (d, i)=> i * 10);
+    let sourcRects = humanMachineGroups.selectAll('rect').data(d=> d[1]).join('rect').attr('width', 10).attr('height', 8);
+    sourcRects.attr('opacity', 0);
+    sourcRects.attr('y', (d, i)=> i * 10);
 
-   /////ARCS
-   ///SHAPING THE DATA
-   let linkData = sourcRects.nodes().map(m=> {
+    /////ARCS
+    ///SHAPING THE DATA
+    let linkData = sourcRects.nodes().map(m=> {
 
-        let obSource = {};
-        obSource.id = d3.select(m).data()[0].source;
-        obSource.x = (svg.node().getBoundingClientRect().width * .1);
+          let obSource = {};
+          obSource.id = d3.select(m).data()[0].source;
+          obSource.x = (svg.node().getBoundingClientRect().width * .1);
 
-        let calcY = humanMachineGroups.data().map(h=> h[0]).indexOf(obSource.id) === 0 ? svg.node().getBoundingClientRect().height * .3 : svg.node().getBoundingClientRect().height * .5;
-        obSource.y = +d3.select(m).attr('y') + calcY;
-        
-        let artifactNode = artifactGroup.filter(f=> f.id === d3.select(m).data()[0].target);
+          let calcY = humanMachineGroups.data().map(h=> h[0]).indexOf(obSource.id) === 0 ? svg.node().getBoundingClientRect().height * .3 : svg.node().getBoundingClientRect().height * .5;
+          obSource.y = +d3.select(m).attr('y') + calcY;
+          
+          let artifactNode = artifactGroup.filter(f=> f.id === d3.select(m).data()[0].target);
 
-        let obTarget = {};
-        obTarget.x = +artifactNode.attr('x') + 5;
-        obTarget.y = (svg.node().getBoundingClientRect().width * .7) + 6;
-        obTarget.id = artifactNode.data()[0].id;
+          let obTarget = {};
+          obTarget.x = +artifactNode.attr('x') + 5;
+          obTarget.y = (svg.node().getBoundingClientRect().width * .7) + 6;
+          obTarget.id = artifactNode.data()[0].id;
 
-       return {source: obSource, target: obTarget};
-   });
+        return {source: obSource, target: obTarget};
+    });
 
     var linkG = d3.linkHorizontal()
         .source( d => [d.source.x, d.source.y] )
@@ -252,6 +252,7 @@ export function renderHumanVsMachine(nodes){
         d3.select(n[i]).classed('click-selected', false);
       });
 
+      d3.selectAll('.clicked-selected').classed('clicked-selected', false);
 
       let clickedSelected = d3.select(event.target);
       clickedSelected.classed('clicked-selected', true);
@@ -267,6 +268,12 @@ export function renderHumanVsMachine(nodes){
       x.append('i').attr('class', 'fas fa-times-circle');
       x.on('click', ()=> {
         d3.select('.more-info').remove();
+        d3.selectAll('.clicked-selected').each((f, i, n)=>{
+          d3.select(n[i]).attr('r', radius);
+          d3.select(n[i]).classed('click-selected', false);
+        });
+  
+        d3.selectAll('.clicked-selected').classed('clicked-selected', false);
       });
 
       let h4 = div.append('h4').text(d['Artifact Type']);
@@ -283,7 +290,7 @@ export function renderHumanVsMachine(nodes){
         let what = d[param];
         let shared = d3.selectAll('.artifact').filter(f=> f[param] === what)
         let sharedCircle = shared.select('circle');
-     // console.log(sharedCircle.filter((f, i, n)=> d3.select(n[i])))
+     
         sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('hover', true);
         sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).attr('r', 12);
         let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
@@ -292,10 +299,15 @@ export function renderHumanVsMachine(nodes){
         let selectedArt = d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', true);
         let selectedIDs = shared.data().map(s=> s['Artifact ID']);
         
-        d3.selectAll('.link').filter(f=> {
-        
+        let hoverLines = d3.selectAll('.link').filter(f=> {
           return selectedIDs.indexOf(f.target.id) > -1}).classed('hover', true);
-        d3.selectAll('.link').filter(f=> selectedIDs.indexOf(f.target.id) === -1).classed('non-hover', true);
+        
+        let antiHover = d3.selectAll('.link').filter((f, d, i) => {
+          return d3.select(n[1]).classed('hover') === false;
+        }).classed('non-hover', true);
+
+        // let notHoverLines = d3.selectAll('.link').filter(f=> selectedIDs.indexOf(f.target.id) === -1).classed('non-hover', true);
+        //   console.log('not hoverrr', notHoverLines);
 
       }).on('mouseout', (event, m)=>{
         let param = d3.select(event.target.parentNode).data();
