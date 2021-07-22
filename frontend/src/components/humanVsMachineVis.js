@@ -248,10 +248,9 @@ export function renderHumanVsMachine(nodes){
     artifactGroup.on('click', (event, d)=> {
 
       d3.selectAll('.clicked-selected').each((f, i, n)=>{
-        console.log('f', f, n[i]);
         d3.select(n[i]).attr('r', radius);
         d3.select(n[i]).classed('click-selected', false);
-      });//.classed('click-selected', false);
+      });
 
 
       let clickedSelected = d3.select(event.target);

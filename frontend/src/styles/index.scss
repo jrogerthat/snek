@@ -27,7 +27,7 @@ font-weight: 200;
     justify-content: space-around;
     vertical-align: middle;
   }
-  
+
   input{
     background-color: #2b2b2b;
     color: #ADAAC0;
@@ -156,6 +156,11 @@ path.non-hover{
 .source-label{
   text-anchor: end;
   fill:white;
+}
+
+.clicked-selected{
+  stroke: #fff;
+  stroke-width: 1px;
 }
 
 
