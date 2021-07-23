@@ -1,0 +1,45 @@
+{   "pipeline_stages": ["preparation/data"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "clientShardsUrl": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/shards",
+    "createdBy": {
+        "id": "005B0000006wvarIAA",
+        "name": "Admin User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+    },
+    "createdDate": "2021-06-28T15:16:34.000Z",
+    "currentVersionId": "0FcB00000059uwqKAA",
+    "currentVersionUrl": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA",
+    "dataRefreshDate": "2021-06-28T15:16:44.000Z",
+    "datasetType": "default",
+    "folder": {
+        "id": "00lB0000000TKYMIA4",
+        "label": "Artifact Trace",
+        "name": "Artifact_Trace",
+        "url": "/services/data/v52.0/wave/folders/00lB0000000TKYMIA4"
+    },
+    "id": "0FbB0000000INzcKAG",
+    "label": "farmingham_study_baseline_no_time",
+    "lastAccessedDate": "2021-06-28T20:34:54.000Z",
+    "lastModifiedBy": {
+        "id": "005B0000006wvfPIAQ",
+        "name": "Integration User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+    },
+    "lastModifiedDate": "2021-06-28T20:35:01.000Z",
+    "lastQueriedDate": "2021-06-28T20:34:58.000Z",
+    "licenseAttributes": {
+        "type": "einsteinanalytics"
+    },
+    "name": "farmingham_study_baseline_no_time",
+    "permissions": {
+        "create": true,
+        "manage": true,
+        "modify": true,
+        "view": true
+    },
+    "type": "dataset",
+    "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG",
+    "versionsUrl": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions",
+    "visibility": "All"
+}

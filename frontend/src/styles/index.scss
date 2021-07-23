@@ -65,6 +65,12 @@ font-weight: 200;
   }
 }
 
+.hover-label{
+  font-size: 10px;
+  fill: #fff;
+  //transform: translate(40px, 12px);
+}
+
 .specific-chosen{
   fill: #fff !important;
 }
@@ -115,6 +121,10 @@ border-radius: 5px;
 .svg-wrap path.human{
   stroke: #ec2227;
   stroke-opacity: .6;
+}
+
+circle.hover{
+  opacity: 1;
 }
 
 path.link{

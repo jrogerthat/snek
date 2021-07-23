@@ -2,6 +2,7 @@ import * as d3 from "d3";
 import * as d3Array from "d3-array";
 import * as artifactDependencies from "../../vendors/links/artifact-dependencies.json";
 import { machineOrHuman } from "../application/generalHelpers";
+import { viewSingleton } from "../application/viewSingleton";
 import { nodeHoverInteraction } from "./nodes";
 
 const radius = 9;
@@ -29,6 +30,9 @@ function buildArc (d, artifactGroup) {
   };
 
 export function renderDependencyVis(nodes){
+
+    let viewOb = viewSingleton.getInstance();
+    viewOb.changeView('dependency');
 
     let artifactGroup = d3.select('#container').selectAll('g.artifact');
     let visWrap = d3.select('#container').select('.secondary-vis');

@@ -1,0 +1,104 @@
+{
+    "action": "query",
+    "responseId": "4dDXygDgLguxNVl1cKey1-",
+    "results": {
+        "metadata": [
+            {
+                "lineage": {
+                    "type": "union",
+                    "inputs": [
+                        {
+                            "type": "foreach",
+                            "projections": [
+                                {
+                                    "field": {
+                                        "id": "q0.bin",
+                                        "type": "numeric"
+                                    }
+                                },
+                                {
+                                    "field": {
+                                        "id": "q0.count",
+                                        "type": "numeric"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "foreach",
+                            "projections": [
+                                {
+                                    "field": {
+                                        "id": "q1.bin",
+                                        "type": "numeric"
+                                    }
+                                },
+                                {
+                                    "field": {
+                                        "id": "q1.count",
+                                        "type": "numeric"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "foreach",
+                            "projections": [
+                                {
+                                    "field": {
+                                        "id": "q2.bin",
+                                        "type": "numeric"
+                                    }
+                                },
+                                {
+                                    "field": {
+                                        "id": "q2.count",
+                                        "type": "numeric"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "foreach",
+                            "projections": [
+                                {
+                                    "field": {
+                                        "id": "q3.bin",
+                                        "type": "numeric"
+                                    }
+                                },
+                                {
+                                    "field": {
+                                        "id": "q3.count",
+                                        "type": "numeric"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "queryLanguage": "SAQL"
+            }
+        ],
+        "records": [
+            {
+                "bin": 0,
+                "count": 3164
+            },
+            {
+                "bin": 1,
+                "count": 1059
+            },
+            {
+                "bin": 2,
+                "count": 173
+            },
+            {
+                "bin": 3,
+                "count": 14
+            }
+        ]
+    },
+    "query": "q = load \"0Fb5e000000D7qhCAC/0Fc5e000000GV5qCAG\"; q = filter q by 'glucose' in [0..240.11236890434486]; q = filter q by 'totchol' in [0..696] || 'totchol' is null; q = filter q by 'randid' in [2448..9999312] || 'randid' is null; q = filter q by 'diabp' in [48..142.5] || 'diabp' is null; q = filter q by 'sysbp' in [83.5..295] || 'sysbp' is null; q = filter q by 'age' in [32..70] || 'age' is null; q = filter q by 'cigpday' in [0..70] || 'cigpday' is null; q = filter q by 'heartrte' in [0..143] || 'heartrte' is null; q = filter q by 'bmi' in [0..56.8] || 'bmi' is null;   q0 = filter q by 'cigpday' >= 0 and 'cigpday' < 17.5;q0 = group q0 by all;q0 = foreach q0 generate 0 as bin, count() as 'count';q1 = filter q by 'cigpday' >= 17.5 and 'cigpday' < 35;q1 = group q1 by all;q1 = foreach q1 generate 1 as bin, count() as 'count';q2 = filter q by 'cigpday' >= 35 and 'cigpday' < 52.5;q2 = group q2 by all;q2 = foreach q2 generate 2 as bin, count() as 'count';q3 = filter q by 'cigpday' >= 52.5 and 'cigpday' <= 70;q3 = group q3 by all;q3 = foreach q3 generate 3 as bin, count() as 'count'; q = union q0, q1, q2, q3;",
+    "responseTime": 17
+}

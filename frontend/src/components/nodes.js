@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import * as d3Array from "d3-array";
 import { machineOrHuman } from "../application/generalHelpers";
+import { viewSingleton } from "../application/viewSingleton";
 
 const radius = 9;
 
@@ -96,3 +97,124 @@ export function renderNodes(nodes){
     artifactGroup.attr('x', (d, i)=> xScale(d.posID))
                 .attr('y', (d, i)=> (svg.node().getBoundingClientRect().height)-20);
 }
+
+export function artifactClicked(event, d){
+   
+    d3.selectAll('.clicked-selected').each((f, i, n)=>{
+      d3.select(n[i]).attr('r', radius);
+      d3.select(n[i]).classed('click-selected', false);
+    });
+  
+    d3.selectAll('.clicked-selected').classed('clicked-selected', false);
+  
+    let clickedSelected = d3.select(event.target);
+    clickedSelected.classed('clicked-selected', true);
+    clickedSelected.attr('r', 16);
+  
+    d3.select('#wrapper').select('.more-info').remove(); 
+    let height = d3.select('svg').node().getBoundingClientRect().height;
+    let div = d3.select('#wrapper').append('div').classed('more-info', true);
+    div.style('height', `${height}px`);
+  
+    let x = div.append('div').classed('exit', true);
+  
+    x.append('i').attr('class', 'fas fa-times-circle');
+    x.on('click', ()=> {
+      d3.select('.more-info').remove();
+      d3.selectAll('.clicked-selected').each((f, i, n)=>{
+        d3.select(n[i]).attr('r', radius);
+        d3.select(n[i]).classed('click-selected', false);
+      });
+  
+      d3.selectAll('.clicked-selected').classed('clicked-selected', false);
+    });
+  
+    let h4 = div.append('h4').text(d['Artifact Type']);
+  
+    let dataUl = div.append('ul');
+  
+    let liData = Object.keys(d).filter(f=> f != "name" && f != "id" && f != "posID" && f != "Artifact Type" && f != "Source File");
+  
+    let li = dataUl.selectAll('li').data(liData).join('li');
+    li.html(l=> `${l}: <span class="badge bg-secondary">${d[l]}</span>`);
+  
+    li.selectAll('span').on('mouseover', (event, m)=> {
+      let param = d3.select(event.target.parentNode).data();
+     
+      let what = d[param];
+      let shared = d3.selectAll('.artifact').filter(f=> f[param] === what)
+      let sharedCircle = shared.select('circle');
+   
+      sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('hover', true);
+      sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).attr('r', 12);
+      let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
+      notShared.classed('non-hover', true);
+      notShared.attr('opacity', .2);
+
+      d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', true);
+      let selectedIDs = shared.data().map(s=> s['Artifact ID']);
+      
+      let hoverLines = d3.selectAll('.link').filter(f=> {
+        return selectedIDs.indexOf(f.target.id) > -1}).classed('hover', true);
+      
+    //   let antiHover = d3.selectAll('.link').filter((f, i, n) => {
+    //     return d3.select(n[1]).classed('hover') === false;
+    //   }).classed('non-hover', true);
+        d3.selectAll('.label-wrap').attr('opacity', 0);
+        
+        let hoverLabel = shared.append('text').classed('hover-label', true);
+        hoverLabel.text(t=> t['Artifact Type']);
+
+        let viewOb = viewSingleton.getInstance();
+        console.log(viewOb.currentView());
+        if(viewOb.currentView() === 'human-machine'){
+            hoverLabel.style('transform', 'translate(40px, 12px)');
+        }else{
+            console.log('does this work??')
+            hoverLabel.style('transform', 'translate(-10px, 30px), rotate(40)')
+        }
+       // hoverLabel.attr('transform', 'translate(100px, 100px)')
+        
+
+    }).on('mouseout', (event, m)=>{
+        
+        let param = d3.select(event.target.parentNode).data();
+        let what = d[param];
+        let shared = d3.selectAll('.artifact').filter(f=> f[param] === what).select('circle');
+        shared.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('hover', false);
+        shared.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).attr('r', radius);
+        let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
+        notShared.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('non-hover', false);
+        //notShared.attr('opacity', 1);
+        d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', false);
+        d3.selectAll('.link').classed('hover', false);
+        d3.selectAll('.link').classed('not-hover', false);
+
+        d3.selectAll('.hover-label').remove();
+        d3.selectAll('.label-wrap').attr('opacity', 1);
+    });
+  
+    let buttonRawFile = div.append('button').classed('btn btn-secondary', true).text('See Artifact');
+    buttonRawFile.on('click', ()=> {
+        //console.log('m', d['Source File']);
+        if(d['Source File'] != null){
+            console.log(d['Source File']);
+            d3.json(d['Source File']).then(json => {
+        
+                let rawData = d3.select('#wrapper').select('.more-info').append('div');
+                rawData.html(`${JSON.stringify(json)}`);
+                rawData.style('width', '440px');
+                rawData.style('height', '300px');
+                rawData.style('overflow-x', 'auto');
+                rawData.style('overflow-y', 'auto');
+            
+            });
+
+
+        }
+      
+      
+      });
+
+     
+  }

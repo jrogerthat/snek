@@ -1,0 +1,1915 @@
+{   "pipeline_stages": ["preparation/wrangle"],
+    "could_pull_from_API": false,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["metadata/fields", "improvements"],
+        "metadata": {
+            "outcome": {
+                "label": "death"
+            },
+            "fields": [
+                {
+                    "label": "age",
+                    "property": {
+                        "type": "Field",
+                        "field": "age"
+                    },
+                    "values": [
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 32,
+                                "end": 39
+                            },
+                            "label": "32 to 39"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 39,
+                                "end": 41
+                            },
+                            "label": "40 to 41"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 41,
+                                "end": 44
+                            },
+                            "label": "42 to 44"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 44,
+                                "end": 46
+                            },
+                            "label": "45 to 46"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 46,
+                                "end": 49
+                            },
+                            "label": "47 to 49"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 49,
+                                "end": 52
+                            },
+                            "label": "50 to 52"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 52,
+                                "end": 55
+                            },
+                            "label": "53 to 55"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 55,
+                                "end": 59
+                            },
+                            "label": "56 to 59"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 59,
+                                "end": 62
+                            },
+                            "label": "60 to 62"
+                        },
+                        {
+                            "property": {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 62,
+                                "end": 70
+                            },
+                            "label": "63 to 70"
+                        }
+                    ]
+                },
+                {
+                    "label": "prevchd",
+                    "property": {
+                        "type": "Field",
+                        "field": "prevchd"
+                    },
+                    "values": [
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "prevchd",
+                                "value": "No"
+                            },
+                            "label": "No"
+                        },
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "prevchd",
+                                "value": "Yes"
+                            },
+                            "label": "Yes"
+                        }
+                    ]
+                },
+                {
+                    "label": "stroke",
+                    "property": {
+                        "type": "Field",
+                        "field": "stroke"
+                    },
+                    "values": [
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "stroke",
+                                "value": "No"
+                            },
+                            "label": "No"
+                        },
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "stroke",
+                                "value": "Yes"
+                            },
+                            "label": "Yes"
+                        }
+                    ]
+                },
+                {
+                    "label": "sex",
+                    "property": {
+                        "type": "Field",
+                        "field": "sex"
+                    },
+                    "values": [
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "sex",
+                                "value": "Female"
+                            },
+                            "label": "Female"
+                        },
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "sex",
+                                "value": "Male"
+                            },
+                            "label": "Male"
+                        }
+                    ]
+                },
+                {
+                    "label": "prevhyp",
+                    "property": {
+                        "type": "Field",
+                        "field": "prevhyp"
+                    },
+                    "values": [
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "prevhyp",
+                                "value": "No"
+                            },
+                            "label": "No"
+                        },
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "prevhyp",
+                                "value": "Yes"
+                            },
+                            "label": "Yes"
+                        }
+                    ]
+                },
+                {
+                    "label": "hospmi",
+                    "property": {
+                        "type": "Field",
+                        "field": "hospmi"
+                    },
+                    "values": [
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "hospmi",
+                                "value": "No"
+                            },
+                            "label": "No"
+                        },
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "hospmi",
+                                "value": "Yes"
+                            },
+                            "label": "Yes"
+                        }
+                    ]
+                },
+                {
+                    "label": "diabetes",
+                    "property": {
+                        "type": "Field",
+                        "field": "diabetes"
+                    },
+                    "values": [
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "diabetes",
+                                "value": "No"
+                            },
+                            "label": "No"
+                        },
+                        {
+                            "property": {
+                                "type": "String",
+                                "field": "diabetes",
+                                "value": "Yes"
+                            },
+                            "label": "Yes"
+                        }
+                    ]
+                }
+            ]
+        },
+        "improvements": [
+            {
+                "name": "SINGLE_VALUE_WITH_OTHER",
+                "messages": [
+                    {
+                        "prompt": "prevchd",
+                        "details": "95.6% of all values are No",
+                        "directives": [
+                            {
+                                "factories": [
+                                    {
+                                        "FIELDS": {
+                                            "fields": [
+                                                {
+                                                    "name": "prevchd",
+                                                    "displayName": "prevchd",
+                                                    "factory": {
+                                                        "factories": [
+                                                            {
+                                                                "ENUM": "TEXT_INCLUDE_OTHER"
+                                                            },
+                                                            {
+                                                                "VALUES": {
+                                                                    "fields": [
+                                                                        {
+                                                                            "name": "Yes",
+                                                                            "displayName": "Yes",
+                                                                            "factory": {
+                                                                                "factories": [
+                                                                                    "IGNORE"
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "prototype": {
+                                    "outcome": {
+                                        "type": "text",
+                                        "name": "death",
+                                        "displayName": "death",
+                                        "predictionType": "Binary",
+                                        "goal": "Maximize",
+                                        "success": "Yes",
+                                        "failure": "No"
+                                    },
+                                    "fields": [
+                                        {
+                                            "type": "text",
+                                            "name": "prevchd",
+                                            "displayName": "prevchd",
+                                            "ordering": "OCCURRENCE",
+                                            "includeOther": false,
+                                            "support": 24,
+                                            "values": [
+                                                {
+                                                    "name": "Yes",
+                                                    "displayName": "Yes",
+                                                    "count": 194,
+                                                    "ignored": true
+                                                }
+                                            ],
+                                            "ignored": false,
+                                            "sensitive": false,
+                                            "uniqueEquivalent": false,
+                                            "protected": false,
+                                            "highCardinality": false
+                                        }
+                                    ],
+                                    "modelConfiguration": {
+                                        "modelAlgType": "GLM"
+                                    },
+                                    "transformations": [],
+                                    "overrides": {
+                                        "outcome": {
+                                            "type": "text",
+                                            "name": "death",
+                                            "displayName": "death",
+                                            "predictionType": "Binary",
+                                            "goal": "Maximize",
+                                            "success": "Yes",
+                                            "failure": "No"
+                                        },
+                                        "fields": [
+                                            {
+                                                "type": "number",
+                                                "name": "glucose",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "totchol",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "randid",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "diabp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "sysbp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "age",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "cigpday",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "heartrte",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "bmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "mi_fchd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "death",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevhyp",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevchd",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "angina",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "sex",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hospmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "stroke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "bpmeds",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cvd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cursmoke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevstrk",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevap",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "diabetes",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hyperten",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "anychd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            }
+                                        ],
+                                        "modelConfiguration": {
+                                            "modelAlgType": "GLM"
+                                        },
+                                        "transformations": []
+                                    }
+                                },
+                                "previewText": [
+                                    "Keep only No"
+                                ]
+                            },
+                            {
+                                "factories": [
+                                    {
+                                        "FIELDS": {
+                                            "fields": [
+                                                {
+                                                    "name": "prevchd",
+                                                    "displayName": "prevchd",
+                                                    "factory": {
+                                                        "factories": [
+                                                            {
+                                                                "ENUM": "IGNORE"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "prototype": {
+                                    "outcome": {
+                                        "type": "text",
+                                        "name": "death",
+                                        "displayName": "death",
+                                        "predictionType": "Binary",
+                                        "goal": "Maximize",
+                                        "success": "Yes",
+                                        "failure": "No"
+                                    },
+                                    "fields": [
+                                        {
+                                            "type": "text",
+                                            "name": "prevchd",
+                                            "displayName": "prevchd",
+                                            "ordering": "OCCURRENCE",
+                                            "includeOther": true,
+                                            "support": 24,
+                                            "values": [],
+                                            "ignored": true,
+                                            "sensitive": false,
+                                            "uniqueEquivalent": false,
+                                            "protected": false,
+                                            "highCardinality": false
+                                        }
+                                    ],
+                                    "modelConfiguration": {
+                                        "modelAlgType": "GLM"
+                                    },
+                                    "transformations": [],
+                                    "overrides": {
+                                        "outcome": {
+                                            "type": "text",
+                                            "name": "death",
+                                            "displayName": "death",
+                                            "predictionType": "Binary",
+                                            "goal": "Maximize",
+                                            "success": "Yes",
+                                            "failure": "No"
+                                        },
+                                        "fields": [
+                                            {
+                                                "type": "number",
+                                                "name": "glucose",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "totchol",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "randid",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "diabp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "sysbp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "age",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "cigpday",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "heartrte",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "bmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "mi_fchd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "death",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevhyp",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevchd",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "angina",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "sex",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hospmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "stroke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "bpmeds",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cvd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cursmoke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevstrk",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevap",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "diabetes",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hyperten",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "anychd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            }
+                                        ],
+                                        "modelConfiguration": {
+                                            "modelAlgType": "GLM"
+                                        },
+                                        "transformations": []
+                                    }
+                                },
+                                "previewText": [
+                                    "Field: prevchd Is Ignored set to True"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "prompt": "stroke",
+                        "details": "90.6% of all values are No",
+                        "directives": [
+                            {
+                                "factories": [
+                                    {
+                                        "FIELDS": {
+                                            "fields": [
+                                                {
+                                                    "name": "stroke",
+                                                    "displayName": "stroke",
+                                                    "factory": {
+                                                        "factories": [
+                                                            {
+                                                                "ENUM": "TEXT_INCLUDE_OTHER"
+                                                            },
+                                                            {
+                                                                "VALUES": {
+                                                                    "fields": [
+                                                                        {
+                                                                            "name": "Yes",
+                                                                            "displayName": "Yes",
+                                                                            "factory": {
+                                                                                "factories": [
+                                                                                    "IGNORE"
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "prototype": {
+                                    "outcome": {
+                                        "type": "text",
+                                        "name": "death",
+                                        "displayName": "death",
+                                        "predictionType": "Binary",
+                                        "goal": "Maximize",
+                                        "success": "Yes",
+                                        "failure": "No"
+                                    },
+                                    "fields": [
+                                        {
+                                            "type": "text",
+                                            "name": "stroke",
+                                            "displayName": "stroke",
+                                            "ordering": "OCCURRENCE",
+                                            "includeOther": false,
+                                            "support": 24,
+                                            "values": [
+                                                {
+                                                    "name": "Yes",
+                                                    "displayName": "Yes",
+                                                    "count": 415,
+                                                    "ignored": true
+                                                }
+                                            ],
+                                            "ignored": false,
+                                            "sensitive": false,
+                                            "uniqueEquivalent": false,
+                                            "protected": false,
+                                            "highCardinality": false
+                                        }
+                                    ],
+                                    "modelConfiguration": {
+                                        "modelAlgType": "GLM"
+                                    },
+                                    "transformations": [],
+                                    "overrides": {
+                                        "outcome": {
+                                            "type": "text",
+                                            "name": "death",
+                                            "displayName": "death",
+                                            "predictionType": "Binary",
+                                            "goal": "Maximize",
+                                            "success": "Yes",
+                                            "failure": "No"
+                                        },
+                                        "fields": [
+                                            {
+                                                "type": "number",
+                                                "name": "glucose",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "totchol",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "randid",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "diabp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "sysbp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "age",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "cigpday",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "heartrte",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "bmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "mi_fchd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "death",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevhyp",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevchd",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "angina",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "sex",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hospmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "stroke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "bpmeds",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cvd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cursmoke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevstrk",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevap",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "diabetes",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hyperten",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "anychd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            }
+                                        ],
+                                        "modelConfiguration": {
+                                            "modelAlgType": "GLM"
+                                        },
+                                        "transformations": []
+                                    }
+                                },
+                                "previewText": [
+                                    "Keep only No"
+                                ]
+                            },
+                            {
+                                "factories": [
+                                    {
+                                        "FIELDS": {
+                                            "fields": [
+                                                {
+                                                    "name": "stroke",
+                                                    "displayName": "stroke",
+                                                    "factory": {
+                                                        "factories": [
+                                                            {
+                                                                "ENUM": "IGNORE"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "prototype": {
+                                    "outcome": {
+                                        "type": "text",
+                                        "name": "death",
+                                        "displayName": "death",
+                                        "predictionType": "Binary",
+                                        "goal": "Maximize",
+                                        "success": "Yes",
+                                        "failure": "No"
+                                    },
+                                    "fields": [
+                                        {
+                                            "type": "text",
+                                            "name": "stroke",
+                                            "displayName": "stroke",
+                                            "ordering": "OCCURRENCE",
+                                            "includeOther": true,
+                                            "support": 24,
+                                            "values": [],
+                                            "ignored": true,
+                                            "sensitive": false,
+                                            "uniqueEquivalent": false,
+                                            "protected": false,
+                                            "highCardinality": false
+                                        }
+                                    ],
+                                    "modelConfiguration": {
+                                        "modelAlgType": "GLM"
+                                    },
+                                    "transformations": [],
+                                    "overrides": {
+                                        "outcome": {
+                                            "type": "text",
+                                            "name": "death",
+                                            "displayName": "death",
+                                            "predictionType": "Binary",
+                                            "goal": "Maximize",
+                                            "success": "Yes",
+                                            "failure": "No"
+                                        },
+                                        "fields": [
+                                            {
+                                                "type": "number",
+                                                "name": "glucose",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "totchol",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "randid",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "diabp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "sysbp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "age",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "cigpday",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "heartrte",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "bmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "mi_fchd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "death",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevhyp",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevchd",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "angina",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "sex",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hospmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "stroke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "bpmeds",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cvd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cursmoke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevstrk",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevap",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "diabetes",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hyperten",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "anychd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            }
+                                        ],
+                                        "modelConfiguration": {
+                                            "modelAlgType": "GLM"
+                                        },
+                                        "transformations": []
+                                    }
+                                },
+                                "previewText": [
+                                    "Field: stroke Is Ignored set to True"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "prompt": "diabetes",
+                        "details": "97.3% of all values are No",
+                        "directives": [
+                            {
+                                "factories": [
+                                    {
+                                        "FIELDS": {
+                                            "fields": [
+                                                {
+                                                    "name": "diabetes",
+                                                    "displayName": "diabetes",
+                                                    "factory": {
+                                                        "factories": [
+                                                            {
+                                                                "ENUM": "TEXT_INCLUDE_OTHER"
+                                                            },
+                                                            {
+                                                                "VALUES": {
+                                                                    "fields": [
+                                                                        {
+                                                                            "name": "Yes",
+                                                                            "displayName": "Yes",
+                                                                            "factory": {
+                                                                                "factories": [
+                                                                                    "IGNORE"
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "prototype": {
+                                    "outcome": {
+                                        "type": "text",
+                                        "name": "death",
+                                        "displayName": "death",
+                                        "predictionType": "Binary",
+                                        "goal": "Maximize",
+                                        "success": "Yes",
+                                        "failure": "No"
+                                    },
+                                    "fields": [
+                                        {
+                                            "type": "text",
+                                            "name": "diabetes",
+                                            "displayName": "diabetes",
+                                            "ordering": "OCCURRENCE",
+                                            "includeOther": false,
+                                            "support": 24,
+                                            "values": [
+                                                {
+                                                    "name": "Yes",
+                                                    "displayName": "Yes",
+                                                    "count": 121,
+                                                    "ignored": true
+                                                }
+                                            ],
+                                            "ignored": false,
+                                            "sensitive": false,
+                                            "uniqueEquivalent": false,
+                                            "protected": false,
+                                            "highCardinality": false
+                                        }
+                                    ],
+                                    "modelConfiguration": {
+                                        "modelAlgType": "GLM"
+                                    },
+                                    "transformations": [],
+                                    "overrides": {
+                                        "outcome": {
+                                            "type": "text",
+                                            "name": "death",
+                                            "displayName": "death",
+                                            "predictionType": "Binary",
+                                            "goal": "Maximize",
+                                            "success": "Yes",
+                                            "failure": "No"
+                                        },
+                                        "fields": [
+                                            {
+                                                "type": "number",
+                                                "name": "glucose",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "totchol",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "randid",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "diabp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "sysbp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "age",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "cigpday",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "heartrte",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "bmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "mi_fchd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "death",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevhyp",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevchd",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "angina",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "sex",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hospmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "stroke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "bpmeds",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cvd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cursmoke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevstrk",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevap",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "diabetes",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hyperten",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "anychd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            }
+                                        ],
+                                        "modelConfiguration": {
+                                            "modelAlgType": "GLM"
+                                        },
+                                        "transformations": []
+                                    }
+                                },
+                                "previewText": [
+                                    "Keep only No"
+                                ]
+                            },
+                            {
+                                "factories": [
+                                    {
+                                        "FIELDS": {
+                                            "fields": [
+                                                {
+                                                    "name": "diabetes",
+                                                    "displayName": "diabetes",
+                                                    "factory": {
+                                                        "factories": [
+                                                            {
+                                                                "ENUM": "IGNORE"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "prototype": {
+                                    "outcome": {
+                                        "type": "text",
+                                        "name": "death",
+                                        "displayName": "death",
+                                        "predictionType": "Binary",
+                                        "goal": "Maximize",
+                                        "success": "Yes",
+                                        "failure": "No"
+                                    },
+                                    "fields": [
+                                        {
+                                            "type": "text",
+                                            "name": "diabetes",
+                                            "displayName": "diabetes",
+                                            "ordering": "OCCURRENCE",
+                                            "includeOther": true,
+                                            "support": 24,
+                                            "values": [],
+                                            "ignored": true,
+                                            "sensitive": false,
+                                            "uniqueEquivalent": false,
+                                            "protected": false,
+                                            "highCardinality": false
+                                        }
+                                    ],
+                                    "modelConfiguration": {
+                                        "modelAlgType": "GLM"
+                                    },
+                                    "transformations": [],
+                                    "overrides": {
+                                        "outcome": {
+                                            "type": "text",
+                                            "name": "death",
+                                            "displayName": "death",
+                                            "predictionType": "Binary",
+                                            "goal": "Maximize",
+                                            "success": "Yes",
+                                            "failure": "No"
+                                        },
+                                        "fields": [
+                                            {
+                                                "type": "number",
+                                                "name": "glucose",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "totchol",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "randid",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "diabp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "sysbp",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "age",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "cigpday",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "heartrte",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "number",
+                                                "name": "bmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "mi_fchd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "death",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevhyp",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevchd",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "angina",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "sex",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hospmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "stroke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "bpmeds",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cvd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "cursmoke",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevstrk",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevap",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "prevmi",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "diabetes",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "hyperten",
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "anychd",
+                                                "ignored": true,
+                                                "uniqueEquivalent": false,
+                                                "protected": false,
+                                                "highCardinality": false
+                                            }
+                                        ],
+                                        "modelConfiguration": {
+                                            "modelAlgType": "GLM"
+                                        },
+                                        "transformations": []
+                                    }
+                                },
+                                "previewText": [
+                                    "Field: diabetes Is Ignored set to True"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "insightsCount": 28,
+        "insightsOffset": 0,
+        "resultCode": 200,
+        "transformations": [],
+        "summary": {
+            "count": 4434,
+            "mean": 34.95714930085701
+        }
+}

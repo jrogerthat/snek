@@ -1,0 +1,155 @@
+{   "changed between version?": "unknown",
+    "fields": [
+        {
+            "associationToOutcome": {
+                "value": -0.00010612045988533936
+            },
+            "name": "randid"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.012654888157279331
+            },
+            "name": "glucose"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.010433534985044068
+            },
+            "name": "totchol"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.0894007143504274
+            },
+            "name": "sysbp"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.004193585011280643
+            },
+            "name": "cigpday"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.040689714923442866
+            },
+            "name": "diabp"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.18130357336985514
+            },
+            "name": "age"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.014684055668627738
+            },
+            "name": "bmi"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.0018539736491094416
+            },
+            "name": "heartrte"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.1426088327952284
+            },
+            "name": "mi_fchd"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.030813705791642
+            },
+            "name": "prevchd"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.06799966028494908
+            },
+            "name": "prevhyp"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.018350762845647517
+            },
+            "name": "angina"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.024048650303428065
+            },
+            "name": "sex"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.05046448446927709
+            },
+            "name": "hospmi"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.015867326020461703
+            },
+            "name": "bpmeds"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.045680335295824714
+            },
+            "name": "stroke"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.1489307499273096
+            },
+            "name": "cvd"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.00036037403476418817
+            },
+            "name": "cursmoke"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.005733502829363579
+            },
+            "name": "prevstrk"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.021363942751054132
+            },
+            "name": "prevap"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.018538223105452056
+            },
+            "name": "prevmi"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.02230688641073919
+            },
+            "name": "diabetes"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.004059903207686122
+            },
+            "name": "hyperten"
+        },
+        {
+            "associationToOutcome": {
+                "value": 0.09482404247246279
+            },
+            "name": "anychd"
+        }
+    ],
+    "url": "/services/data/v52.0/smartdatadiscovery/analyses/9B45e000000YdL7CAK/input-profile"
+}

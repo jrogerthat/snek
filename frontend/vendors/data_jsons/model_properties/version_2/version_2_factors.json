@@ -1,0 +1,386 @@
+{  "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": true,
+    "interface_components": [
+        {"key": "negativeFactors", "path": "frontend/vendors/data_jsons/interface_components/occurance.json", "section": "least"},
+        {"key": "positiveFactors", "path": "frontend/vendors/data_jsons/interface_components/occurance.json", "section": "most"}
+    ],
+    "changed_from_prev" : true,
+    "areas_changed": ["negativeFactors","positiveFactors"],
+    "averageOutcome": 34.95714930085701,
+    "negativeFactors": [
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 39,
+                        "field": "age",
+                        "startValue": 32,
+                        "type": "Range"
+                    },
+                    "value": "32 to 39"
+                },
+                {
+                    "fieldName": "sex",
+                    "property": {
+                        "field": "sex",
+                        "type": "String",
+                        "value": "Female"
+                    },
+                    "value": "Female"
+                }
+            ],
+            "count": 303,
+            "diffFromAverage": -21.806172386786002,
+            "score": 9.24092409240924
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 39,
+                        "field": "age",
+                        "startValue": 32,
+                        "type": "Range"
+                    },
+                    "value": "32 to 39"
+                }
+            ],
+            "count": 559,
+            "diffFromAverage": -24.402587583504598,
+            "score": 10.554561717352415
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 39,
+                        "field": "age",
+                        "startValue": 32,
+                        "type": "Range"
+                    },
+                    "value": "32 to 39"
+                },
+                {
+                    "fieldName": "sex",
+                    "property": {
+                        "field": "sex",
+                        "type": "String",
+                        "value": "Male"
+                    },
+                    "value": "Male"
+                }
+            ],
+            "count": 256,
+            "diffFromAverage": -35.9948904028436,
+            "score": 12.109375
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 41,
+                        "field": "age",
+                        "startValue": 39,
+                        "type": "Range"
+                    },
+                    "value": "40 to 41"
+                }
+            ],
+            "count": 370,
+            "diffFromAverage": -19.822014165721875,
+            "score": 15.135135135135135
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 44,
+                        "field": "age",
+                        "startValue": 41,
+                        "type": "Range"
+                    },
+                    "value": "42 to 44"
+                }
+            ],
+            "count": 511,
+            "diffFromAverage": -14.996288244105543,
+            "score": 19.96086105675147
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 46,
+                        "field": "age",
+                        "startValue": 44,
+                        "type": "Range"
+                    },
+                    "value": "45 to 46"
+                }
+            ],
+            "count": 353,
+            "diffFromAverage": -12.294259782443415,
+            "score": 22.662889518413596
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 46,
+                        "field": "age",
+                        "startValue": 44,
+                        "type": "Range"
+                    },
+                    "value": "45 to 46"
+                },
+                {
+                    "fieldName": "prevhyp",
+                    "property": {
+                        "field": "prevhyp",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 87,
+            "diffFromAverage": -30.739209695226844,
+            "score": 24.137931034482758
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "prevhyp",
+                    "property": {
+                        "field": "prevhyp",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 3004,
+            "diffFromAverage": -8.59230243001813,
+            "score": 26.364846870838882
+        }
+    ],
+    "positiveFactors": [
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 70,
+                        "field": "age",
+                        "startValue": 62,
+                        "type": "Range"
+                    },
+                    "value": "63 to 70"
+                }
+            ],
+            "count": 427,
+            "diffFromAverage": 43.02879917689475,
+            "score": 77.98594847775176
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 121,
+            "diffFromAverage": 42.72880111236613,
+            "score": 77.68595041322314
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 70,
+                        "field": "age",
+                        "startValue": 62,
+                        "type": "Range"
+                    },
+                    "value": "63 to 70"
+                },
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 402,
+            "diffFromAverage": 48.086784181877626,
+            "score": 77.363184079602
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "prevchd",
+                    "property": {
+                        "field": "prevchd",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 194,
+            "diffFromAverage": 39.269654822854335,
+            "score": 74.22680412371135
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "stroke",
+                    "property": {
+                        "field": "stroke",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 415,
+            "diffFromAverage": 31.789838650950216,
+            "score": 66.74698795180723
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "hospmi",
+                    "property": {
+                        "field": "hospmi",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 454,
+            "diffFromAverage": 31.782938804869858,
+            "score": 66.74008810572687
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "stroke",
+                    "property": {
+                        "field": "stroke",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                },
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 387,
+            "diffFromAverage": 34.7328023209742,
+            "score": 65.37467700258398
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "hospmi",
+                    "property": {
+                        "field": "hospmi",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                },
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 427,
+            "diffFromAverage": 35.05136435242828,
+            "score": 65.33957845433255
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "stroke",
+                    "property": {
+                        "field": "stroke",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                },
+                {
+                    "fieldName": "hospmi",
+                    "property": {
+                        "field": "hospmi",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 383,
+            "diffFromAverage": 36.850238548659036,
+            "score": 65.0130548302872
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 59,
+                        "field": "age",
+                        "startValue": 55,
+                        "type": "Range"
+                    },
+                    "value": "56 to 59"
+                },
+                {
+                    "fieldName": "prevchd",
+                    "property": {
+                        "field": "prevchd",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 482,
+            "diffFromAverage": 18.531310244921485,
+            "score": 49.5850622406639
+        }
+    ],
+    "rowCount": 4434,
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y35e000000Xy5MCAS/histories/9B45e000000YdkDCAS/summary"
+}

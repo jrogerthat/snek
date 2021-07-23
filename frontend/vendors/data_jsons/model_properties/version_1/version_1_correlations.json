@@ -1,0 +1,57 @@
+{
+    "averageOutcome": 34.95714930085701,
+    "changed_from_prev" : true,
+    "areas_changed": ["averageOutcome", "correlations"],
+    "correlations": [
+        {
+            "correlationToOutcome": 0.18130357336985514,
+            "fieldName": "age"
+        },
+        {
+            "correlationToOutcome": 0.1489307499273096,
+            "fieldName": "cvd"
+        },
+        {
+            "correlationToOutcome": 0.1426088327952284,
+            "fieldName": "mi_fchd"
+        },
+        {
+            "correlationToOutcome": 0.09482404247246279,
+            "fieldName": "anychd"
+        },
+        {
+            "correlationToOutcome": 0.0894007143504274,
+            "fieldName": "sysbp"
+        },
+        {
+            "correlationToOutcome": 0.06799966028494908,
+            "fieldName": "prevhyp"
+        },
+        {
+            "correlationToOutcome": 0.05046448446927709,
+            "fieldName": "hospmi"
+        },
+        {
+            "correlationToOutcome": 0.045680335295824714,
+            "fieldName": "stroke"
+        },
+        {
+            "correlationToOutcome": 0.040689714923442866,
+            "fieldName": "diabp"
+        },
+        {
+            "correlationToOutcome": 0.030813705791642,
+            "fieldName": "prevchd"
+        },
+        {
+            "correlationToOutcome": 0.024048650303428065,
+            "fieldName": "sex"
+        },
+        {
+            "correlationToOutcome": 0.02230688641073919,
+            "fieldName": "diabetes"
+        }
+    ],
+    "rowCount": 4434,
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y35e000000Xy5MCAS/histories/9B45e000000YdL7CAK/summary"
+}

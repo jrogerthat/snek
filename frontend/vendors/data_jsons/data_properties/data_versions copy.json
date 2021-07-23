@@ -1,0 +1,37 @@
+{   "pipeline_stages": ["preparation/data", "preparation/profile"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions",
+    "versions": [
+        {
+            "createdBy": {
+                "id": "005B0000006wvfPIAQ",
+                "name": "Integration User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+            },
+            "createdDate": "2021-06-28T15:16:37.000Z",
+            "dataset": {
+                "id": "0FbB0000000INzcKAG",
+                "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG"
+            },
+            "files": [],
+            "id": "0FcB00000059uwqKAA",
+            "lastModifiedBy": {
+                "id": "005B0000006wvfPIAQ",
+                "name": "Integration User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+            },
+            "lastModifiedDate": "2021-06-28T20:35:01.000Z",
+            "permissions": {
+                "create": true,
+                "modify": true,
+                "view": true
+            },
+            "securityCoverageUrl": "/services/data/v52.0/wave/security/coverage/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA",
+            "totalRows": 4434,
+            "type": "datasetversion",
+            "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA",
+            "xmdsUrl": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA/xmds"
+        }
+    ]
+}

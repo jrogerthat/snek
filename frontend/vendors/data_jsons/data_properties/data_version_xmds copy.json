@@ -1,0 +1,442 @@
+{   "pipeline_stages": ["preparation/data", "preparation/profile"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "createdBy": {
+        "id": "005B0000006wvfPIAQ",
+        "name": "Integration User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+    },
+    "createdDate": "2021-06-28T15:16:37.000Z",
+    "dataset": {
+        "id": "0FbB0000000INzcKAG",
+        "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG"
+    },
+    "files": [],
+    "id": "0FcB00000059uwqKAA",
+    "lastModifiedBy": {
+        "id": "005B0000006wvfPIAQ",
+        "name": "Integration User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+    },
+    "lastModifiedDate": "2021-06-28T20:35:01.000Z",
+    "permissions": {
+        "create": true,
+        "modify": true,
+        "view": true
+    },
+    "securityCoverageUrl": "/services/data/v52.0/wave/security/coverage/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA",
+    "totalRows": 4434,
+    "type": "datasetversion",
+    "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA",
+    "xmdMain": {
+        "createdBy": {
+            "id": "005B0000006wvfPIAQ",
+            "name": "Integration User",
+            "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+        },
+        "createdDate": "2021-06-28T15:16:40.000Z",
+        "dataset": {
+            "connector": "CSV",
+            "fullyQualifiedName": "farminghamstudy_baseline_no_time_farminghamstudy_baseline_csv"
+        },
+        "dates": [],
+        "derivedDimensions": [],
+        "derivedMeasures": [],
+        "dimensions": [
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "death",
+                "fullyQualifiedName": "death",
+                "isMultiValue": false,
+                "label": "death",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "death",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "prevchd",
+                "fullyQualifiedName": "prevchd",
+                "isMultiValue": false,
+                "label": "prevchd",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "prevchd",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "angina",
+                "fullyQualifiedName": "angina",
+                "isMultiValue": false,
+                "label": "angina",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "angina",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "hospmi",
+                "fullyQualifiedName": "hospmi",
+                "isMultiValue": false,
+                "label": "hospmi",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "hospmi",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "cvd",
+                "fullyQualifiedName": "cvd",
+                "isMultiValue": false,
+                "label": "cvd",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "cvd",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "prevstrk",
+                "fullyQualifiedName": "prevstrk",
+                "isMultiValue": false,
+                "label": "prevstrk",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "prevstrk",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "prevmi",
+                "fullyQualifiedName": "prevmi",
+                "isMultiValue": false,
+                "label": "prevmi",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "prevmi",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "hyperten",
+                "fullyQualifiedName": "hyperten",
+                "isMultiValue": false,
+                "label": "hyperten",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "hyperten",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "mi_fchd",
+                "fullyQualifiedName": "mi_fchd",
+                "isMultiValue": false,
+                "label": "mi_fchd",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "mi_fchd",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "prevhyp",
+                "fullyQualifiedName": "prevhyp",
+                "isMultiValue": false,
+                "label": "prevhyp",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "prevhyp",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "sex",
+                "fullyQualifiedName": "sex",
+                "isMultiValue": false,
+                "label": "sex",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "sex",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "bpmeds",
+                "fullyQualifiedName": "bpmeds",
+                "isMultiValue": false,
+                "label": "bpmeds",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "bpmeds",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "stroke",
+                "fullyQualifiedName": "stroke",
+                "isMultiValue": false,
+                "label": "stroke",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "stroke",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "cursmoke",
+                "fullyQualifiedName": "cursmoke",
+                "isMultiValue": false,
+                "label": "cursmoke",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "cursmoke",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "prevap",
+                "fullyQualifiedName": "prevap",
+                "isMultiValue": false,
+                "label": "prevap",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "prevap",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "diabetes",
+                "fullyQualifiedName": "diabetes",
+                "isMultiValue": false,
+                "label": "diabetes",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "diabetes",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "customActions": [],
+                "customActionsEnabled": true,
+                "field": "anychd",
+                "fullyQualifiedName": "anychd",
+                "isMultiValue": false,
+                "label": "anychd",
+                "linkTemplateEnabled": true,
+                "members": [],
+                "origin": "anychd",
+                "recordDisplayFields": [],
+                "salesforceActions": [],
+                "salesforceActionsEnabled": true,
+                "showInExplorer": true
+            }
+        ],
+        "language": "en_US",
+        "lastModifiedBy": {
+            "id": "005B0000006wvfPIAQ",
+            "name": "Integration User",
+            "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+        },
+        "lastModifiedDate": "2021-06-28T15:16:40.000Z",
+        "measures": [
+            {
+                "conditionalFormatting": {},
+                "field": "heartrte",
+                "format": {
+                    "decimalDigits": 0,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "heartrte",
+                "label": "heartrte",
+                "origin": "heartrte",
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "field": "randid",
+                "format": {
+                    "decimalDigits": 0,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "randid",
+                "label": "randid",
+                "origin": "randid",
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "field": "totchol",
+                "format": {
+                    "decimalDigits": 0,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "totchol",
+                "label": "totchol",
+                "origin": "totchol",
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "field": "sysbp",
+                "format": {
+                    "decimalDigits": 1,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "sysbp",
+                "label": "sysbp",
+                "origin": "sysbp",
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "field": "glucose",
+                "format": {
+                    "decimalDigits": 0,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "glucose",
+                "label": "glucose",
+                "origin": "glucose",
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "field": "cigpday",
+                "format": {
+                    "decimalDigits": 0,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "cigpday",
+                "label": "cigpday",
+                "origin": "cigpday",
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "field": "diabp",
+                "format": {
+                    "decimalDigits": 1,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "diabp",
+                "label": "diabp",
+                "origin": "diabp",
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "field": "age",
+                "format": {
+                    "decimalDigits": 0,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "age",
+                "label": "age",
+                "origin": "age",
+                "showInExplorer": true
+            },
+            {
+                "conditionalFormatting": {},
+                "field": "bmi",
+                "format": {
+                    "decimalDigits": 2,
+                    "delimiters": {}
+                },
+                "fullyQualifiedName": "bmi",
+                "label": "bmi",
+                "origin": "bmi",
+                "showInExplorer": true
+            }
+        ],
+        "organizations": [],
+        "showDetailsDefaultFields": [],
+        "type": "main",
+        "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA/xmds/main"
+    },
+    "xmdsUrl": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA/xmds"
+}
