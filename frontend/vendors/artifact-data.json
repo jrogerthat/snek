@@ -1,7 +1,8 @@
 [
   {
     "Artifact ID": "1A",
-    "Source File": "static/vendors/farminghamstudy_baseline_no_time - farminghamstudy_baseline.csv",
+    "Folder": "static/vendors/",
+    "Source File": "farminghamstudy_baseline_no_time - farminghamstudy_baseline.csv",
     "Stage": "Preparation",
     "Step": "Data",
     "Artifact Group": "Data Properties",
@@ -10,24 +11,28 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "Tensor",
     "Task": "Steering/Directing",
-    "Dependencies": null
+    "Dependencies": null,
+    "Has Versions": false
   },
   {
     "Artifact ID": "1B",
-    "Source File": "static/vendors/data_jsons/oversight_processes/requirements.json",
+    "Folder": "static/vendors/data_jsons/oversight_processes/",
+    "Source File": "requirements.json",
     "Stage": "Preparation",
     "Step": "Data",
     "Artifact Group": "Oversight Processes",
     "Artifact Type": "Requirements Document",
     "Source": "Organizational Process/integrated",
     "Transmission Mode": "Boundry Crossing/H-M",
-    "Artifact Format": "Report - Static",
+    "Artifact Format": "Report/Static",
     "Task": "Steering/Directing",
-    "Dependencies": null
+    "Dependencies": null,
+    "Has Versions": false
   },
   {
     "Artifact ID": "2A",
-    "Source File": "static/vendors/data_jsons/analysis_properties/current_analysis_outcome.json",
+    "Folder": "static/vendors/data_jsons/analysis_properties/",
+    "Source File": "current_analysis_outcome.json",
     "Stage": "Preparation",
     "Step": "Goal",
     "Artifact Group": "Analysis Properties",
@@ -36,11 +41,13 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "Specification (Component)",
     "Task": "Steering/Directing",
-    "Dependencies": "1B"
+    "Dependencies": "1B",
+    "Has Versions": false
   },
   {
     "Artifact ID": "2B",
-    "Source File": "static/vendors/data_jsons/model_properties/current_analysis_input.json",
+    "Folder": "static/vendors/data_jsons/model_properties/",
+    "Source File": "current_analysis_input.json",
     "Stage": "Preparation",
     "Step": "Goal",
     "Artifact Group": "Model Properties",
@@ -53,6 +60,7 @@
   },
   {
     "Artifact ID": "3A",
+    "Folder": null,
     "Source File": null,
     "Stage": "Preparation",
     "Step": "Profile",
@@ -66,6 +74,7 @@
   },
   {
     "Artifact ID": "4A",
+    "Folder": null,
     "Source File": null,
     "Stage": "Preparation",
     "Step": "Wrangling",
@@ -79,6 +88,7 @@
   },
   {
     "Artifact ID": "4B",
+    "Folder": null,
     "Source File": null,
     "Stage": "Preparation",
     "Step": "Wrangling",
@@ -92,7 +102,8 @@
   },
   {
     "Artifact ID": "4C",
-    "Source File": "static/vendors/data_jsons/model_properties/current_analysis_input.json",
+    "Folder": "static/vendors/data_jsons/model_properties/",
+    "Source File": "current_analysis_input.json",
     "Stage": "Preparation",
     "Step": "Wrangling",
     "Artifact Group": "Data Properties",
@@ -105,7 +116,8 @@
   },
   {
     "Artifact ID": "5A",
-    "Source File": "static/vendors/data_jsons/automated_reporting_processes/insights.json",
+    "Folder": "static/vendors/data_jsons/automated_reporting_processes/",
+    "Source File": "insights.json",
     "Stage": "Analysis",
     "Step": "Exploration",
     "Artifact Group": "Automated Reporting",
@@ -118,7 +130,8 @@
   },
   {
     "Artifact ID": "5B",
-    "Source File": "DONT HAVE?",
+    "Folder": null,
+    "Source File": null,
     "Stage": "Analysis",
     "Step": "Exploration",
     "Artifact Group": "Interface Components",
@@ -131,7 +144,8 @@
   },
   {
     "Artifact ID": "6A",
-    "Source File": "static/vendors/data_jsons/model_properties/current_analysis_input.json,static/vendors/data_jsons/model_properties/input_profile.json",
+    "Folder": "static/vendors/data_jsons/model_properties/",
+    "Source File": "current_analysis_input.json,input_profile.json",
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -144,7 +158,8 @@
   },
   {
     "Artifact ID": "6B",
-    "Source File": "DONT HAVE ACTUAL SPLITS - WE HAVE METRICS FROM THE SPLITS",
+    "Folder": null,
+    "Source File": null,
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Data Properties",
@@ -157,7 +172,8 @@
   },
   {
     "Artifact ID": "6C",
-    "Source File": "static/vendors/data_jsons/model_properties/train_validation_metrics.json",
+    "Folder": "static/vendors/data_jsons/model_properties/",
+    "Source File": "train_validation_metrics.json",
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -170,7 +186,8 @@
   },
   {
     "Artifact ID": "6D",
-    "Source File": "static/vendors/data_jsons/model_properties/train_validation_metrics.json",
+    "Folder": "static/vendors/data_jsons/model_properties/",
+    "Source File": "train_validation_metrics.json",
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -183,7 +200,8 @@
   },
   {
     "Artifact ID": "6E",
-    "Source File": "static/vendors/data_jsons/model_properties/correlations.json",
+    "Folder": "static/vendors/data_jsons/model_properties/",
+    "Source File": "correlations.json",
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -196,7 +214,8 @@
   },
   {
     "Artifact ID": "6F",
-    "Source File": "static/vendors/data_jsons/model_properties/factors.json",
+    "Folder": "static/vendors/data_jsons/model_properties/",
+    "Source File": "factors.json",
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -209,7 +228,8 @@
   },
   {
     "Artifact ID": "6G",
-    "Source File": "static/vendors/data_jsons/interface_components",
+    "Folder": "static/vendors/data_jsons/",
+    "Source File": "interface_components",
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Interface Components",
@@ -222,7 +242,8 @@
   },
   {
     "Artifact ID": "6H",
-    "Source File": "static/vendors/data_jsons/interface_components",
+    "Folder": "static/vendors/data_jsons/",
+    "Source File": "interface_components",
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Interface Components",
@@ -235,7 +256,8 @@
   },
   {
     "Artifact ID": "7A",
-    "Source File": "static/vendors/data_jsons/oversight_processes/current_analysis_admin.json",
+    "Folder": "static/vendors/data_jsons/oversight_processes/",
+    "Source File": "current_analysis_admin.json",
     "Stage": "Deployment",
     "Step": "Deploy",
     "Artifact Group": "Oversight Processes",
@@ -248,6 +270,7 @@
   },
   {
     "Artifact ID": "7B",
+    "Folder": null,
     "Source File": null,
     "Stage": "Deployment",
     "Step": "Deploy",
@@ -261,6 +284,7 @@
   },
   {
     "Artifact ID": "7C",
+    "Folder": null,
     "Source File": null,
     "Stage": "Deployment",
     "Step": "Deploy",
@@ -274,7 +298,8 @@
   },
   {
     "Artifact ID": "8A",
-    "Source File": "static/vendors/data_jsons/oversight_processes/story_histories.json",
+    "Folder": "static/vendors/data_jsons/oversight_processes/",
+    "Source File": "story_histories.json",
     "Stage": "Deployment",
     "Step": "Monitor",
     "Artifact Group": "Oversight Processes",
@@ -287,7 +312,8 @@
   },
   {
     "Artifact ID": "9A",
-    "Source File": "static/vendors/Farmingham-Study-Generated-Insights.pdf",
+    "Folder": "static/vendors/",
+    "Source File": "Farmingham-Study-Generated-Insights.pdf",
     "Stage": "Communication",
     "Step": "Dissemination",
     "Artifact Group": "Automated Reporting",
@@ -300,6 +326,7 @@
   },
   {
     "Artifact ID": "10A",
+    "Folder": null,
     "Source File": null,
     "Stage": "Communication",
     "Step": "Feedback",
@@ -313,6 +340,7 @@
   },
   {
     "Artifact ID": "11A",
+    "Folder": null,
     "Source File": null,
     "Stage": "Cross Process Artifacts",
     "Step": null,
