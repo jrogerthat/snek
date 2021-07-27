@@ -1,0 +1,175 @@
+{
+    "models": [
+        {
+            "createdBy": {
+                "id": "005B0000006wvfPIAQ",
+                "name": "Integration User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+            },
+            "createdDate": "2021-07-26T17:24:05.000Z",
+            "id": "1OTB0000000CsGzOAK",
+            "input": {
+                "story": {
+                    "id": "1Y3B00000004LuRKAU"
+                },
+                "storyHistory": {
+                    "id": "9B4B0000000CvR2KAK"
+                },
+                "type": "Discovery"
+            },
+            "label": "Maximize death",
+            "lastModifiedBy": {
+                "id": "005B0000006wvfPIAQ",
+                "name": "Integration User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+            },
+            "lastModifiedDate": "2021-07-26T17:24:06.000Z",
+            "modelFields": [
+                {
+                    "label": "hospmi",
+                    "name": "hospmi",
+                    "type": "Text"
+                },
+                {
+                    "label": "hyperten",
+                    "name": "hyperten",
+                    "type": "Text"
+                },
+                {
+                    "label": "cigpday",
+                    "name": "cigpday",
+                    "type": "Number"
+                },
+                {
+                    "label": "age",
+                    "name": "age",
+                    "type": "Number"
+                },
+                {
+                    "label": "prevchd",
+                    "name": "prevchd",
+                    "type": "Text"
+                },
+                {
+                    "label": "prevmi",
+                    "name": "prevmi",
+                    "type": "Text"
+                },
+                {
+                    "label": "totchol",
+                    "name": "totchol",
+                    "type": "Number"
+                },
+                {
+                    "label": "prevstrk",
+                    "name": "prevstrk",
+                    "type": "Text"
+                },
+                {
+                    "label": "stroke",
+                    "name": "stroke",
+                    "type": "Text"
+                },
+                {
+                    "label": "bmi",
+                    "name": "bmi",
+                    "type": "Number"
+                },
+                {
+                    "label": "prevap",
+                    "name": "prevap",
+                    "type": "Text"
+                },
+                {
+                    "label": "sex",
+                    "name": "sex",
+                    "type": "Text"
+                },
+                {
+                    "label": "diabp",
+                    "name": "diabp",
+                    "type": "Number"
+                },
+                {
+                    "label": "angina",
+                    "name": "angina",
+                    "type": "Text"
+                },
+                {
+                    "label": "heartrte",
+                    "name": "heartrte",
+                    "type": "Number"
+                },
+                {
+                    "label": "sysbp",
+                    "name": "sysbp",
+                    "type": "Number"
+                },
+                {
+                    "label": "mi_fchd",
+                    "name": "mi_fchd",
+                    "type": "Text"
+                },
+                {
+                    "label": "prevhyp",
+                    "name": "prevhyp",
+                    "type": "Text"
+                },
+                {
+                    "label": "glucose",
+                    "name": "glucose",
+                    "type": "Number"
+                },
+                {
+                    "label": "anychd",
+                    "name": "anychd",
+                    "type": "Text"
+                },
+                {
+                    "label": "death",
+                    "name": "death",
+                    "type": "Text"
+                },
+                {
+                    "label": "diabetes",
+                    "name": "diabetes",
+                    "type": "Text"
+                },
+                {
+                    "label": "cursmoke",
+                    "name": "cursmoke",
+                    "type": "Text"
+                },
+                {
+                    "label": "cvd",
+                    "name": "cvd",
+                    "type": "Text"
+                },
+                {
+                    "label": "bpmeds",
+                    "name": "bpmeds",
+                    "type": "Text"
+                }
+            ],
+            "modelFileUrl": "/services/data/v52.0/smartdatadiscovery/models/1OTB0000000CsGzOAK/file",
+            "modelRuntime": {
+                "type": "Discovery"
+            },
+            "name": "Maximize_death5",
+            "predictedField": "death",
+            "predictionProperty": {
+                "algorithmType": "Glm",
+                "classificationThreshold": {
+                    "type": "Binary",
+                    "value": 0.5005305942929651
+                },
+                "type": "Classification"
+            },
+            "status": "Enabled",
+            "url": "/services/data/v52.0/smartdatadiscovery/models/1OTB0000000CsGzOAK",
+            "validationResult": {}
+        }
+    ],
+    "totalSize": 1,
+    "url": "/services/data/v52.0/smartdatadiscovery/models?storyHistoryId=9B4B0000000CvR2KAK"
+}

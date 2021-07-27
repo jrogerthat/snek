@@ -1,4 +1,5 @@
-{
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": false,
     "averageOutcome": 34.95714930085701,
     "changed_from_prev" : true,
     "areas_changed": ["averageOutcome", "correlations"],
@@ -53,5 +54,5 @@
         }
     ],
     "rowCount": 4434,
-    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y35e000000Xy5MCAS/histories/9B45e000000YdL7CAK/summary"
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvR2KAK/summary"
 }

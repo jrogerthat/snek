@@ -1,0 +1,30 @@
+{   "changed_from_prev" : true,
+    "areas_changed": ["results"],
+    "action": "query",
+    "responseId": "4dKuiskINKAMzu-qbx3GN-",
+    "results": {
+        "metadata": [
+            {
+                "lineage": {
+                    "type": "foreach",
+                    "projections": [
+                        {
+                            "field": {
+                                "id": "q.count",
+                                "type": "numeric"
+                            }
+                        }
+                    ]
+                },
+                "queryLanguage": "SAQL"
+            }
+        ],
+        "records": [
+            {
+                "count": 4434
+            }
+        ]
+    },
+    "query": "q = load \"0FbB0000000INzcKAG/0FcB00000059uwqKAA\"; q = filter q by 'glucose' in [40..394] || 'glucose' is null; q = filter q by 'totchol' in [107..696] || 'totchol' is null; q = filter q by 'randid' in [2448..9999312] || 'randid' is null; q = filter q by 'diabp' in [48..142.5] || 'diabp' is null; q = filter q by 'sysbp' in [83.5..295] || 'sysbp' is null; q = filter q by 'age' in [32..70] || 'age' is null; q = filter q by 'cigpday' in [0..70] || 'cigpday' is null; q = filter q by 'heartrte' in [44..143] || 'heartrte' is null; q = filter q by 'bmi' in [15.54..56.8] || 'bmi' is null;  q = group q by all; q = foreach q generate count() as 'count'; ",
+    "responseTime": 10
+}

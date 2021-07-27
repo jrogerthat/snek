@@ -1,0 +1,75 @@
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["correlations"],
+    "averageOutcome": 34.95714930085701,
+    "correlations": [
+        {
+            "correlationToOutcome": 0.18130357336985514,
+            "fieldName": "age"
+        },
+        {
+            "correlationToOutcome": 0.1426088327952284,
+            "fieldName": "mi_fchd"
+        },
+        {
+            "correlationToOutcome": 0.06799966028494908,
+            "fieldName": "prevhyp"
+        },
+        {
+            "correlationToOutcome": 0.030813705791642,
+            "fieldName": "prevchd"
+        },
+        {
+            "correlationToOutcome": 0.024048650303428065,
+            "fieldName": "sex"
+        },
+        {
+            "correlationToOutcome": 0.02230688641073919,
+            "fieldName": "diabetes"
+        },
+        {
+            "correlationToOutcome": 0.02044332240982849,
+            "fieldName": "glucose"
+        },
+        {
+            "correlationToOutcome": 0.01835076284564774,
+            "fieldName": "angina"
+        },
+        {
+            "correlationToOutcome": 0.016379985879534598,
+            "fieldName": "bmi"
+        },
+        {
+            "correlationToOutcome": 0.015867326020461703,
+            "fieldName": "bpmeds"
+        },
+        {
+            "correlationToOutcome": 0.009691505237754972,
+            "fieldName": "totchol"
+        },
+        {
+            "correlationToOutcome": 0.005733502829363579,
+            "fieldName": "prevstrk"
+        },
+        {
+            "correlationToOutcome": 0.004163502467196323,
+            "fieldName": "cigpday"
+        },
+        {
+            "correlationToOutcome": 0.0040599032076859,
+            "fieldName": "hyperten"
+        },
+        {
+            "correlationToOutcome": 0.0007367555285077154,
+            "fieldName": "heartrte"
+        },
+        {
+            "correlationToOutcome": -0.00048659821847629736,
+            "fieldName": "randid"
+        }
+    ],
+    "rowCount": 4434,
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvRRKA0/summary"
+}

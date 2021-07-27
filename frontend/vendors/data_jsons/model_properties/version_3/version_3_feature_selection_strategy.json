@@ -1,12 +1,13 @@
-{   "pipeline_stages": ["analysis/model"],
+{
+    "pipeline_stages": ["analysis/model"],
     "could_pull_from_API": false,
     "interface_components":null,
     "changed_from_prev" : false,
     
     "featureSelectionStrategy": "LASSO",
-    "maxRows": 100000,
+    "maxRows": 20000000,
     "minRows": 50,
-    "maxColumns": 12,
+    "maxColumns": 200,
     "minColumns": 2,
     "maxValuesPerColumn": 100,
     "minNumberOfOccurrences": 24,
@@ -17,14 +18,14 @@
     "maxHighCardinalityColumns": 1,
     "maxUniqueValuesInHighCardinalityColumns": 200,
     "isDrfEnabled": true,
-    "isMulticlassEnabled": false,
+    "isMulticlassEnabled": true,
     "isImputeEnabled": true,
     "isModelCardEnabled": true,
     "isSentimentAnalysisEnabled": false,
     "isDownsamplingEnabled": false,
     "isFreeTextEnabled": false,
     "transformationDenyList": [
-        "SentimentAnalysis",
-        "FreeTextClustering"
+        "FreeTextClustering",
+        "SentimentAnalysis"
     ]
 }

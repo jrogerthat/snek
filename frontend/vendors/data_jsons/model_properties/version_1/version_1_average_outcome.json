@@ -1,0 +1,8 @@
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": false,
+    "changed_from_prev" : true,
+    "areas_changed": ["averageOutcome"],
+    "averageOutcome": 34.95714930085701,
+    "rowCount": 4434,
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvR2KAK/summary"
+}

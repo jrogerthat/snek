@@ -1,4 +1,5 @@
-{   "could_pull_from_API": true,
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": true,
     "interface_components":null,
     "changed_from_prev" : true,
     "areas_changed": ["correlations"],

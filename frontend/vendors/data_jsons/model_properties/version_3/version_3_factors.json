@@ -19,6 +19,32 @@
                         "type": "Range"
                     },
                     "value": "32 to 39"
+                },
+                {
+                    "fieldName": "angina",
+                    "property": {
+                        "field": "angina",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 497,
+            "diffFromAverage": -25.199202688108727,
+            "score": 10.261569416498993
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 39,
+                        "field": "age",
+                        "startValue": 32,
+                        "type": "Range"
+                    },
+                    "value": "32 to 39"
                 }
             ],
             "count": 559,
@@ -45,23 +71,6 @@
         {
             "condition": [
                 {
-                    "fieldName": "sysbp",
-                    "property": {
-                        "endValue": 108.8,
-                        "field": "sysbp",
-                        "startValue": 83.5,
-                        "type": "Range"
-                    },
-                    "value": "83.5 to 108.8"
-                }
-            ],
-            "count": 429,
-            "diffFromAverage": -15.609829953537663,
-            "score": 19.34731934731935
-        },
-        {
-            "condition": [
-                {
                     "fieldName": "age",
                     "property": {
                         "endValue": 44,
@@ -79,69 +88,85 @@
         {
             "condition": [
                 {
-                    "fieldName": "sysbp",
+                    "fieldName": "age",
                     "property": {
-                        "endValue": 119.7,
-                        "field": "sysbp",
-                        "startValue": 114.5,
+                        "endValue": 46,
+                        "field": "age",
+                        "startValue": 44,
                         "type": "Range"
                     },
-                    "value": "114.6 to 119.7"
+                    "value": "45 to 46"
+                }
+            ],
+            "count": 353,
+            "diffFromAverage": -12.294259782443415,
+            "score": 22.662889518413596
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "prevhyp",
+                    "property": {
+                        "field": "prevhyp",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                },
+                {
+                    "fieldName": "hyperten",
+                    "property": {
+                        "field": "hyperten",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 1822,
+            "diffFromAverage": -5.630747342594088,
+            "score": 24.149286498353458
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "mi_fchd",
+                    "property": {
+                        "field": "mi_fchd",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                },
+                {
+                    "fieldName": "glucose",
+                    "property": {
+                        "field": "glucose",
+                        "type": "Null"
+                    },
+                    "value": "Unspecified"
+                }
+            ],
+            "count": 346,
+            "diffFromAverage": -50.23234727416979,
+            "score": 24.277456647398843
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "bmi",
+                    "property": {
+                        "endValue": 23.6,
+                        "field": "bmi",
+                        "startValue": 22.54,
+                        "type": "Range"
+                    },
+                    "value": "22.55 to 23.6"
                 }
             ],
             "count": 423,
-            "diffFromAverage": -13.444146936790819,
-            "score": 21.513002364066192
-        },
-        {
-            "condition": [
-                {
-                    "fieldName": "stroke",
-                    "property": {
-                        "field": "stroke",
-                        "type": "String",
-                        "value": "No"
-                    },
-                    "value": "No"
-                },
-                {
-                    "fieldName": "cvd",
-                    "property": {
-                        "field": "cvd",
-                        "type": "String",
-                        "value": "No"
-                    },
-                    "value": "No"
-                }
-            ],
-            "count": 3277,
-            "diffFromAverage": -41.48278411899648,
-            "score": 24.015868172108636
-        },
-        {
-            "condition": [
-                {
-                    "fieldName": "prevchd",
-                    "property": {
-                        "field": "prevchd",
-                        "type": "String",
-                        "value": "No"
-                    },
-                    "value": "No"
-                },
-                {
-                    "fieldName": "anychd",
-                    "property": {
-                        "field": "anychd",
-                        "type": "String",
-                        "value": "No"
-                    },
-                    "value": "No"
-                }
-            ],
-            "count": 3194,
-            "diffFromAverage": -29.842163425447573,
-            "score": 25.798371947401378
+            "diffFromAverage": -10.13445426539602,
+            "score": 24.822695035460992
         },
         {
             "condition": [
@@ -155,43 +180,19 @@
                     "value": "No"
                 },
                 {
-                    "fieldName": "hospmi",
+                    "fieldName": "glucose",
                     "property": {
-                        "field": "hospmi",
-                        "type": "String",
-                        "value": "No"
+                        "endValue": 82,
+                        "field": "glucose",
+                        "startValue": 40,
+                        "type": "Range"
                     },
-                    "value": "No"
+                    "value": "40 to 82"
                 }
             ],
-            "count": 3703,
-            "diffFromAverage": -62.94057603796707,
-            "score": 26.951120712935456
-        },
-        {
-            "condition": [
-                {
-                    "fieldName": "prevchd",
-                    "property": {
-                        "field": "prevchd",
-                        "type": "String",
-                        "value": "No"
-                    },
-                    "value": "No"
-                },
-                {
-                    "fieldName": "anychd",
-                    "property": {
-                        "field": "anychd",
-                        "type": "String",
-                        "value": "Yes"
-                    },
-                    "value": "Yes"
-                }
-            ],
-            "count": 1046,
-            "diffFromAverage": -18.586268750862395,
-            "score": 55.64053537284895
+            "count": 2158,
+            "diffFromAverage": -44.98066708521431,
+            "score": 25.71825764596849
         },
         {
             "condition": [
@@ -200,26 +201,70 @@
                     "property": {
                         "field": "mi_fchd",
                         "type": "String",
-                        "value": "Yes"
+                        "value": "No"
                     },
-                    "value": "Yes"
+                    "value": "No"
                 },
                 {
-                    "fieldName": "hospmi",
+                    "fieldName": "glucose",
                     "property": {
-                        "field": "hospmi",
-                        "type": "String",
-                        "value": "Yes"
+                        "endValue": 111,
+                        "field": "glucose",
+                        "startValue": 82,
+                        "type": "Range"
                     },
-                    "value": "Yes"
+                    "value": "83 to 111"
                 }
             ],
-            "count": 454,
-            "diffFromAverage": -23.151608645175656,
-            "score": 66.74008810572687
+            "count": 1066,
+            "diffFromAverage": -53.59549718574108,
+            "score": 27.204502814258912
         }
     ],
     "positiveFactors": [
+        {
+            "condition": [
+                {
+                    "fieldName": "glucose",
+                    "property": {
+                        "endValue": 394,
+                        "field": "glucose",
+                        "startValue": 134,
+                        "type": "Range"
+                    },
+                    "value": "135 to 394"
+                }
+            ],
+            "count": 77,
+            "diffFromAverage": 45.56233121862351,
+            "score": 80.51948051948052
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 70,
+                        "field": "age",
+                        "startValue": 62,
+                        "type": "Range"
+                    },
+                    "value": "63 to 70"
+                },
+                {
+                    "fieldName": "bpmeds",
+                    "property": {
+                        "field": "bpmeds",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 386,
+            "diffFromAverage": 49.068422635058155,
+            "score": 78.23834196891191
+        },
         {
             "condition": [
                 {
@@ -236,6 +281,48 @@
             "count": 427,
             "diffFromAverage": 43.02879917689475,
             "score": 77.98594847775176
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 121,
+            "diffFromAverage": 42.72880111236613,
+            "score": 77.68595041322314
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "age",
+                    "property": {
+                        "endValue": 70,
+                        "field": "age",
+                        "startValue": 62,
+                        "type": "Range"
+                    },
+                    "value": "63 to 70"
+                },
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 402,
+            "diffFromAverage": 48.086784181877626,
+            "score": 77.363184079602
         },
         {
             "condition": [
@@ -265,30 +352,21 @@
                     "value": "Yes"
                 },
                 {
-                    "fieldName": "anychd",
+                    "fieldName": "bpmeds",
                     "property": {
-                        "field": "anychd",
-                        "type": "String",
-                        "value": "Yes"
-                    },
-                    "value": "Yes"
-                }
-            ],
-            "count": 731,
-            "diffFromAverage": 41.3283200610623,
-            "score": 75.51299589603283
-        },
-        {
-            "condition": [
-                {
-                    "fieldName": "stroke",
-                    "property": {
-                        "field": "stroke",
+                        "field": "bpmeds",
                         "type": "String",
                         "value": "No"
                     },
                     "value": "No"
-                },
+                }
+            ],
+            "count": 675,
+            "diffFromAverage": 48.45590779299276,
+            "score": 74.37037037037037
+        },
+        {
+            "condition": [
                 {
                     "fieldName": "mi_fchd",
                     "property": {
@@ -297,11 +375,20 @@
                         "value": "Yes"
                     },
                     "value": "Yes"
+                },
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
                 }
             ],
-            "count": 621,
-            "diffFromAverage": 50.52915468889059,
-            "score": 74.39613526570048
+            "count": 680,
+            "diffFromAverage": 48.087992422402486,
+            "score": 74.26470588235294
         },
         {
             "condition": [
@@ -322,112 +409,30 @@
         {
             "condition": [
                 {
-                    "fieldName": "sysbp",
+                    "fieldName": "mi_fchd",
                     "property": {
-                        "endValue": 295,
-                        "field": "sysbp",
-                        "startValue": 163.3,
+                        "field": "mi_fchd",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                },
+                {
+                    "fieldName": "glucose",
+                    "property": {
+                        "endValue": 82,
+                        "field": "glucose",
+                        "startValue": 40,
                         "type": "Range"
                     },
-                    "value": "163.4 to 295"
+                    "value": "40 to 82"
                 }
             ],
-            "count": 443,
-            "diffFromAverage": 33.440141895531255,
-            "score": 68.39729119638827
-        },
-        {
-            "condition": [
-                {
-                    "fieldName": "stroke",
-                    "property": {
-                        "field": "stroke",
-                        "type": "String",
-                        "value": "Yes"
-                    },
-                    "value": "Yes"
-                }
-            ],
-            "count": 415,
-            "diffFromAverage": 31.789838650950216,
-            "score": 66.74698795180723
-        },
-        {
-            "condition": [
-                {
-                    "fieldName": "stroke",
-                    "property": {
-                        "field": "stroke",
-                        "type": "String",
-                        "value": "No"
-                    },
-                    "value": "No"
-                },
-                {
-                    "fieldName": "cvd",
-                    "property": {
-                        "field": "cvd",
-                        "type": "String",
-                        "value": "Yes"
-                    },
-                    "value": "Yes"
-                }
-            ],
-            "count": 742,
-            "diffFromAverage": 41.48278411899648,
-            "score": 65.49865229110512
-        },
-        {
-            "condition": [
-                {
-                    "fieldName": "prevchd",
-                    "property": {
-                        "field": "prevchd",
-                        "type": "String",
-                        "value": "No"
-                    },
-                    "value": "No"
-                },
-                {
-                    "fieldName": "anychd",
-                    "property": {
-                        "field": "anychd",
-                        "type": "String",
-                        "value": "Yes"
-                    },
-                    "value": "Yes"
-                }
-            ],
-            "count": 1046,
-            "diffFromAverage": 29.842163425447573,
-            "score": 55.64053537284895
-        },
-        {
-            "condition": [
-                {
-                    "fieldName": "hospmi",
-                    "property": {
-                        "field": "hospmi",
-                        "type": "String",
-                        "value": "No"
-                    },
-                    "value": "No"
-                },
-                {
-                    "fieldName": "anychd",
-                    "property": {
-                        "field": "anychd",
-                        "type": "String",
-                        "value": "Yes"
-                    },
-                    "value": "Yes"
-                }
-            ],
-            "count": 786,
-            "diffFromAverage": 28.01842194572839,
-            "score": 53.81679389312977
+            "count": 372,
+            "diffFromAverage": 44.98066708521431,
+            "score": 70.6989247311828
         }
     ],
     "rowCount": 4434,
-    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvR2KAK/summary"
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvRRKA0/summary"
 }
