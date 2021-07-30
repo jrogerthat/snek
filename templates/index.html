@@ -12,9 +12,22 @@
 <body>
 <div id="toolbar">
   <ul><li><a href="https://github.com/jrogerthat/snek/issues">file a bug <i class="fas fa-bug"></i></a></li>
-    <li><input type="text" placeholder="Search for artifact.."></li>
+    <!-- <li><input type="text" placeholder="Search for artifact.."></li> -->
+    
     <li>
-      <div class="dropdown">
+      <div id="version" class="dropdown">
+      <span>Story Version 4 </span><i class="fas fa-caret-down"></i>
+      <div class="dropdown-content">
+        <p>Story Version 1</p>
+        <p>Story Version 2</p>
+        <p>Story Version 3</p>
+        <p>Story Version 4</p>
+      </div>
+    </div>
+  </li>
+
+    <li>
+      <div id="view" class="dropdown">
       <span>Mouse over me </span><i class="fas fa-caret-down"></i>
       <div class="dropdown-content">
         <p>Human vs Machine</p>
@@ -22,6 +35,7 @@
       </div>
     </div>
   </li>
+
   </ul>
 </div>
 <div class="jumbotron py-5">

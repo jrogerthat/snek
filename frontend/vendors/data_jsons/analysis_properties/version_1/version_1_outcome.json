@@ -2,6 +2,7 @@
     "pipeline_stages": ["preparation/goal"],
     "could_pull_from_API": true,
     "interface_components": null,
+    "has_versions": true,
 
     "changed_from_prev" : false,
     "areas_changed": null,

@@ -1,30 +1,38 @@
 import * as d3 from "d3";
 import * as d3Array from "d3-array";
 import { machineOrHuman } from "../application/generalHelpers";
+import { versionSingleton } from "../application/versionControlSingleton";
 import { viewSingleton } from "../application/viewSingleton";
 
 const radius = 9;
-
-const otherVersions = ['version_2', 'version_3', 'version_4'];
-
-const version = 'version_1';
 
 export function tooltip(event, d){
 
     let tooltip = d3.select('#tooltip');
     tooltip.style('opacity', 1);
     tooltip.style('top', `${event.clientY}px`).style('left', `${event.clientX + 30}px`);
-    tooltip.html(`
-    <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
-    <h4>${d['Artifact Type']}</h4>
-    <br>
-    <ul>
-    <li><h6>${d['Artifact Group']}</h6></li>
-    <li><h6>${d['Transmission Mode']}</h6></li>
-    <li><h6>${d['Task']}</h6></li>
-    <li><h6>${d['Source']}</h6></li>
-    </ul>
-    `)
+    if(d['Task'] === null){
+
+        tooltip.html(`
+        <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
+        <h4>${d['Artifact Type']}</h4>
+        <br>
+        `)
+
+    }else{
+
+        tooltip.html(`
+        <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
+        <h4>${d['Artifact Type']}</h4>
+        <br>
+        <ul>
+        <li><h6>${d['Artifact Group']}</h6></li>
+        <li><h6>${d['Transmission Mode']}</h6></li>
+        <li><h6>${d['Task']}</h6></li>
+        <li><h6>${d['Source']}</h6></li>
+        </ul>
+        `)
+    }
 }
 
 export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
@@ -103,13 +111,14 @@ export function renderNodes(nodes){
 }
 
 export function artifactClicked(event, d){
+
+    let versOb = versionSingleton.getInstance();
+    let version = versOb.currentVersion();
    
     d3.selectAll('.clicked-selected').each((f, i, n)=>{
       d3.select(n[i]).attr('r', radius);
       d3.select(n[i]).classed('click-selected', false);
     });
-
-    console.log(version, otherVersions);
   
     d3.selectAll('.clicked-selected').classed('clicked-selected', false);
   
@@ -176,7 +185,6 @@ export function artifactClicked(event, d){
         if(viewOb.currentView() === 'human-machine'){
             hoverLabel.style('transform', 'translate(40px, 12px)');
         }else{
-          
             hoverLabel.style('transform', 'translate(-10px, 30px), rotate(40)')
         }
        // hoverLabel.attr('transform', 'translate(100px, 100px)')
@@ -191,7 +199,6 @@ export function artifactClicked(event, d){
         shared.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).attr('r', radius);
         let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
         notShared.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('non-hover', false);
-        //notShared.attr('opacity', 1);
         d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', false);
         d3.selectAll('.link').classed('hover', false);
         d3.selectAll('.link').classed('not-hover', false);
@@ -199,28 +206,55 @@ export function artifactClicked(event, d){
         d3.selectAll('.hover-label').remove();
         d3.selectAll('.label-wrap').attr('opacity', 1);
     });
-    
-    if(d['Source File'] != null){
 
+   
+    if(d['Source File'] != null){
+        let buttonHistory = div.append('button').classed('btn btn-outline-light btn-lg', true).text('View Artifact history');
+        buttonHistory.style('margin-top', '25px');
+        buttonHistory.style('margin-bottom', '25px');
+
+        buttonHistory.on('click', (event, h)=>{
+
+        });
+
+        div.append('h4').text('Source Files');
         let source = div.selectAll('div.source').data(d['Source File']).join('div').classed('source', true);
         source.selectAll('text').data(d=> [d]).join('text').text(t=> `${t.format} for ${t.what}`);
-        console.log('d ON CICK', d);
+       
+        let buttonRawFile = source.selectAll('button').data(b=> [b]).join('button').classed('btn btn-secondary btn-sm', true).text('See Artifact');
+        buttonRawFile.style('margin-left', '25px');
 
-        let buttonRawFile = source.append('button').classed('btn btn-secondary', true).text('See Artifact');
-        buttonRawFile.on('click', ()=> {
-          console.log(d);
-            d3.select('#wrapper').select('.more-info').select('div.raw-file').remove();
-                console.log(`${d['Folder']}${version}/${version}${d['Source File']}`);
+        buttonRawFile.on('click', (event, b)=> {
 
-                d3.json(`${d['Folder']}${version}/${version}${d['Source File']}`).then(json => {
-            
-                    let rawData = d3.select('#wrapper').select('.more-info').append('div').classed('raw-file', true);
+            if(event.target.innerHTML === "See Artifact"){
+
+                d3.select('#wrapper').select('.more-info').select('div.raw-file').remove();
+
+                d3.json(`${b.path}${version}/${version}${b.file_name}`).then(json => {
+                
+                    let rawData = d3.select('#wrapper').select('.more-info')
+                    .append('div').classed('raw-file', true);
+    
                     rawData.html(`${JSON.stringify(json)}`);
                     rawData.style('width', '440px');
                     rawData.style('height', '300px');
                     rawData.style('overflow-x', 'auto');
                     rawData.style('overflow-y', 'auto');
+    
                 });
+
+                event.target.innerHTML = "Hide Artifact";
+
+            }else{
+
+
+                event.target.innerHTML = "See Artifact";
+                d3.select('.raw-file').remove();
+
+            }
+
+        
+
            
           
           });

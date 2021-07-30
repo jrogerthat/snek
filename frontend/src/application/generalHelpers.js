@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { renderDependencyVis } from "../components/dependencyVis";
 import { renderHumanVsMachine } from "../components/humanVsMachineVis";
+import { versionSingleton } from "./versionControlSingleton";
 
 export function machineOrHuman(d){
     if(d['Transmission Mode'] === "Boundry Crossing/M-H" || d['Transmission Mode'] === "Non-Boundary/M-M"){ 
@@ -17,11 +18,20 @@ export function machineOrHuman(d){
       'Artifact Dependencies' : renderDependencyVis
   }
 
-  export function dropDownInteraction(nodes){
-      d3.select('.dropdown').selectAll('.dropdown-content').selectAll('p').on('click', (event, d)=>{
+  export function dropDownChangeView(nodes){
+      d3.select('#view.dropdown').selectAll('.dropdown-content').selectAll('p').on('click', (event, d)=>{
         d3.select('.dropdown').select('span').text(d3.select(event.target).text());
         d3.select('#wrapper').select('svg').selectAll('.secondary-vis').selectAll('*').remove();
         d3.selectAll('.label-wrap').remove();
         dropdownDictionary[d3.select(event.target).text()](nodes);
       });
   }
+
+  export function dropDownChangeVersion(){
+    d3.select('#version.dropdown').selectAll('.dropdown-content').selectAll('p').on('click', (event, d)=>{
+      d3.select('.dropdown').select('span').text(d3.select(event.target).text());
+      let versOb = versionSingleton.getInstance();
+      versOb.changeVersion(d3.select(event.target).text());
+      console.log(versOb.currentVersion());
+    });
+}

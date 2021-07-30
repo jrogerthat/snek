@@ -1,4 +1,11 @@
-{
+{   "pipeline_stages": ["preparation/goal"],
+    "could_pull_from_API": true,
+    "interface_components": null,
+    "has_versions": true,
+    
+    "changed_from_prev" : true,
+    "areas_changed": ["createdDate","id","inputProfile","label","lastModifiedBy","lastModifiedDate","setup"],
+
     "createdBy": {
         "id": "005B0000006wvarIAA",
         "name": "Admin User",
