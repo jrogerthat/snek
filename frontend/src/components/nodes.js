@@ -5,6 +5,8 @@ import { viewSingleton } from "../application/viewSingleton";
 
 const radius = 9;
 
+const otherVersions = ['version_2', 'version_3', 'version_4'];
+
 const version = 'version_1';
 
 export function tooltip(event, d){
@@ -106,6 +108,8 @@ export function artifactClicked(event, d){
       d3.select(n[i]).attr('r', radius);
       d3.select(n[i]).classed('click-selected', false);
     });
+
+    console.log(version, otherVersions);
   
     d3.selectAll('.clicked-selected').classed('clicked-selected', false);
   
@@ -198,9 +202,11 @@ export function artifactClicked(event, d){
     
     if(d['Source File'] != null){
 
+        let source = div.selectAll('div.source').data(d['Source File']).join('div').classed('source', true);
+        source.selectAll('text').data(d=> [d]).join('text').text(t=> `${t.format} for ${t.what}`);
         console.log('d ON CICK', d);
 
-        let buttonRawFile = div.append('button').classed('btn btn-secondary', true).text('See Artifact');
+        let buttonRawFile = source.append('button').classed('btn btn-secondary', true).text('See Artifact');
         buttonRawFile.on('click', ()=> {
           console.log(d);
             d3.select('#wrapper').select('.more-info').select('div.raw-file').remove();
