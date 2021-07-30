@@ -3,8 +3,8 @@
     "Artifact ID": "1A",
     "Folder": "static/vendors/",
     "Source File": [
-      {"what":"raw file","path":"static/vendors/data_properties","format":"csv","file_name":"_farminghamstudy_baseline_no_time - farminghamstudy_baseline.csv"},
-      {"what":"version meta","path":"static/vendors/data_properties","format":"json","file_name":"_current_data_meta.json"}
+      {"what":"raw file","path":"static/vendors/data_properties/","format":"csv","file_name":"_farminghamstudy_baseline_no_time - farminghamstudy_baseline.csv"},
+      {"what":"version meta","path":"static/vendors/data_properties/","format":"json","file_name":"_current_data_meta.json"}
     ],
     "Stage": "Preparation",
     "Step": "Data",
@@ -112,9 +112,9 @@
   },
   {
     "Artifact ID": "4C-1",
-    "Folder": "static/vendors/data_jsons/analysis_properties/",
+    "Folder": "static/vendors/data_jsons/data_properties/",
     "Source File": [
-      {"what":"input_overrides","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name":"_improvements.json"}
+      {"what":"input_overrides","path":"static/vendors/data_jsons/data_properties/","format":"json","file_name":"_improvements.json"}
     ], 
     "Stage": "Preparation",
     "Step": "Wrangling",
@@ -177,7 +177,7 @@
     "Folder": "static/vendors/data_jsons/model_properties/",
     "Source File": [
       {"what":"model parameters","path":"static/vendors/data_jsons/model_properties/","format":"json","file_name":"_model_version_summary.json"},
-      {"what":"model parameters","path":"static/vendors/data_jsons/model_properties/","format":"md","file_name":"_model_code.md"}
+      {"what":"model code","path":"static/vendors/data_jsons/model_properties/","format":"md","file_name":"_model_code_files.json"}
     ], 
     "Stage": "Analysis",
     "Step": "Machine Learning",

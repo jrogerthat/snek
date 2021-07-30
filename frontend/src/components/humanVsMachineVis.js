@@ -1,8 +1,6 @@
 import * as d3 from "d3";
 import * as d3Array from "d3-array";
 import * as humanMachineLinks from "../../vendors/links/links-human-machine.json";
-import * as graphFile from "../../vendors/links/sankey.json";
-import { theSankey } from "../application/sankey";
 import { viewSingleton } from "../application/viewSingleton";
 import { artifactClicked, nodeHoverInteraction } from "./nodes";
 

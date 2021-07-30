@@ -3,6 +3,7 @@ import * as d3Array from "d3-array";
 import { machineOrHuman } from "../application/generalHelpers";
 import { versionSingleton } from "../application/versionControlSingleton";
 import { viewSingleton } from "../application/viewSingleton";
+import { removeHistory, renderHistoryHorizontal } from "./historyVis";
 
 const radius = 9;
 
@@ -209,15 +210,44 @@ export function artifactClicked(event, d){
 
    
     if(d['Source File'] != null){
-        let buttonHistory = div.append('button').classed('btn btn-outline-light btn-lg', true).text('View Artifact history');
+        let buttonHistory = div.append('button').classed('btn btn-outline-light btn-lg', true).text('View Artifact History');
         buttonHistory.style('margin-top', '25px');
         buttonHistory.style('margin-bottom', '25px');
 
+        let viewOb = viewSingleton.getInstance();
+
         buttonHistory.on('click', (event, h)=>{
 
+            if(event.target.innerHTML === "View Artifact History"){
+
+                event.target.innerHTML = "Hide Artifact History";
+
+                let sources = d['Source File'].map( m => {
+               
+                    let versionsS = versOb.otherVersions().map( async ov => {
+                        let ob = {}
+                        let json = await d3.json(`${m.path}${ov}/${ov}${m.file_name}`);
+                        ob[ov] = json.changed_from_prev === true ? json : null;
+                        return ob;
+                    });
+                    return versionsS;
+                });
+
+                console.log(sources, viewOb.currentView())
+                if(viewOb.currentView() === "human-machine"){
+                    renderHistoryHorizontal(sources);
+                }else{
+                    console.log('make version for vertical history')
+                }
+                
+
+            }else{
+                event.target.innerHTML = "View Artifact History";
+                removeHistory();
+            }
         });
 
-        div.append('h4').text('Source Files');
+        div.append('h4').text(`Source Files for ${version}`);
         let source = div.selectAll('div.source').data(d['Source File']).join('div').classed('source', true);
         source.selectAll('text').data(d=> [d]).join('text').text(t=> `${t.format} for ${t.what}`);
        

@@ -1,13 +1,20 @@
 export let versionSingleton = (function () {
     let objInstance; 
     function create() { 
-        let _version = 'version_1';
+        let _version = 'version_4';
         const _versionArray = ['version_1', 'version_2', 'version_3', 'version_4'];
-        let _otherVersionArray = ['version_2', 'version_3', 'version_4'];
+        let _otherVersionArray = ['version_1', 'version_2', 'version_3'];
+
+        let _versionDict = {
+            'Story Version 1' : 'version_1',
+            'Story Version 2' : 'version_2',
+            'Story Version 3' : 'version_3',
+            'Story Version 4' : 'version_4',
+        }
     
-        let changeVersion = function(version){
-            _version = version;
-            _otherVersionArray = _versionArray.filter(f => f != version);
+        let changeVersion = function(versionLabel){
+            _version = _versionDict[versionLabel];
+            _otherVersionArray = _versionArray.filter(f => f != _versionDict[versionLabel]);
         }
         let currentVersion = function(){
             return _version;
