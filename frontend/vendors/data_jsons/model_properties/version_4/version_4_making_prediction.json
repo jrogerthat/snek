@@ -1,0 +1,187 @@
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": false,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["insights"],
+    
+    "prediction_variable": "diabetes",
+    "prediction_value": "Yes",
+    "insights": [
+            {
+                "others": [],
+                "chart": {
+                    "metricLabel": "death (Yes)",
+                    "categoryLabel": "Drivers of death (Yes) (by descending Magnitude)",
+                    "values": [
+                        {
+                            "label": "Baseline",
+                            "value": 77.13395001436992,
+                            "properties": [],
+                            "dimensions": [],
+                            "details": {}
+                        },
+                        {
+                            "label": "diabetes is Yes",
+                            "value": 1.260990727106801,
+                            "properties": [
+                                {
+                                    "type": "String",
+                                    "field": "diabetes",
+                                    "value": "Yes"
+                                }
+                            ],
+                            "dimensions": [],
+                            "details": {
+                                "Order": 1,
+                                "Average": 77.68595041322314,
+                                "Count": 121
+                            }
+                        },
+                        {
+                            "label": "Expected Impact of Other Fields",
+                            "value": -6.727577058524048,
+                            "properties": [],
+                            "dimensions": [],
+                            "details": {}
+                        }
+                    ]
+                },
+                "narrative": {
+                    "title": {
+                        "type": "HEADING",
+                        "elements": [
+                            {
+                                "type": "PARAGRAPH",
+                                "value": "Predicted death (Yes)"
+                            }
+                        ]
+                    },
+                    "header": {
+                        "type": "SUB_HEADING",
+                        "elements": [
+                            {
+                                "type": "PARAGRAPH",
+                                "value": "Predicted death (Yes) when "
+                            },
+                            {
+                                "type": "PARAGRAPH",
+                                "value": "diabetes is Yes",
+                                "properties": [
+                                    {
+                                        "type": "String",
+                                        "field": "diabetes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "body": {
+                        "type": "BODY",
+                        "elements": [
+                            {
+                                "type": "PARAGRAPH",
+                                "elements": [
+                                    {
+                                        "type": "PARAGRAPH",
+                                        "value": "Predicted death (Yes) when "
+                                    },
+                                    {
+                                        "type": "PARAGRAPH",
+                                        "value": "diabetes is Yes",
+                                        "properties": [
+                                            {
+                                                "type": "String",
+                                                "field": "diabetes",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "PARAGRAPH",
+                                        "value": " and the other 12 fields are unknown is 71.67."
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "PARAGRAPH",
+                                "elements": [
+                                    {
+                                        "type": "GOOD_SECTION",
+                                        "elements": [
+                                            {
+                                                "type": "PARAGRAPH",
+                                                "value": "Top contributors that indicate better death (Yes):"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "LIST",
+                                        "elements": [
+                                            {
+                                                "type": "PARAGRAPH",
+                                                "elements": [
+                                                    {
+                                                        "type": "PARAGRAPH",
+                                                        "value": "Added 1.261 because "
+                                                    },
+                                                    {
+                                                        "type": "PARAGRAPH",
+                                                        "value": "diabetes is Yes",
+                                                        "properties": [
+                                                            {
+                                                                "type": "String",
+                                                                "field": "diabetes",
+                                                                "value": "Yes"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "insightValues": {
+                    "diagnosticInsightRecord": {},
+                    "descriptiveInsightRecord": {}
+                },
+                "values": {
+                    "elements": [
+                        {
+                            "type": "PREDICTION",
+                            "value": 71.66736368295267
+                        },
+                        {
+                            "type": "POSITIVE_FACTOR",
+                            "value": 1.260990727106801,
+                            "properties": [
+                                {
+                                    "type": "String",
+                                    "field": "diabetes",
+                                    "value": "Yes"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "metadata": {
+                    "type": "WHAT_COULD_HAPPEN",
+                    "properties": [
+                        {
+                            "type": "String",
+                            "field": "diabetes",
+                            "value": "Yes"
+                        }
+                    ]
+                },
+                "type": "Predictive"
+            }
+    ],
+    "insightsCount": 1,
+    "insightsOffset": 0,
+    "needsNewCacheBucket": false
+}

@@ -1,0 +1,188 @@
+
+    {   "pipeline_stages": ["analysis/model"],
+        "could_pull_from_API": false,
+        "interface_components":null,
+        "changed_from_prev" : true,
+        "areas_changed": ["insights"],
+        "prediction_variable": "age",
+        "prediction_value": "63 to 70",
+        "others": [],
+        "insights":[{
+            "chart": {
+                "metricLabel": "death (Yes)",
+                "categoryLabel": "Drivers of death (Yes) (by descending Magnitude)",
+                "values": [
+                    {
+                        "label": "Baseline",
+                        "value": 89.09394999258095,
+                        "properties": [],
+                        "dimensions": [],
+                        "details": {}
+                    },
+                    {
+                        "label": "age is 63 to 70",
+                        "value": 1.8940982426288713,
+                        "properties": [
+                            {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 62,
+                                "end": 70
+                            }
+                        ],
+                        "dimensions": [],
+                        "details": {
+                            "Order": 1,
+                            "Average": 77.98594847775176,
+                            "Count": 427
+                        }
+                    },
+                    {
+                        "label": "Expected Impact of Other Fields",
+                        "value": -11.820203515919417,
+                        "properties": [],
+                        "dimensions": [],
+                        "details": {}
+                    }
+                ]
+            },
+            "narrative": {
+                "title": {
+                    "type": "HEADING",
+                    "elements": [
+                        {
+                            "type": "PARAGRAPH",
+                            "value": "Predicted death (Yes)"
+                        }
+                    ]
+                },
+                "header": {
+                    "type": "SUB_HEADING",
+                    "elements": [
+                        {
+                            "type": "PARAGRAPH",
+                            "value": "Predicted death (Yes) when "
+                        },
+                        {
+                            "type": "PARAGRAPH",
+                            "value": "age is 63 to 70",
+                            "properties": [
+                                {
+                                    "type": "Range",
+                                    "field": "age",
+                                    "start": 62,
+                                    "end": 70
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "body": {
+                    "type": "BODY",
+                    "elements": [
+                        {
+                            "type": "PARAGRAPH",
+                            "elements": [
+                                {
+                                    "type": "PARAGRAPH",
+                                    "value": "Predicted death (Yes) when "
+                                },
+                                {
+                                    "type": "PARAGRAPH",
+                                    "value": "age is 63 to 70",
+                                    "properties": [
+                                        {
+                                            "type": "Range",
+                                            "field": "age",
+                                            "start": 62,
+                                            "end": 70
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARAGRAPH",
+                                    "value": " and the other 15 fields are unknown is 79.17."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "PARAGRAPH",
+                            "elements": [
+                                {
+                                    "type": "GOOD_SECTION",
+                                    "elements": [
+                                        {
+                                            "type": "PARAGRAPH",
+                                            "value": "Top contributors that indicate better death (Yes):"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "LIST",
+                                    "elements": [
+                                        {
+                                            "type": "PARAGRAPH",
+                                            "elements": [
+                                                {
+                                                    "type": "PARAGRAPH",
+                                                    "value": "Added 1.894 because "
+                                                },
+                                                {
+                                                    "type": "PARAGRAPH",
+                                                    "value": "age is 63 to 70",
+                                                    "properties": [
+                                                        {
+                                                            "type": "Range",
+                                                            "field": "age",
+                                                            "start": 62,
+                                                            "end": 70
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "descriptiveInsightValues": {
+                "insights": {}
+            },
+            "values": {
+                "elements": [
+                    {
+                        "type": "PREDICTION",
+                        "value": 79.1678447192904
+                    },
+                    {
+                        "type": "POSITIVE_FACTOR",
+                        "value": 1.8940982426288713,
+                        "properties": [
+                            {
+                                "type": "Range",
+                                "field": "age",
+                                "start": 62,
+                                "end": 70
+                            }
+                        ]
+                    }
+                ]
+            },
+            "metadata": {
+                "type": "WHAT_COULD_HAPPEN",
+                "properties": [
+                    {
+                        "type": "Range",
+                        "field": "age",
+                        "start": 62,
+                        "end": 70
+                    }
+                ]
+            },
+            "type": "Predictive"
+        }]
+
+    }

@@ -1,6 +1,9 @@
 {   "pipeline_stages": ["preparation/wrangle"],
     "could_pull_from_API": false,
-    "interface_components":null,
+    "interface_components":[
+        {"what":"recommendation_interface_1","path":"static/vendors/images/data_properties/","format":"png","file_name":"version_1_recommendations_dominant.png"},
+        {"what":"recommendation_interface_2","path":"static/vendors/images/data_properties/","format":"png","file_name":"version_1_recommendations_duplicates.png"}
+    ],
     "changed_from_prev" : true,
     "areas_changed": ["metadata/fields", "improvements"],
     "metadata": {

@@ -1,0 +1,139 @@
+{
+    "createdBy": {
+        "id": "005B0000006wvfPIAQ",
+        "name": "Integration User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+    },
+    "createdDate": "2021-06-28T20:37:35.000Z",
+    "id": "1OTB0000000Cr5oOAC",
+    "input": {
+        "story": {
+            "id": "1Y3B00000004LD0KAM"
+        },
+        "storyHistory": {
+            "id": "9B4B0000000Cuk5KAC"
+        },
+        "type": "Discovery"
+    },
+    "label": "Maximize death",
+    "lastModifiedBy": {
+        "id": "005B0000006wvfPIAQ",
+        "name": "Integration User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+    },
+    "lastModifiedDate": "2021-06-28T20:37:35.000Z",
+    "modelFields": [
+        {
+            "label": "cvd",
+            "name": "cvd",
+            "type": "Text"
+        },
+        {
+            "label": "cigpday",
+            "name": "cigpday",
+            "type": "Number"
+        },
+        {
+            "label": "sysbp",
+            "name": "sysbp",
+            "type": "Number"
+        },
+        {
+            "label": "heartrte",
+            "name": "heartrte",
+            "type": "Number"
+        },
+        {
+            "label": "prevhyp",
+            "name": "prevhyp",
+            "type": "Text"
+        },
+        {
+            "label": "hospmi",
+            "name": "hospmi",
+            "type": "Text"
+        },
+        {
+            "label": "sex",
+            "name": "sex",
+            "type": "Text"
+        },
+        {
+            "label": "glucose",
+            "name": "glucose",
+            "type": "Number"
+        },
+        {
+            "label": "age",
+            "name": "age",
+            "type": "Number"
+        },
+        {
+            "label": "bmi",
+            "name": "bmi",
+            "type": "Number"
+        },
+        {
+            "label": "hyperten",
+            "name": "hyperten",
+            "type": "Text"
+        },
+        {
+            "label": "mi_fchd",
+            "name": "mi_fchd",
+            "type": "Text"
+        },
+        {
+            "label": "totchol",
+            "name": "totchol",
+            "type": "Number"
+        },
+        {
+            "label": "anychd",
+            "name": "anychd",
+            "type": "Text"
+        },
+        {
+            "label": "bpmeds",
+            "name": "bpmeds",
+            "type": "Text"
+        },
+        {
+            "label": "randid",
+            "name": "randid",
+            "type": "Number"
+        },
+        {
+            "label": "diabp",
+            "name": "diabp",
+            "type": "Number"
+        },
+        {
+            "label": "angina",
+            "name": "angina",
+            "type": "Text"
+        },
+        {
+            "label": "death",
+            "name": "death",
+            "type": "Text"
+        }
+    ],
+    "modelFileUrl": "/services/data/v52.0/smartdatadiscovery/models/1OTB0000000Cr5oOAC/file",
+    "modelRuntime": {
+        "type": "Discovery"
+    },
+    "name": "Maximize_death3",
+    "predictedField": "death",
+    "predictionProperty": {
+        "algorithmType": "Glm",
+        "classificationThreshold": {
+            "type": "Binary",
+            "value": 0.4712859621885789
+        },
+        "type": "Classification"
+    },
+    "status": "Enabled",
+    "url": "/services/data/v52.0/smartdatadiscovery/models/1OTB0000000Cr5oOAC",
+    "validationResult": {}
+}

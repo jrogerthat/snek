@@ -1,0 +1,27 @@
+{   "pipeline_stages": ["deployment/monitor"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["histories"],
+    
+    "histories": [
+            {   
+                "id": "0RmB0000000AwAlKAK",
+                "name": "Change 1",
+                "label": "Initial Create",
+                "createdBy": {
+                    "id": "005B0000006wvarIAA",
+                    "name": "Admin User",
+                    "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+                },
+                "createdDate": "2021-07-29T21:04:58.000Z",
+                "historyUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0grKAC/histories/0RmB0000000AwAlKAK",
+                "previewUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0grKAC?historyId=0RmB0000000AwAlKAK",
+                "revertUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0grKAC",
+                "isCurrent": true,
+                "status": null
+            }
+        ]
+
+}
+

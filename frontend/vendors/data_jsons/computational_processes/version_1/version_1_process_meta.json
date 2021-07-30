@@ -1,0 +1,141 @@
+{
+    "actions": [
+        {
+            "id": "6;a",
+            "state": "SUCCESS",
+            "returnValue": {
+                "cometdUrl": "/cometd/40.0",
+                "cometdWorkerJs": "/jslibrary/1626998680000/streaming-v2/CometdWorkerJs.js",
+                "sessionKey": "00DB00000005yST!AQ4AQNkhk1xrzgntf8iHVF8WpfX7XxL1Mg9o5oMMcVYC0EN5kON5EOt.09aXcKk5LXUPdI_6WraeB8melYN8lqL6jX9oGGSM"
+            },
+            "error": []
+        },
+        {
+            "id": "10;a",
+            "state": "SUCCESS",
+            "returnValue": {
+                "brandLightActive": "rgba(221, 229, 252, 1)",
+                "brandHeaderContrastWarm": "rgba(214, 5, 1, 1)",
+                "brandAccessible": "rgba(1, 118, 211, 1)",
+                "brandHeaderContrastWeakDisabled": "rgba(145, 145, 145, 0.25)",
+                "brandPrimaryTransparent10": "rgba(65, 148, 249, 0.1)",
+                "brandPrimary": "rgba(65, 148, 249, 1)",
+                "brandPrimaryActive": "rgba(35, 118, 204, 1)",
+                "brandHeader": "rgba(255, 255, 255, 1)",
+                "brandHeaderContrastCool": "rgba(13, 112, 165, 1)",
+                "brandLogoImage": "url(/_slds/images/themes/lightning_blue/lightning_blue_logo_2x.png)",
+                "bannerUserDefaultImage": "url(/_slds/images/themes/lightning_blue/lightning_blue_profile.png)",
+                "brandLight": "rgba(240, 243, 253, 1)",
+                "brandTextLink": "rgba(1, 118, 211, 1)",
+                "brandAccessibleActive": "rgba(53, 93, 150, 1)",
+                "brandHeaderContrastWeak": "rgba(145, 145, 145, 1)",
+                "brandDark": "rgba(7, 47, 87, 1)",
+                "groupDefaultAvatar": "url(/_slds/images/themes/lightning_blue/lightning_blue_group_icon_200.png)",
+                "brandBandDefaultImage": "url(/_slds/images/themes/lightning_blue/lightning_blue_background.png)",
+                "brandHeaderContrastInverseActive": "rgba(238, 238, 238, 1)",
+                "brandDarkActive": "rgba(3, 24, 48, 1)",
+                "brandHeaderContrastInverse": "rgba(255, 255, 255, 1)",
+                "bannerGroupDefaultImage": "url(/_slds/images/themes/lightning_blue/lightning_blue_group.png)",
+                "brandPrimaryTransparent": "rgba(65, 148, 249, 0.1)",
+                "groupDefaultAvatarSmall": "url(/_slds/images/themes/lightning_blue/lightning_blue_group_icon_96.png)",
+                "brandPrimaryTransparent40": "rgba(65, 148, 249, 0.4)",
+                "brandTextLinkActive": "rgba(53, 93, 150, 1)",
+                "userDefaultAvatar": "url(/_slds/images/themes/lightning_blue/lightning_blue_profile_avatar_200.png)",
+                "groupDefaultAvatarMedium": "url(/_slds/images/themes/lightning_blue/lightning_blue_group_icon_160.png)",
+                "brandContrast": "rgba(252, 255, 255, 1)",
+                "brandBackgroundDarkTransparent": "rgba(160, 180, 206, 0.0)",
+                "brandBackgroundDark": "rgba(160, 180, 206, 1)",
+                "brandHeaderContrastActive": "rgba(92, 92, 92, 1)",
+                "brandHeaderContrastCoolActive": "rgba(0, 97, 149, 1)",
+                "brandHeaderContrastWeakActive": "rgba(129, 129, 129, 1)",
+                "brandHeaderContrastWarmActive": "rgba(194, 0, 0, 1)",
+                "brandBackgroundPrimaryTransparent": "rgba(176, 196, 223, 0.0)",
+                "userDefaultAvatarSmall": "url(/_slds/images/themes/lightning_blue/lightning_blue_profile_avatar_96.png)",
+                "brandBackgroundPrimary": "rgba(176, 196, 223, 1)",
+                "brandHeaderContrast": "rgba(106, 106, 106, 1)",
+                "brandContrastActive": "rgba(235, 238, 247, 1)",
+                "userDefaultAvatarMedium": "url(/_slds/images/themes/lightning_blue/lightning_blue_profile_avatar_160.png)"
+            },
+            "error": [],
+            "storable": true
+        }
+    ],
+    "context": {
+        "mode": "PROD",
+        "app": "wave:wave",
+        "pathPrefix": "",
+        "fwuid": "AE898lCB2KpCUerBipCwXg",
+        "mlr": 1,
+        "uad": 1,
+        "descriptorUids": {},
+        "loaded": {
+            "APPLICATION@markup://wave:wave": "9pY-0N-OvGK1DX4n7AoHlg"
+        },
+        "globalValueProviders": [
+            {
+                "type": "$Global",
+                "values": {
+                    "eswConfigDeveloperName": {
+                        "writable": true,
+                        "defaultValue": ""
+                    },
+                    "isVoiceOver": {
+                        "writable": true,
+                        "defaultValue": false
+                    },
+                    "setupAppContextId": {
+                        "writable": true,
+                        "defaultValue": ""
+                    },
+                    "density": {
+                        "writable": true,
+                        "value": "VIEW_ONE"
+                    },
+                    "srcdoc": {
+                        "writable": false,
+                        "defaultValue": false
+                    },
+                    "appContextId": {
+                        "writable": true,
+                        "defaultValue": ""
+                    },
+                    "dynamicTypeSize": {
+                        "writable": true,
+                        "defaultValue": ""
+                    }
+                }
+            }
+        ],
+        "enableAccessChecks": true,
+        "dns": "c",
+        "ls": 1,
+        "lv": "52",
+        "csp": 1,
+        "ch": "https://static.lightning.force.com/gs0",
+        "mna": {
+            "lightning": "interop"
+        },
+        "arse": 1,
+        "services": [
+            "markup://lightning:configProvider",
+            "markup://force:salesforceScopedModuleResolver",
+            "markup://instrumentation:locatorService"
+        ]
+    },
+    "perfSummary": {
+        "version": "core",
+        "request": 77,
+        "actions": {
+            "6;a": {
+                "total": 1,
+                "db": 0
+            },
+            "10;a": {
+                "total": 46,
+                "db": 0
+            }
+        },
+        "actionsTotal": 47,
+        "overhead": 0
+    }
+}

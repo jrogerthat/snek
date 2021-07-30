@@ -1,0 +1,15 @@
+{
+    "dashboard_components":[
+        {"key": "Overview", "path": "static/vendors/images/model_evaluation/version_3_overview.png"},
+        {"key": "Model Evaluation", 
+            "parts":[
+                {"key": "Overall Performance", "path": "static/vendors/images/model_evaluation/version_3_overall_model_performance.png"},
+                {"key": "Cumulative Gains", "path": "static/vendors/images/model_evaluation/version_3_cumulative_gains_chart.png"},
+                {"key": "Cross-Validation", "path": "static/vendors/images/model_evaluation/version_3_cross_validation.png"},
+                {"key": "Coefficients", "path": "static/vendors/images/model_evaluation/version_3_overall_model_performance.png"}
+            ]
+        },
+        {"key": "Threshold Evaluation", "path": "static/vendors/images/model_evaluation/version_3_threshold_evaluation.png"},
+        {"key": "Prediction Examination", "path": "static/vendors/images/model_evaluation/version_3_examination_training_data.png"}
+    ]
+}

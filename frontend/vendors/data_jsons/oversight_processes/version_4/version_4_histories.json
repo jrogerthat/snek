@@ -1,0 +1,75 @@
+{   "pipeline_stages": ["deployment/monitor"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["histories"],
+    "histories": [
+        {
+            "id": "9B4B0000000CvgyKAC",
+            "name": "Framingham Study",
+            "label": "removed major variables",
+            "createdBy": {
+                "id": "005B0000006wvarIAA",
+                "name": "Admin User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+            },
+            "createdDate": "2021-07-28T23:21:00.000Z",
+            "historyUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvgyKAC",
+            "previewUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU?historyId=9B4B0000000CvgyKAC",
+            "revertUrl": null,
+            "isCurrent": true,
+            "status": "Success"
+        },
+        {
+            "id": "9B4B0000000CvRRKA0",
+            "name": "Framingham Study",
+            "label": null,
+            "createdBy": {
+                "id": "005B0000006wvarIAA",
+                "name": "Admin User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+            },
+            "createdDate": "2021-07-26T22:51:07.000Z",
+            "historyUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvRRKA0",
+            "previewUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU?historyId=9B4B0000000CvRRKA0",
+            "revertUrl": null,
+            "isCurrent": false,
+            "status": "Success"
+        },
+        {
+            "id": "9B4B0000000CvRHKA0",
+            "name": "Framingham Study",
+            "label": null,
+            "createdBy": {
+                "id": "005B0000006wvarIAA",
+                "name": "Admin User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+            },
+            "createdDate": "2021-07-26T19:59:50.000Z",
+            "historyUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvRHKA0",
+            "previewUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU?historyId=9B4B0000000CvRHKA0",
+            "revertUrl": null,
+            "isCurrent": false,
+            "status": "Success"
+        },
+        {
+            "id": "9B4B0000000CvR2KAK",
+            "name": "Framingham Study",
+            "label": null,
+            "createdBy": {
+                "id": "005B0000006wvarIAA",
+                "name": "Admin User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+            },
+            "createdDate": "2021-07-26T17:20:37.000Z",
+            "historyUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvR2KAK",
+            "previewUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU?historyId=9B4B0000000CvR2KAK",
+            "revertUrl": null,
+            "isCurrent": false,
+            "status": "Success"
+        }
+    ],
+    "nextPageUrl": null,
+    "totalSize": 4,
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories"
+}

@@ -1,0 +1,52 @@
+{
+    "liveMetrics": {
+        "missingColumns": [],
+        "outOfBoundsColumns": [],
+        "predictions": [
+            {
+                "rowCount": 0,
+                "value": {}
+            }
+        ],
+        "warnings": [
+            {
+                "rowCount": 0,
+                "value": {}
+            }
+        ]
+    },
+    "trainingMetrics": {
+        "mae": null,
+        "rowCount": 3698,
+        "value": {
+            "r2": 0.383093006516778,
+            "nobs": 3698,
+            "nullDeviance": 4408.996527374554,
+            "residualDegreesOfFreedom": 2268,
+            "type": "BinomialGLM",
+            "gini": 0.7212426184646406,
+            "meanPerClassError": 0.22727063229151662,
+            "logloss": 0.4008209616059475,
+            "auc": 0.8606213092323203,
+            "residualDeviance": 2964.471832037588,
+            "confusionMatrices": {
+                "thresholds": [
+                    0.4712859621885789
+                ],
+                "tns": [
+                    2480
+                ],
+                "tps": [
+                    612
+                ],
+                "totalPositives": 782,
+                "totalNegatives": 2916
+            },
+            "rmse": 0.3539537503244024,
+            "aic": 5824.471832037588,
+            "nullDegreesOfFreedom": 3697,
+            "mse": 0.12528325736870938
+        }
+    },
+    "url": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0TRKA0/metrics"
+}

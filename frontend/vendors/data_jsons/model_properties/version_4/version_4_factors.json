@@ -1,0 +1,429 @@
+{
+    "negativeFactors": [
+        {
+            "condition": [
+                {
+                    "fieldName": "sex",
+                    "property": {
+                        "field": "sex",
+                        "type": "String",
+                        "value": "Female"
+                    },
+                    "value": "Female"
+                },
+                {
+                    "fieldName": "glucose",
+                    "property": {
+                        "endValue": 82,
+                        "field": "glucose",
+                        "startValue": 40,
+                        "type": "Range"
+                    },
+                    "value": "40 to 82"
+                }
+            ],
+            "count": 1394,
+            "diffFromAverage": -10.423433375462462,
+            "score": 24.53371592539455
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "bmi",
+                    "property": {
+                        "endValue": 23.6,
+                        "field": "bmi",
+                        "startValue": 22.54,
+                        "type": "Range"
+                    },
+                    "value": "22.55 to 23.6"
+                }
+            ],
+            "count": 423,
+            "diffFromAverage": -10.13445426539602,
+            "score": 24.822695035460992
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "bmi",
+                    "property": {
+                        "endValue": 22.54,
+                        "field": "bmi",
+                        "startValue": 21.08,
+                        "type": "Range"
+                    },
+                    "value": "21.09 to 22.54"
+                }
+            ],
+            "count": 454,
+            "diffFromAverage": -9.186224190724854,
+            "score": 25.770925110132158
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "totchol",
+                    "property": {
+                        "endValue": 199,
+                        "field": "totchol",
+                        "startValue": 183,
+                        "type": "Range"
+                    },
+                    "value": "184 to 199"
+                }
+            ],
+            "count": 430,
+            "diffFromAverage": -7.980405114810498,
+            "score": 26.976744186046513
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "totchol",
+                    "property": {
+                        "endValue": 199,
+                        "field": "totchol",
+                        "startValue": 183,
+                        "type": "Range"
+                    },
+                    "value": "184 to 199"
+                },
+                {
+                    "fieldName": "prevstrk",
+                    "property": {
+                        "field": "prevstrk",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 430,
+            "diffFromAverage": -7.980405114810498,
+            "score": 26.976744186046513
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "sex",
+                    "property": {
+                        "field": "sex",
+                        "type": "String",
+                        "value": "Female"
+                    },
+                    "value": "Female"
+                }
+            ],
+            "count": 2490,
+            "diffFromAverage": -6.563575003668255,
+            "score": 28.393574297188756
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "hyperten",
+                    "property": {
+                        "field": "hyperten",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                },
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 1161,
+            "diffFromAverage": -6.188846113949172,
+            "score": 28.76830318690784
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "hyperten",
+                    "property": {
+                        "field": "hyperten",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 1182,
+            "diffFromAverage": -5.177115459909466,
+            "score": 29.780033840947546
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "prevchd",
+                    "property": {
+                        "field": "prevchd",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                },
+                {
+                    "fieldName": "bpmeds",
+                    "property": {
+                        "field": "bpmeds",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 4063,
+            "diffFromAverage": -2.936474922318986,
+            "score": 32.020674378538025
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "sex",
+                    "property": {
+                        "field": "sex",
+                        "type": "String",
+                        "value": "Female"
+                    },
+                    "value": "Female"
+                },
+                {
+                    "fieldName": "glucose",
+                    "property": {
+                        "endValue": 111,
+                        "field": "glucose",
+                        "startValue": 82,
+                        "type": "Range"
+                    },
+                    "value": "83 to 111"
+                }
+            ],
+            "count": 721,
+            "diffFromAverage": -2.64092183899848,
+            "score": 32.31622746185853
+        }
+    ],
+    "positiveFactors": [
+        {
+            "condition": [
+                {
+                    "fieldName": "glucose",
+                    "property": {
+                        "endValue": 394,
+                        "field": "glucose",
+                        "startValue": 134,
+                        "type": "Range"
+                    },
+                    "value": "135 to 394"
+                }
+            ],
+            "count": 77,
+            "diffFromAverage": 45.56233121862351,
+            "score": 80.51948051948052
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "prevstrk",
+                    "property": {
+                        "field": "prevstrk",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 32,
+            "diffFromAverage": 43.16785069914299,
+            "score": 78.125
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "diabetes",
+                    "property": {
+                        "field": "diabetes",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 121,
+            "diffFromAverage": 42.72880111236613,
+            "score": 77.68595041322314
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "prevchd",
+                    "property": {
+                        "field": "prevchd",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 194,
+            "diffFromAverage": 39.269654822854335,
+            "score": 74.22680412371135
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "bmi",
+                    "property": {
+                        "field": "bmi",
+                        "type": "Null"
+                    },
+                    "value": "Unspecified"
+                }
+            ],
+            "count": 19,
+            "diffFromAverage": 33.463903330721934,
+            "score": 68.42105263157895
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "cigpday",
+                    "property": {
+                        "endValue": 7,
+                        "field": "cigpday",
+                        "startValue": 0,
+                        "type": "Range"
+                    },
+                    "value": "0 to 7"
+                },
+                {
+                    "fieldName": "angina",
+                    "property": {
+                        "field": "angina",
+                        "type": "String",
+                        "value": "Yes"
+                    },
+                    "value": "Yes"
+                }
+            ],
+            "count": 443,
+            "diffFromAverage": 10.415311195756985,
+            "score": 45.372460496613996
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "bmi",
+                    "property": {
+                        "endValue": 56.8,
+                        "field": "bmi",
+                        "startValue": 30.84,
+                        "type": "Range"
+                    },
+                    "value": "30.85 to 56.8"
+                },
+                {
+                    "fieldName": "angina",
+                    "property": {
+                        "field": "angina",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                }
+            ],
+            "count": 342,
+            "diffFromAverage": 8.610102161131294,
+            "score": 43.567251461988306
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "sex",
+                    "property": {
+                        "field": "sex",
+                        "type": "String",
+                        "value": "Male"
+                    },
+                    "value": "Male"
+                },
+                {
+                    "fieldName": "glucose",
+                    "property": {
+                        "endValue": 111,
+                        "field": "glucose",
+                        "startValue": 82,
+                        "type": "Range"
+                    },
+                    "value": "83 to 111"
+                }
+            ],
+            "count": 595,
+            "diffFromAverage": 8.572262463848872,
+            "score": 43.529411764705884
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "sex",
+                    "property": {
+                        "field": "sex",
+                        "type": "String",
+                        "value": "Male"
+                    },
+                    "value": "Male"
+                },
+                {
+                    "fieldName": "glucose",
+                    "property": {
+                        "endValue": 82,
+                        "field": "glucose",
+                        "startValue": 40,
+                        "type": "Range"
+                    },
+                    "value": "40 to 82"
+                }
+            ],
+            "count": 1136,
+            "diffFromAverage": 6.944259149847213,
+            "score": 41.901408450704224
+        },
+        {
+            "condition": [
+                {
+                    "fieldName": "prevchd",
+                    "property": {
+                        "field": "prevchd",
+                        "type": "String",
+                        "value": "No"
+                    },
+                    "value": "No"
+                },
+                {
+                    "fieldName": "bmi",
+                    "property": {
+                        "endValue": 30.84,
+                        "field": "bmi",
+                        "startValue": 28.74,
+                        "type": "Range"
+                    },
+                    "value": "28.75 to 30.84"
+                }
+            ],
+            "count": 417,
+            "diffFromAverage": 5.570428636792869,
+            "score": 40.52757793764988
+        }
+    ],
+    "rowCount": 4434,
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories/9B4B0000000CvgyKAC/summary"
+}

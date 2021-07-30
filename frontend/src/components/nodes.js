@@ -5,6 +5,8 @@ import { viewSingleton } from "../application/viewSingleton";
 
 const radius = 9;
 
+const version = 'version_1';
+
 export function tooltip(event, d){
 
     let tooltip = d3.select('#tooltip');
@@ -193,28 +195,30 @@ export function artifactClicked(event, d){
         d3.selectAll('.hover-label').remove();
         d3.selectAll('.label-wrap').attr('opacity', 1);
     });
-  
-    let buttonRawFile = div.append('button').classed('btn btn-secondary', true).text('See Artifact');
-    buttonRawFile.on('click', ()=> {
-        //console.log('m', d['Source File']);
-        if(d['Source File'] != null){
-            console.log(d['Source File']);
-            d3.json(d['Source File']).then(json => {
-        
-                let rawData = d3.select('#wrapper').select('.more-info').append('div');
-                rawData.html(`${JSON.stringify(json)}`);
-                rawData.style('width', '440px');
-                rawData.style('height', '300px');
-                rawData.style('overflow-x', 'auto');
-                rawData.style('overflow-y', 'auto');
+    
+    if(d['Source File'] != null){
+
+        let buttonRawFile = div.append('button').classed('btn btn-secondary', true).text('See Artifact');
+        buttonRawFile.on('click', ()=> {
+          console.log(d);
+            d3.select('#wrapper').select('.more-info').select('div.raw-file').remove();
+                console.log(`${d['Folder']}${version}/${version}${d['Source File']}`);
+
+                d3.json(`${d['Folder']}${version}/${version}${d['Source File']}`).then(json => {
             
-            });
+                    let rawData = d3.select('#wrapper').select('.more-info').append('div').classed('raw-file', true);
+                    rawData.html(`${JSON.stringify(json)}`);
+                    rawData.style('width', '440px');
+                    rawData.style('height', '300px');
+                    rawData.style('overflow-x', 'auto');
+                    rawData.style('overflow-y', 'auto');
+                });
+           
+          
+          });
 
+    }
 
-        }
-      
-      
-      });
 
      
   }

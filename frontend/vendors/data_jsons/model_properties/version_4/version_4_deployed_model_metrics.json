@@ -1,0 +1,1124 @@
+{
+    "liveMetrics": {
+        "missingColumns": [],
+        "outOfBoundsColumns": [],
+        "predictions": [
+            {
+                "endDate": "2014-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-07-01T00:00:00.000Z",
+                "value": {}
+            }
+        ],
+        "warnings": [
+            {
+                "endDate": "2014-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2014-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2014-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2015-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2015-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2016-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2016-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2017-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2017-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2018-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2018-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2019-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2019-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-07-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-09-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-08-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-10-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-09-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-11-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-10-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2020-12-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-11-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-01-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2020-12-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-02-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-01-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-03-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-02-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-04-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-03-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-05-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-04-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-06-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-05-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-07-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-06-01T00:00:00.000Z",
+                "value": {}
+            },
+            {
+                "endDate": "2021-08-01T00:00:00.000Z",
+                "rowCount": 0,
+                "startDate": "2021-07-01T00:00:00.000Z",
+                "value": {}
+            }
+        ]
+    },
+    "trainingMetrics": {
+        "mae": null,
+        "rowCount": 4434,
+        "value": {
+            "r2": 0.133852467134156,
+            "nobs": 4434,
+            "nullDeviance": 5739.200866552726,
+            "residualDegreesOfFreedom": 3299,
+            "type": "BinomialGLM",
+            "gini": 0.4185356359894412,
+            "meanPerClassError": 0.35916580913605656,
+            "logloss": 0.5788050219057854,
+            "auc": 0.7092678179947206,
+            "residualDeviance": 5132.842934260505,
+            "confusionMatrices": {
+                "thresholds": [
+                    0.5448639124938851
+                ],
+                "tns": [
+                    2781
+                ],
+                "tps": [
+                    314
+                ],
+                "totalPositives": 417,
+                "totalNegatives": 4017
+            },
+            "rmse": 0.443775911473865,
+            "aic": 7402.842934260505,
+            "nullDegreesOfFreedom": 4433,
+            "mse": 0.19693705960445967
+        }
+    },
+    "url": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0grKAC/metrics?count=90&span=month"
+}

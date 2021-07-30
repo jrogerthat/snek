@@ -1,0 +1,44 @@
+{   "pipeline_stages": ["deployment/monitor"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["histories"],
+    
+    "histories": [
+        {
+            "id": "0RmB0000000AuPEKA0",
+            "name": "Change 2",
+            "label": "Change 2",
+            "createdBy": {
+                "id": "005B0000006wvarIAA",
+                "name": "Admin User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+            },
+            "createdDate": "2021-07-07T22:29:54.000Z",
+            "historyUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0TRKA0/histories/0RmB0000000AuPEKA0",
+            "previewUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0TRKA0?historyId=0RmB0000000AuPEKA0",
+            "revertUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0TRKA0",
+            "isCurrent": true,
+            "status": null
+        },
+        {
+            "id": "0RmB0000000Atf6KAC",
+            "name": "Change 1",
+            "label": "Initial Create",
+            "createdBy": {
+                "id": "005B0000006wvarIAA",
+                "name": "Admin User",
+                "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+            },
+            "createdDate": "2021-06-28T20:43:36.000Z",
+            "historyUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0TRKA0/histories/0RmB0000000Atf6KAC",
+            "previewUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0TRKA0?historyId=0RmB0000000Atf6KAC",
+            "revertUrl": "/services/data/v52.0/smartdatadiscovery/predictiondefinitions/1ORB0000000L055OAC/models/1OtB0000000L0TRKA0",
+            "isCurrent": false,
+            "status": null
+        }
+    ],
+    "nextPageUrl": null,
+    "totalSize": null,
+    "url": null
+}
