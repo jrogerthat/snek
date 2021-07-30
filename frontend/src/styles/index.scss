@@ -124,6 +124,12 @@ border-radius: 5px;
   stroke-opacity: .6;
 }
 
+.svg-wrap circle.other{
+  fill: rgb(33, 33, 33);
+  stroke:white;
+  stroke-width: 1px;
+}
+
 circle.hover{
   opacity: 1;
 }
