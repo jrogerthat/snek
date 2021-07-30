@@ -53,7 +53,6 @@ console.log('graph', graph.links)
       .links(graph.links)
       .layout(32);
 
-console.log('graph links', sankey.links())
 
 // add in the links
   var link = svg.append("g").selectAll(".link")
@@ -178,7 +177,7 @@ export function renderHumanVsMachine(nodes){
           obSource.y = +d3.select(m).attr('y') + calcY;
           
           let artifactNode = artifactGroup.filter(f=> f.id === d3.select(m).data()[0].target);
-
+      console.log('artifactNode',artifactNode.data())
           let obTarget = {};
           obTarget.x = +artifactNode.attr('x') + 5;
           obTarget.y = (svg.node().getBoundingClientRect().width * .7) + 6;

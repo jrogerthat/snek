@@ -168,11 +168,11 @@ export function artifactClicked(event, d){
         hoverLabel.text(t=> t['Artifact Type']);
 
         let viewOb = viewSingleton.getInstance();
-        console.log(viewOb.currentView());
+  
         if(viewOb.currentView() === 'human-machine'){
             hoverLabel.style('transform', 'translate(40px, 12px)');
         }else{
-            console.log('does this work??')
+          
             hoverLabel.style('transform', 'translate(-10px, 30px), rotate(40)')
         }
        // hoverLabel.attr('transform', 'translate(100px, 100px)')
@@ -197,6 +197,8 @@ export function artifactClicked(event, d){
     });
     
     if(d['Source File'] != null){
+
+        console.log('d ON CICK', d);
 
         let buttonRawFile = div.append('button').classed('btn btn-secondary', true).text('See Artifact');
         buttonRawFile.on('click', ()=> {

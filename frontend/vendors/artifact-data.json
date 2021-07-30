@@ -121,7 +121,7 @@
     "Artifact Group": "Data Properties",
     "Artifact Type": "Cleaning Transformations",
     "Source": "data/derived,system/processes",
-    "Transmission Mode": "Boundry Crossing/H-M",
+    "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/tensor,specification/visualization",
     "Task": "Steering",
     "Dependencies": "4A"

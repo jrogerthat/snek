@@ -30,9 +30,14 @@
     "target": "4B"
   },
   {
+    "source": "Machine",
+    "subsource": 4,
+    "target": "4C-1"
+  },
+  {
     "source": "Human",
     "subsource": 4,
-    "target": "4C"
+    "target": "4C-2"
   },
   {
     "source": "Machine",
