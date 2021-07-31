@@ -22,11 +22,15 @@ export let versionSingleton = (function () {
         let otherVersions = function(){
             return _otherVersionArray;
         }
+        let allVersions = function(){
+            return _versionArray;
+        }
 
         return{
             otherVersions : otherVersions,
             currentVersion : currentVersion,
             changeVersion : changeVersion,
+            allVersions : allVersions
         }
     }
     return {

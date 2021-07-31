@@ -222,18 +222,30 @@ export function artifactClicked(event, d){
 
                 event.target.innerHTML = "Hide Artifact History";
 
-                let sources = d['Source File'].map( m => {
+                // let sources = d['Source File'].map( m => {
                
-                    let versionsS = versOb.otherVersions().map( async ov => {
+                //     let versionsS = versOb.otherVersions().map( async ov => {
+                //         let ob = {}
+                //         let json = await d3.json(`${m.path}${ov}/${ov}${m.file_name}`);
+                //         ob[ov] = json.changed_from_prev === true ? json : null;
+                //         return ob;
+                //     });
+                //     return versionsS;
+                // });
+
+                let sources = versOb.otherVersions().map( ov => {
+                    let topOb = {};
+                    topOb.version = ov;
+                    topOb.sources = d['Source File'].map( async m => {
                         let ob = {}
                         let json = await d3.json(`${m.path}${ov}/${ov}${m.file_name}`);
-                        ob[ov] = json.changed_from_prev === true ? json : null;
+                        ob[m.what] = json.changed_from_prev === true ? json : null;
                         return ob;
                     });
-                    return versionsS;
+                    return topOb;
                 });
 
-                console.log(sources, viewOb.currentView())
+                
                 if(viewOb.currentView() === "human-machine"){
                     renderHistoryHorizontal(sources);
                 }else{
