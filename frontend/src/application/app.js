@@ -18,7 +18,8 @@ let svg = d3.select('#container').select('#wrapper').append('svg').classed('svg-
 renderNodes(nodeFormat);
 dropDownChangeView(nodeFormat);
 dropDownChangeVersion();
-renderHumanVsMachine(nodeFormat);
+//renderHumanVsMachine(nodeFormat);
+depend.renderDependencyVis(nodeFormat)
 
 
 

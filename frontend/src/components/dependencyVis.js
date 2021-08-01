@@ -3,7 +3,7 @@ import * as d3Array from "d3-array";
 import * as artifactDependencies from "../../vendors/links/artifact-dependencies.json";
 import { machineOrHuman } from "../application/generalHelpers";
 import { viewSingleton } from "../application/viewSingleton";
-import { nodeHoverInteraction } from "./nodes";
+import { artifactClicked, nodeHoverInteraction } from "./nodes";
 
 const radius = 9;
 
@@ -39,8 +39,6 @@ export function renderDependencyVis(nodes){
     let arcGroup = visWrap.append('g').classed('arc-wrap', true);
     arcGroup.attr('transform', 'translate(0, 200)');
     let svg = d3.select('#container').select('svg');
-
-    console.log(nodes.length, svg.node().getBoundingClientRect().width);
 
     let xScale = d3.scaleLinear()
         .domain([0, nodes.length])
@@ -98,8 +96,7 @@ export function renderDependencyVis(nodes){
         .style('fill', '#fff')
         .attr('transform', `translate(${(start + (xScale(nodeD.length) * .43))},${(svgHeight + 15)}), rotate(40)`);
     });
-
-
-
+    
+    artifactGroup.on('click', (event, d)=> artifactClicked(event, d));
 }
 

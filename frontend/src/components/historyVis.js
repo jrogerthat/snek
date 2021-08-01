@@ -29,6 +29,10 @@ export function renderHistoryHorizontal(sources){
     
     history.append('circle').attr('r', 20).attr('cx', 0).attr('cy', 0);
     d3.select('.secondary-vis').style('opacity', .1);
+
+    let text = history.append('text').text(d => d.version);
+    text.style('fill', '#fff')
+    .attr('transform', `translate(0, -22), rotate(-40)`);
     
     let first = beforeHis.size() > 0 ? beforeHis.nodes()[0].getBoundingClientRect().x - d3.select('.clicked-selected').node().getBoundingClientRect().x : 0;
     let second = afterHis.size() > 0 ? afterHis.nodes()[(afterHis.nodes().length - 1)].getBoundingClientRect().x - d3.select('.clicked-selected').node().getBoundingClientRect().x : 0;
@@ -45,6 +49,74 @@ export function renderHistoryHorizontal(sources){
         .attr("y1", 7)
         .attr("x2", second)
         .attr("y2", 10);
+}
+
+export function renderHistoryVertical(sources){
+
+    let versOb = versionSingleton.getInstance();
+    versOb.allVersions();
+
+    let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
+    let pathG = parent.append('g').classed('version-path', true);
+
+    let history = parent.selectAll('g.version_group')
+        .data(sources.filter(f=> f.version != versOb.currentVersion())).join('g')
+        .classed('version_group', true);
+
+    let versionIndex = versOb.allVersions().indexOf(versOb.currentVersion());
+
+    let beforeHis = history.filter(f => versOb.allVersions().indexOf(f.version) < versionIndex);
+    let afterHis = history.filter(f => versOb.allVersions().indexOf(f.version) > versionIndex);
+    
+    let moveB = d3.scaleLinear().domain([0, beforeHis.size()]).range([(-(beforeHis.size() * 150)), 0])
+    let moveF = d3.scaleLinear().domain([0, 3]).range([0, 400])
+
+    beforeHis.style('transform', (d, i, n) => {
+        return `translate(10px, -${((n.length - i) * 130)}px)`});
+
+    afterHis.style('transform', (d, i) => {
+        return `translate(10px, ${((i + 1) * 150)}px)`});
+
+    //GETTING DEPENDICIES AND THEIR HISTORY
+    console.log('parent', parent.data()[0].Dependencies)
+    let testFilter = d3.selectAll('.artifact').filter(f=> {
+        return (f.Dependencies != null && f.Dependencies.includes(parent.data()[0]['Artifact ID'])) || (f.Dependencies != null && parent.data()[0].Dependencies.includes(f['Artifact ID']))
+    });
+
+    console.log(testFilter)
+
+    //THIS IS WHERE IT CHANGED
+    let test = history.filter(f=> {
+        f.sources.filter(async s => {
+            let tes = await s;
+            console.log(tes.value);
+        });
+       
+    })
+    
+    history.append('circle').attr('r', 20).attr('cx', 0).attr('cy', 0);
+    d3.select('.secondary-vis').style('opacity', .1);
+
+    let text = history.append('text').text(d => d.version);
+    text.style('fill', '#fff')
+    .attr('transform', `translate(25, 0)`);
+    
+    let first = beforeHis.size() > 0 ? beforeHis.nodes()[0].getBoundingClientRect().y - d3.select('.clicked-selected').node().getBoundingClientRect().y : 0;
+    let second = afterHis.size() > 0 ? afterHis.nodes()[(afterHis.nodes().length - 1)].getBoundingClientRect().y - d3.select('.clicked-selected').node().getBoundingClientRect().y : 0;
+    
+    if(beforeHis.size() > 1){
+        d3.select('svg').select('g').attr('transform', 'translate(5, 190)')
+        d3.select('svg').style('width', '1100px');
+    }
+    pathG.append('line')
+        .classed('version-line', true)
+        .style("stroke", "gray")
+        .style("stroke-width", 2)
+        .style("stroke-dasharray", "5,5")
+        .attr("y1", first)
+        .attr("x1", 7)
+        .attr("y2", second)
+        .attr("x2", 10);
 }
 
 export function removeHistory(){

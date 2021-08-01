@@ -3,7 +3,7 @@ import * as d3Array from "d3-array";
 import { machineOrHuman } from "../application/generalHelpers";
 import { versionSingleton } from "../application/versionControlSingleton";
 import { viewSingleton } from "../application/viewSingleton";
-import { removeHistory, renderHistoryHorizontal } from "./historyVis";
+import { removeHistory, renderHistoryHorizontal, renderHistoryVertical } from "./historyVis";
 
 const radius = 9;
 
@@ -239,7 +239,8 @@ export function artifactClicked(event, d){
                     topOb.sources = d['Source File'].map( async m => {
                         let ob = {}
                         let json = await d3.json(`${m.path}${ov}/${ov}${m.file_name}`);
-                        ob[m.what] = json.changed_from_prev === true ? json : null;
+                        ob.key = m.what;
+                        ob.value = json.changed_from_prev === true ? json : null;
                         return ob;
                     });
                     return topOb;
@@ -249,7 +250,7 @@ export function artifactClicked(event, d){
                 if(viewOb.currentView() === "human-machine"){
                     renderHistoryHorizontal(sources);
                 }else{
-                    console.log('make version for vertical history')
+                    renderHistoryVertical(sources);
                 }
                 
 
@@ -284,25 +285,11 @@ export function artifactClicked(event, d){
                     rawData.style('overflow-y', 'auto');
     
                 });
-
                 event.target.innerHTML = "Hide Artifact";
-
             }else{
-
-
                 event.target.innerHTML = "See Artifact";
                 d3.select('.raw-file').remove();
-
             }
-
-        
-
-           
-          
           });
-
     }
-
-
-     
   }

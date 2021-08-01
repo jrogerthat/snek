@@ -48,7 +48,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "Specification (Component)",
     "Task": "Steering/Directing",
-    "Dependencies": "1B",
+    "Dependencies": ["1B"],
     "Has Versions": false
   },
   {
@@ -66,7 +66,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "Specification",
     "Task": "Steering/Directing",
-    "Dependencies": "1B"
+    "Dependencies": ["1B"]
   },
   {
     "Artifact ID": "3A",
@@ -94,7 +94,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/network,specification/visualization",
     "Task": "informing/provanance,governing/auditing",
-    "Dependencies": "1A"
+    "Dependencies": ["1A"]
   },
   {
     "Artifact ID": "4B",
@@ -108,7 +108,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/network,specification/visualization",
     "Task": "informing/provanance,governing/auditing",
-    "Dependencies": "1A,4A"
+    "Dependencies": ["1A","4A"]
   },
   {
     "Artifact ID": "4C-1",
@@ -124,7 +124,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/tensor,specification/visualization",
     "Task": "Steering",
-    "Dependencies": "4A"
+    "Dependencies": ["4A"]
   },
   {
     "Artifact ID": "4C-2",
@@ -140,7 +140,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "multi-value/tensor,specification/visualization",
     "Task": "Steering",
-    "Dependencies": "4A,4C-1"
+    "Dependencies": ["4A","4C-1"]
   },
   {
     "Artifact ID": "5A",
@@ -156,7 +156,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/curating",
-    "Dependencies": "1A,2B"
+    "Dependencies": ["1A","2B"]
   },
   {
     "Artifact ID": "5B",
@@ -170,7 +170,7 @@
     "Transmission Mode": "Non-Boundary/H-H",
     "Artifact Format": "specification/visualization",
     "Task": "sharing/distributed",
-    "Dependencies": "5A"
+    "Dependencies": ["5A"]
   },
   {
     "Artifact ID": "6A",
@@ -187,7 +187,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "specification/workflow,specification/visualization",
     "Task": "informing/descriptive,steering/directing",
-    "Dependencies": "2A"
+    "Dependencies": ["2A"]
   },
   {
     "Artifact ID": "6B",
@@ -201,7 +201,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "multi-value/tensor,specification/visualization",
     "Task": "Steering/Directing",
-    "Dependencies": "1A"
+    "Dependencies": ["1A"]
   },
   {
     "Artifact ID": "6C",
@@ -217,7 +217,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/descriptive",
-    "Dependencies": "3A"
+    "Dependencies": ["3A"]
   },
   {
     "Artifact ID": "6D",
@@ -233,7 +233,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "single-value/number,specification/visualization",
     "Task": "informing/descriptive",
-    "Dependencies": "3A,4A"
+    "Dependencies": ["3A","4A"]
   },
   {
     "Artifact ID": "6E",
@@ -249,7 +249,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/explanatory",
-    "Dependencies": "1C"
+    "Dependencies": ["1C"]
   },
   {
     "Artifact ID": "6F",
@@ -265,7 +265,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/explanatory",
-    "Dependencies": "1C,3A"
+    "Dependencies": ["1C","3A"]
   },
   {
     "Artifact ID": "6G",
@@ -281,7 +281,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization,report/interactive",
     "Task": "informing/descriptive,exploring/targeted",
-    "Dependencies": "6A,6C,6D,6E,6F"
+    "Dependencies": ["6A","6C","6D","6E","6F"]
   },
   {
     "Artifact ID": "6H",
@@ -297,7 +297,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "multi-value/list,specification/visualization,report/interactive",
     "Task": "informing/descriptive,exploring/targeted",
-    "Dependencies": "6A,6B,6C,6D,6E"
+    "Dependencies": ["6A","6B","6C","6D","6E"]
   },
   {
     "Artifact ID": "7A",
@@ -313,7 +313,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "single-value/textual,specification/visualization",
     "Task": "informing/descriptive,governing/assigning",
-    "Dependencies": "2A"
+    "Dependencies": ["2A"]
   },
   {
     "Artifact ID": "7B",
@@ -327,7 +327,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "single-value/textual,specification/visualization",
     "Task": "governing/authorization",
-    "Dependencies": "1B"
+    "Dependencies": ["1B"]
   },
   {
     "Artifact ID": "7C",
@@ -341,7 +341,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "single-value/textual,report/static",
     "Task": "informing/curative,informing/comparative",
-    "Dependencies": "6A,6B,6C,6D,6E"
+    "Dependencies": ["6A","6B","6C","6D","6E"]
   },
   {
     "Artifact ID": "8A",
@@ -373,7 +373,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "single-value/textual,report/static",
     "Task": "informing/descriptive,sharing/distributed",
-    "Dependencies": "6G"
+    "Dependencies": ["6G"]
   },
   {
     "Artifact ID": "10A",
@@ -387,7 +387,7 @@
     "Transmission Mode": "Non-Boundary/H-H",
     "Artifact Format": "single-value/textual,report/static",
     "Task": "sharing/targeted,steering",
-    "Dependencies": "9A"
+    "Dependencies": ["9A"]
   },
   {
     "Artifact ID": "11A",
@@ -401,6 +401,6 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "single-value/textual,report/interactive",
     "Task": "informing/provenance,governing/auditing",
-    "Dependencies": "4A,6H,UI"
+    "Dependencies": ["4A","6H","UI"]
   }
 ]
