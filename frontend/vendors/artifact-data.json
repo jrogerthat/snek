@@ -53,7 +53,7 @@
   },
   {
     "Artifact ID": "2B",
-    "Folder": "static/vendors/data_jsons/model_properties/",
+    "Folder": "static/vendors/data_jsons/analysis_properties/",
     "Source File": [
       {"what":"story input","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name":"_story_summary.json"},
       {"what":"analysis details","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name":"_analysis.json"}
@@ -249,7 +249,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/explanatory",
-    "Dependencies": ["1C"]
+    "Dependencies": ["2A"]
   },
   {
     "Artifact ID": "6F",
@@ -265,7 +265,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/explanatory",
-    "Dependencies": ["1C","3A"]
+    "Dependencies": ["2A","3A"]
   },
   {
     "Artifact ID": "6G",
@@ -303,7 +303,8 @@
     "Artifact ID": "7A",
     "Folder": "static/vendors/data_jsons/oversight_processes/",
     "Source File": [
-      {"what":"story summary","path":"static/vendors/data_jsons/oversight_processes/","format":"json","file_name": "_story_summary.json"}
+      {"what":"story summary","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name": "_story_summary.json"},
+      {"what":"story summary","path":"static/vendors/data_jsons/oversight_processes/","format":"json","file_name": "_story_versioning.json"}
     ], 
     "Stage": "Deployment",
     "Step": "Deploy",

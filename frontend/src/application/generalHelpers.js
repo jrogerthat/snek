@@ -32,7 +32,7 @@ export function machineOrHuman(d){
       d3.select('.dropdown').select('span').text(d3.select(event.target).text());
       let versOb = versionSingleton.getInstance();
       versOb.changeVersion(d3.select(event.target).text());
-      console.log(versOb.currentVersion());
+      
     });
 
 

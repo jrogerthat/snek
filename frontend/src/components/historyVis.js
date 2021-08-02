@@ -106,6 +106,7 @@ export function renderHistoryVertical(sources){
 
     //GETTING DEPENDICIES AND THEIR HISTORY
     let testFilter = d3.selectAll('.artifact').filter(f=> {
+        console.log(f['Artifact ID'], parent.data()[0].Dependencies.includes(f['Artifact ID']))
         return (f.Dependencies != null && f.Dependencies.includes(parent.data()[0].id)) || (f.Dependencies != null && parent.data()[0].Dependencies.includes(f['Artifact ID']))
     });
     
@@ -114,13 +115,24 @@ export function renderHistoryVertical(sources){
         return sources;
     });
 
+
+    console.log('test filter',testFilter)
+
     let otherHistories = renderHistoryGroups(testFilter, testS);
 
-    otherHistories.append('circle').attr('r', 10).attr('cx', 0).attr('cy', 0);
+    let otherHistoryThatChanged = otherHistories.filter(async f=> {
+        console.log('f sources', f.sources);
+        let changed = f.sources.filter(async s => {
+            let sou = await s;
+            return sou['value'].changed_from_prev = true;
+        });
+        return changed;
+    });
+
+    otherHistoryThatChanged.append('circle').attr('r', 10).attr('cx', 0).attr('cy', 0);
     d3.select('.secondary-vis').style('opacity', .1);
 
     //THIS IS WHERE IT CHANGED
-
     let historyThatChanged = history.filter(async f=> {
         let changed = f.sources.filter(async s => {
             let sou = await s;
