@@ -1,16 +1,17 @@
 # Snek: Surfacing Artifacts from AutoML
-## Running Frontend Dev Server
-#### `cd frontend`
-#### `npm install`
-#### `npm run watch`
 
-## Install Python requirements
-#### `pip install -r requirements.txt`
+## Install Dependencies and Run Frontend Dev Server
+* `cd frontend`
+* `npm install`
+* `npm run watch`
 
-## Setting debug mode on
-#### `export FLASK_DEBUG=1`
+## Install Python Requirements
+* `pip install -r requirements.txt`
 
-## Running Flask Server
-#### `env FLASK_APP=app.py flask run`
+## Set Debug Mode On
+* `export FLASK_DEBUG=1`
+
+## Run Flask Server
+* `env FLASK_APP=app.py flask run`
 
 
