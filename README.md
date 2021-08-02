@@ -6,7 +6,7 @@
 * `npm run watch`
 
 ## Install Python Requirements
-* `pip install -r requirements.txt`
+* `pip (or pip3) install -r requirements.txt`
 
 ## Set Debug Mode On
 * `export FLASK_DEBUG=1`
