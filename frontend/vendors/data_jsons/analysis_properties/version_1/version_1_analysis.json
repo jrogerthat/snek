@@ -1,5 +1,11 @@
-{   "could_pull_from_API": true,
+{   "pipeline_stages": ["preparation/goal"],
+    "could_pull_from_API": true,
     "interface_components": null,
+    "has_versions": true,
+
+    "changed_from_prev" : true,
+    "areas_changed": ["createdBy","createdDate","folder","id","input","inputProfile","label","label","lastModifiedBy","lastModifiedDate","outcome","setup"],
+
     "createdBy": {
         "id": "005B0000006wvarIAA",
         "name": "Admin User",
@@ -11,7 +17,7 @@
         "label": "Artifact Trace",
         "url": "/services/data/v52.0/wave/folders/00lB0000000TKYMIA4"
     },
-    "id": "9B4B0000000CvR2KAK",
+    "id": "9B4B0000000CvR2KAK", 
     "input": {
         "dataset": {
             "id": "0FbB0000000INzcKAG",

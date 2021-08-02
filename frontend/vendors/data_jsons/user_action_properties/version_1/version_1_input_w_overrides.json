@@ -1,0 +1,806 @@
+{   
+    "pipeline_stages": ["preparation/wrangle"],
+    "could_pull_from_API": false,
+    "interface_components":null,
+
+    "changed_from_prev" : true,
+    "areas_changed": ["setup/fields", "setup/overrides"],
+
+    "lastModifiedBy": {
+        "id": "005B0000006wvfPIAQ",
+        "name": "Integration User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
+    },
+    "lastModifiedDate": "2021-07-26T17:24:07.000Z",
+    "setup": {
+        "fields": [
+            {
+                "type": "number",
+                "name": "glucose",
+                "displayName": "glucose",
+                "min": 40,
+                "max": 394,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "number",
+                "name": "totchol",
+                "displayName": "totchol",
+                "min": 107,
+                "max": 696,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "number",
+                "name": "randid",
+                "displayName": "randid",
+                "min": 2448,
+                "max": 9999312,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": true,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "number",
+                "name": "diabp",
+                "displayName": "diabp",
+                "min": 48,
+                "max": 142.5,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "number",
+                "name": "sysbp",
+                "displayName": "sysbp",
+                "min": 83.5,
+                "max": 295,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "number",
+                "name": "age",
+                "displayName": "age",
+                "min": 32,
+                "max": 70,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "number",
+                "name": "cigpday",
+                "displayName": "cigpday",
+                "min": 0,
+                "max": 70,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "number",
+                "name": "heartrte",
+                "displayName": "heartrte",
+                "min": 44,
+                "max": 143,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "number",
+                "name": "bmi",
+                "displayName": "bmi",
+                "min": 15.54,
+                "max": 56.8,
+                "bucketingStrategy": "PERCENTILE",
+                "numBuckets": 10,
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "mi_fchd",
+                "displayName": "mi_fchd",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 3703,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 731,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "death",
+                "displayName": "death",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 2884,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 1550,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "prevhyp",
+                "displayName": "prevhyp",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 3004,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 1430,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "prevchd",
+                "displayName": "prevchd",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 4240,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 194,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "angina",
+                "displayName": "angina",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 3709,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 725,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "sex",
+                "displayName": "sex",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "Female",
+                        "displayName": "Female",
+                        "count": 2490,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Male",
+                        "displayName": "Male",
+                        "count": 1944,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "hospmi",
+                "displayName": "hospmi",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 3980,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 454,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "stroke",
+                "displayName": "stroke",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 4019,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 415,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "bpmeds",
+                "displayName": "bpmeds",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 4229,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 144,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "cvd",
+                "displayName": "cvd",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 3277,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 1157,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "cursmoke",
+                "displayName": "cursmoke",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 2253,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 2181,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "prevstrk",
+                "displayName": "prevstrk",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 4402,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 32,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "prevap",
+                "displayName": "prevap",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 4287,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 147,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "prevmi",
+                "displayName": "prevmi",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 4348,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 86,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "diabetes",
+                "displayName": "diabetes",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 4313,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 121,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "hyperten",
+                "displayName": "hyperten",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 3252,
+                        "ignored": false
+                    },
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 1182,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            },
+            {
+                "type": "text",
+                "name": "anychd",
+                "displayName": "anychd",
+                "ordering": "OCCURRENCE",
+                "includeOther": true,
+                "support": 24,
+                "values": [
+                    {
+                        "name": "No",
+                        "displayName": "No",
+                        "count": 3194,
+                        "ignored": false
+                    },
+                    {
+                        "name": "Yes",
+                        "displayName": "Yes",
+                        "count": 1240,
+                        "ignored": false
+                    }
+                ],
+                "ignored": false,
+                "sensitive": false,
+                "highCardinality": false,
+                "uniqueEquivalent": false,
+                "protected": false
+            }
+        ],
+        "transformations": [],
+        "overrides": {
+            "outcome": {
+                "type": "text",
+                "name": "death",
+                "displayName": "death",
+                "predictionType": "Binary",
+                "goal": "Maximize",
+                "success": "Yes",
+                "failure": "No"
+            },
+            "fields": [
+                {
+                    "type": "number",
+                    "name": "glucose",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "number",
+                    "name": "totchol",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "number",
+                    "name": "randid",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "number",
+                    "name": "diabp",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "number",
+                    "name": "sysbp",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "number",
+                    "name": "age",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "number",
+                    "name": "cigpday",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "number",
+                    "name": "heartrte",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "number",
+                    "name": "bmi",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "mi_fchd",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "death",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevhyp",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevchd",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "angina",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "sex",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "hospmi",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "stroke",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "bpmeds",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "cvd",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "cursmoke",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevstrk",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevap",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "prevmi",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "diabetes",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "hyperten",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                },
+                {
+                    "type": "text",
+                    "name": "anychd",
+                    "highCardinality": false,
+                    "uniqueEquivalent": false,
+                    "protected": false
+                }
+            ],
+            "modelConfiguration": {
+                "modelAlgType": "GLM"
+            },
+            "transformations": []
+        }
+    },
+    "status": "Success",
+    "url": "/services/data/v52.0/smartdatadiscovery/analyses/9B4B0000000CvR2KAK"
+}

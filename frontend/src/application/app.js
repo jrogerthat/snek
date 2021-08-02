@@ -4,9 +4,9 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import "../components/sidebar";
 import * as dataF from "../../vendors/artifact-data.json";
 import * as depend from "../components/dependencyVis";
-import { dropDownInteraction } from "./generalHelpers";
+import { dropDownChangeVersion, dropDownChangeView } from "./generalHelpers";
 import { renderNodes } from "../components/nodes";
-import { renderHumanVsMachine, renderTest } from "../components/humanVsMachineVis";
+import { renderHumanVsMachine } from "../components/humanVsMachineVis";
 
 let nodeFormat = dataF.map((m, i)=>{
   m.name = m['Artifact Type'];
@@ -16,11 +16,13 @@ let nodeFormat = dataF.map((m, i)=>{
 
 let svg = d3.select('#container').select('#wrapper').append('svg').classed('svg-wrap', true);
 renderNodes(nodeFormat);
-dropDownInteraction(nodeFormat);
-renderHumanVsMachine(nodeFormat);
-//depend.renderDependencyVis(nodeFormat);
+dropDownChangeView(nodeFormat);
+dropDownChangeVersion();
+//renderHumanVsMachine(nodeFormat);
+depend.renderDependencyVis(nodeFormat)
 
-//renderTest(nodeFormat);
+
+
 
 
 

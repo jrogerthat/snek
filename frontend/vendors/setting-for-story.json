@@ -1,0 +1,29 @@
+{
+    "action": "query",
+    "responseId": "4dKZA2f4IelhbP-qbvffo-",
+    "results": {
+        "metadata": [
+            {
+                "lineage": {
+                    "type": "foreach",
+                    "projections": [
+                        {
+                            "field": {
+                                "id": "q.count",
+                                "type": "numeric"
+                            }
+                        }
+                    ]
+                },
+                "queryLanguage": "SAQL"
+            }
+        ],
+        "records": [
+            {
+                "count": 4434
+            }
+        ]
+    },
+    "query": "q = load \"0FbB0000000INzcKAG/0FcB00000059uwqKAA\";  q = group q by all; q = foreach q generate count() as 'count'; ",
+    "responseTime": 12
+}

@@ -1,0 +1,51 @@
+{   "pipeline_stages": ["preparation/goal"],
+    "could_pull_from_API": true,
+    "interface_components": null,
+
+    "changed_from_prev" : false,
+    "areas_changed": null,
+    
+    "createdBy": {
+        "id": "005B0000006wvarIAA",
+        "name": "Admin User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+    },
+    "createdDate": "2021-07-26T17:20:37.000Z",
+    "folder": {
+        "id": "00lB0000000TKYMIA4",
+        "label": "Artifact Trace",
+        "url": "/services/data/v52.0/wave/folders/00lB0000000TKYMIA4"
+    },
+    "historiesUrl": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU/histories",
+    "id": "1Y3B00000004LuRKAU",
+    "input": {
+        "dataset": {
+            "id": "0FbB0000000INzcKAG",
+            "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG"
+        },
+        "datasetVersion": {
+            "id": "0FcB00000059uwqKAA",
+            "url": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/versions/0FcB00000059uwqKAA"
+        },
+        "type": "AnalyticsDataset"
+    },
+    "label": "Framingham Study",
+    "lastModifiedBy": {
+        "id": "005B0000006wvarIAA",
+        "name": "Admin User",
+        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
+    },
+    "lastModifiedDate": "2021-07-28T23:21:00.000Z",
+    "outcome": {
+        "failureValue": "No",
+        "goal": "Maximize",
+        "label": "death (Yes)",
+        "name": "death",
+        "successValue": "Yes",
+        "type": "Text"
+    },
+    "runId": "9B4B0000000CvgyKAC",
+
+    "status": "Success",
+    "url": "/services/data/v52.0/smartdatadiscovery/stories/1Y3B00000004LuRKAU"
+}

@@ -1,0 +1,11 @@
+{
+    "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": false,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["insights"],
+
+    "model_code_files" : [
+        {"format": "md", "path": "static/vendors/data_jsons/model_properties/version_4/version_4_model_code.md"}
+    ]
+}

@@ -2,7 +2,10 @@
   {
     "Artifact ID": "1A",
     "Folder": "static/vendors/",
-    "Source File": "farminghamstudy_baseline_no_time - farminghamstudy_baseline.csv",
+    "Source File": [
+      {"what":"raw file","path":"static/vendors/data_properties/","format":"csv","file_name":"_farminghamstudy_baseline_no_time - farminghamstudy_baseline.csv"},
+      {"what":"version meta","path":"static/vendors/data_properties/","format":"json","file_name":"_current_data_meta.json"}
+    ],
     "Stage": "Preparation",
     "Step": "Data",
     "Artifact Group": "Data Properties",
@@ -12,12 +15,14 @@
     "Artifact Format": "Tensor",
     "Task": "Steering/Directing",
     "Dependencies": null,
-    "Has Versions": false
+    "Has Versions": true
   },
   {
     "Artifact ID": "1B",
     "Folder": "static/vendors/data_jsons/oversight_processes/",
-    "Source File": "requirements.json",
+    "Source File": [
+      {"what":"requirements","path":"static/vendors/data_jsons/oversight_processes/","format":"json","file_name":"_requirements.json"}
+    ],
     "Stage": "Preparation",
     "Step": "Data",
     "Artifact Group": "Oversight Processes",
@@ -32,7 +37,9 @@
   {
     "Artifact ID": "2A",
     "Folder": "static/vendors/data_jsons/analysis_properties/",
-    "Source File": "current_analysis_outcome.json",
+    "Source File": [
+      {"what":"outcome","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name":"_outcome.json"}
+    ], 
     "Stage": "Preparation",
     "Step": "Goal",
     "Artifact Group": "Analysis Properties",
@@ -41,13 +48,16 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "Specification (Component)",
     "Task": "Steering/Directing",
-    "Dependencies": "1B",
+    "Dependencies": ["1B"],
     "Has Versions": false
   },
   {
     "Artifact ID": "2B",
-    "Folder": "static/vendors/data_jsons/model_properties/",
-    "Source File": "current_analysis_input.json",
+    "Folder": "static/vendors/data_jsons/analysis_properties/",
+    "Source File": [
+      {"what":"story input","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name":"_story_summary.json"},
+      {"what":"analysis details","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name":"_analysis.json"}
+    ], 
     "Stage": "Preparation",
     "Step": "Goal",
     "Artifact Group": "Model Properties",
@@ -56,7 +66,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "Specification",
     "Task": "Steering/Directing",
-    "Dependencies": "1B"
+    "Dependencies": ["1B"]
   },
   {
     "Artifact ID": "3A",
@@ -65,7 +75,7 @@
     "Stage": "Preparation",
     "Step": "Profile",
     "Artifact Group": null,
-    "Artifact Type": null,
+    "Artifact Type": "User Leaves System",
     "Source": null,
     "Transmission Mode": null,
     "Artifact Format": null,
@@ -84,7 +94,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/network,specification/visualization",
     "Task": "informing/provanance,governing/auditing",
-    "Dependencies": "1A"
+    "Dependencies": ["1A"]
   },
   {
     "Artifact ID": "4B",
@@ -98,12 +108,30 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/network,specification/visualization",
     "Task": "informing/provanance,governing/auditing",
-    "Dependencies": "1A,4A"
+    "Dependencies": ["1A","4A"]
   },
   {
-    "Artifact ID": "4C",
-    "Folder": "static/vendors/data_jsons/model_properties/",
-    "Source File": "current_analysis_input.json",
+    "Artifact ID": "4C-1",
+    "Folder": "static/vendors/data_jsons/data_properties/",
+    "Source File": [
+      {"what":"input_overrides","path":"static/vendors/data_jsons/data_properties/","format":"json","file_name":"_improvements.json"}
+    ], 
+    "Stage": "Preparation",
+    "Step": "Wrangling",
+    "Artifact Group": "Data Properties",
+    "Artifact Type": "Cleaning Transformations",
+    "Source": "data/derived,system/processes",
+    "Transmission Mode": "Boundry Crossing/M-H",
+    "Artifact Format": "multi-value/tensor,specification/visualization",
+    "Task": "Steering",
+    "Dependencies": ["4A"]
+  },
+  {
+    "Artifact ID": "4C-2",
+    "Folder": "static/vendors/data_jsons/user_action_properties/",
+    "Source File": [
+      {"what":"input_overrides","path":"static/vendors/data_jsons/user_action_properties/","format":"json","file_name":"_input_w_overrides.json"}
+    ], 
     "Stage": "Preparation",
     "Step": "Wrangling",
     "Artifact Group": "Data Properties",
@@ -112,12 +140,14 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "multi-value/tensor,specification/visualization",
     "Task": "Steering",
-    "Dependencies": "4A"
+    "Dependencies": ["4A","4C-1"]
   },
   {
     "Artifact ID": "5A",
     "Folder": "static/vendors/data_jsons/automated_reporting_processes/",
-    "Source File": "insights.json",
+    "Source File": [
+      {"what":"insights","path":"static/vendors/data_jsons/automated_reporting_processes/","format":"json","file_name":"_insights.json"}
+    ], 
     "Stage": "Analysis",
     "Step": "Exploration",
     "Artifact Group": "Automated Reporting",
@@ -126,12 +156,12 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/curating",
-    "Dependencies": "1A"
+    "Dependencies": ["1A","2B"]
   },
   {
     "Artifact ID": "5B",
     "Folder": null,
-    "Source File": null,
+    "Source File": null, 
     "Stage": "Analysis",
     "Step": "Exploration",
     "Artifact Group": "Interface Components",
@@ -140,12 +170,15 @@
     "Transmission Mode": "Non-Boundary/H-H",
     "Artifact Format": "specification/visualization",
     "Task": "sharing/distributed",
-    "Dependencies": "5A"
+    "Dependencies": ["5A"]
   },
   {
     "Artifact ID": "6A",
     "Folder": "static/vendors/data_jsons/model_properties/",
-    "Source File": "current_analysis_input.json,input_profile.json",
+    "Source File": [
+      {"what":"model parameters","path":"static/vendors/data_jsons/model_properties/","format":"json","file_name":"_model_version_summary.json"},
+      {"what":"model code","path":"static/vendors/data_jsons/model_properties/","format":"md","file_name":"_model_code_files.json"}
+    ], 
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -154,7 +187,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "specification/workflow,specification/visualization",
     "Task": "informing/descriptive,steering/directing",
-    "Dependencies": "2A"
+    "Dependencies": ["2A"]
   },
   {
     "Artifact ID": "6B",
@@ -168,12 +201,14 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "multi-value/tensor,specification/visualization",
     "Task": "Steering/Directing",
-    "Dependencies": "1A"
+    "Dependencies": ["1A"]
   },
   {
     "Artifact ID": "6C",
     "Folder": "static/vendors/data_jsons/model_properties/",
-    "Source File": "train_validation_metrics.json",
+    "Source File": [
+      {"what":"model metrics","path":"static/vendors/data_jsons/model_properties/","format":"json","file_name":"_model_evaluation.json"}
+    ], 
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -182,12 +217,14 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/descriptive",
-    "Dependencies": "3A"
+    "Dependencies": ["3A"]
   },
   {
     "Artifact ID": "6D",
     "Folder": "static/vendors/data_jsons/model_properties/",
-    "Source File": "train_validation_metrics.json",
+    "Source File": [
+      {"what":"model metrics","path":"static/vendors/data_jsons/model_properties/","format":"json","file_name":"_model_evaluation.json"}
+    ], 
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -196,12 +233,14 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "single-value/number,specification/visualization",
     "Task": "informing/descriptive",
-    "Dependencies": "3A,4A"
+    "Dependencies": ["3A","4A"]
   },
   {
     "Artifact ID": "6E",
     "Folder": "static/vendors/data_jsons/model_properties/",
-    "Source File": "correlations.json",
+    "Source File": [
+      {"what":"correlations","path":"static/vendors/data_jsons/model_properties/","format":"json","file_name":"_correlations.json"}
+    ], 
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -210,12 +249,14 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/explanatory",
-    "Dependencies": "1C"
+    "Dependencies": ["2A"]
   },
   {
     "Artifact ID": "6F",
     "Folder": "static/vendors/data_jsons/model_properties/",
-    "Source File": "factors.json",
+    "Source File": [
+      {"what":"features","path":"static/vendors/data_jsons/model_properties/","format":"json","file_name":"_factors.json"}
+    ], 
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Model Properties",
@@ -224,12 +265,14 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/explanatory",
-    "Dependencies": "1C,3A"
+    "Dependencies": ["2A","3A"]
   },
   {
     "Artifact ID": "6G",
     "Folder": "static/vendors/data_jsons/",
-    "Source File": "interface_components",
+    "Source File": [
+      {"what":"model dashboard","path":"static/vendors/data_jsons/model_properties/","format":"json","file_name": "_model_dashboard.json"}
+    ], 
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Interface Components",
@@ -238,12 +281,14 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization,report/interactive",
     "Task": "informing/descriptive,exploring/targeted",
-    "Dependencies": "6A,6C,6D,6E,6F"
+    "Dependencies": ["6A","6C","6D","6E","6F"]
   },
   {
     "Artifact ID": "6H",
     "Folder": "static/vendors/data_jsons/",
-    "Source File": "interface_components",
+    "Source File": [
+      {"what":"model dashboard","path":"static/vendors/data_jsons/model_properties/","format":"json","file_name": "_model_dashboard.json"}
+    ], 
     "Stage": "Analysis",
     "Step": "Machine Learning",
     "Artifact Group": "Interface Components",
@@ -252,12 +297,15 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "multi-value/list,specification/visualization,report/interactive",
     "Task": "informing/descriptive,exploring/targeted",
-    "Dependencies": "6A,6B,6C,6D,6E"
+    "Dependencies": ["6A","6B","6C","6D","6E"]
   },
   {
     "Artifact ID": "7A",
     "Folder": "static/vendors/data_jsons/oversight_processes/",
-    "Source File": "current_analysis_admin.json",
+    "Source File": [
+      {"what":"story summary","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name": "_story_summary.json"},
+      {"what":"story summary","path":"static/vendors/data_jsons/oversight_processes/","format":"json","file_name": "_story_versioning.json"}
+    ], 
     "Stage": "Deployment",
     "Step": "Deploy",
     "Artifact Group": "Oversight Processes",
@@ -266,7 +314,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "single-value/textual,specification/visualization",
     "Task": "informing/descriptive,governing/assigning",
-    "Dependencies": "2A"
+    "Dependencies": ["2A"]
   },
   {
     "Artifact ID": "7B",
@@ -280,7 +328,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "single-value/textual,specification/visualization",
     "Task": "governing/authorization",
-    "Dependencies": "1B"
+    "Dependencies": ["1B"]
   },
   {
     "Artifact ID": "7C",
@@ -294,12 +342,16 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "single-value/textual,report/static",
     "Task": "informing/curative,informing/comparative",
-    "Dependencies": "6A,6B,6C,6D,6E"
+    "Dependencies": ["6A","6B","6C","6D","6E"]
   },
   {
     "Artifact ID": "8A",
     "Folder": "static/vendors/data_jsons/oversight_processes/",
-    "Source File": "story_histories.json",
+    "Source File": [
+      {"what":"story history","path":"static/vendors/data_jsons/oversight_processes/","format":"json","file_name": "_histories.json"},
+      {"what":"story versions","path":"static/vendors/data_jsons/oversight_processes/","format":"json","file_name": "_story_versioning.json"},
+      {"what":"model history","path":"static/vendors/data_jsons/oversight_processes/","format":"json","file_name": "_model_history.json"}
+    ], 
     "Stage": "Deployment",
     "Step": "Monitor",
     "Artifact Group": "Oversight Processes",
@@ -312,8 +364,8 @@
   },
   {
     "Artifact ID": "9A",
-    "Folder": "static/vendors/",
-    "Source File": "Farmingham-Study-Generated-Insights.pdf",
+    "Folder": "static/vendors/automated_reporting/",
+    "Source File": "_Farmingham-Study-Generated-Insights.pdf",
     "Stage": "Communication",
     "Step": "Dissemination",
     "Artifact Group": "Automated Reporting",
@@ -322,7 +374,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "single-value/textual,report/static",
     "Task": "informing/descriptive,sharing/distributed",
-    "Dependencies": "6G"
+    "Dependencies": ["6G"]
   },
   {
     "Artifact ID": "10A",
@@ -336,7 +388,7 @@
     "Transmission Mode": "Non-Boundary/H-H",
     "Artifact Format": "single-value/textual,report/static",
     "Task": "sharing/targeted,steering",
-    "Dependencies": "9A"
+    "Dependencies": ["9A"]
   },
   {
     "Artifact ID": "11A",
@@ -350,6 +402,6 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "single-value/textual,report/interactive",
     "Task": "informing/provenance,governing/auditing",
-    "Dependencies": "4A,6H,UI"
+    "Dependencies": ["4A","6H","UI"]
   }
 ]
