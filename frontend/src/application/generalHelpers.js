@@ -34,4 +34,30 @@ export function machineOrHuman(d){
       versOb.changeVersion(d3.select(event.target).text());
       console.log(versOb.currentVersion());
     });
+
+
+}
+
+export function getSources(data){
+  let versOb = versionSingleton.getInstance();
+  return versOb.otherVersions().map( ov => {
+    let topOb = {};
+    topOb.version = ov;
+    console.log(data['Source File'])
+    let sourceFile = data['Source File'] != null ? data['Source File'] : [];
+    topOb.sources = sourceFile.map( async m => {
+
+        let ob = {}
+        if(sourceFile.length > 0){
+
+          let json = await d3.json(`${m.path}${ov}/${ov}${m.file_name}`);
+          ob.key = m.what;
+          ob.value = json.changed_from_prev === true ? json : null;
+
+        }
+
+        return ob;
+    });
+    return topOb;
+  });
 }

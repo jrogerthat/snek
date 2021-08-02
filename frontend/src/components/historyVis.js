@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import { getSources } from "../application/generalHelpers";
 import { versionSingleton } from "../application/versionControlSingleton";
 
 export function renderHistoryHorizontal(sources){
@@ -51,16 +52,15 @@ export function renderHistoryHorizontal(sources){
         .attr("y2", 10);
 }
 
-export function renderHistoryVertical(sources){
+function renderHistoryGroups(d3Selection, data){
 
     let versOb = versionSingleton.getInstance();
     versOb.allVersions();
 
-    let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
-    let pathG = parent.append('g').classed('version-path', true);
+    let pathG = d3Selection.append('g').classed('version-path', true);
 
-    let history = parent.selectAll('g.version_group')
-        .data(sources.filter(f=> f.version != versOb.currentVersion())).join('g')
+    let history = d3Selection.selectAll('g.version_group')
+        .data(data.filter(f=> f.version != versOb.currentVersion())).join('g')
         .classed('version_group', true);
 
     let versionIndex = versOb.allVersions().indexOf(versOb.currentVersion());
@@ -77,33 +77,9 @@ export function renderHistoryVertical(sources){
     afterHis.style('transform', (d, i) => {
         return `translate(10px, ${((i + 1) * 150)}px)`});
 
-    //GETTING DEPENDICIES AND THEIR HISTORY
-    console.log('parent', parent.data()[0].Dependencies)
-    let testFilter = d3.selectAll('.artifact').filter(f=> {
-        return (f.Dependencies != null && f.Dependencies.includes(parent.data()[0]['Artifact ID'])) || (f.Dependencies != null && parent.data()[0].Dependencies.includes(f['Artifact ID']))
-    });
-
-    console.log(testFilter)
-
-    //THIS IS WHERE IT CHANGED
-    let test = history.filter(f=> {
-        f.sources.filter(async s => {
-            let tes = await s;
-            console.log(tes.value);
-        });
-       
-    })
-    
-    history.append('circle').attr('r', 20).attr('cx', 0).attr('cy', 0);
-    d3.select('.secondary-vis').style('opacity', .1);
-
-    let text = history.append('text').text(d => d.version);
-    text.style('fill', '#fff')
-    .attr('transform', `translate(25, 0)`);
-    
     let first = beforeHis.size() > 0 ? beforeHis.nodes()[0].getBoundingClientRect().y - d3.select('.clicked-selected').node().getBoundingClientRect().y : 0;
     let second = afterHis.size() > 0 ? afterHis.nodes()[(afterHis.nodes().length - 1)].getBoundingClientRect().y - d3.select('.clicked-selected').node().getBoundingClientRect().y : 0;
-    
+        
     if(beforeHis.size() > 1){
         d3.select('svg').select('g').attr('transform', 'translate(5, 190)')
         d3.select('svg').style('width', '1100px');
@@ -117,6 +93,50 @@ export function renderHistoryVertical(sources){
         .attr("x1", 7)
         .attr("y2", second)
         .attr("x2", 10);
+
+    return history;
+
+}
+
+export function renderHistoryVertical(sources){
+
+    let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
+
+    let history = renderHistoryGroups(parent, sources);
+
+    //GETTING DEPENDICIES AND THEIR HISTORY
+    let testFilter = d3.selectAll('.artifact').filter(f=> {
+        return (f.Dependencies != null && f.Dependencies.includes(parent.data()[0].id)) || (f.Dependencies != null && parent.data()[0].Dependencies.includes(f['Artifact ID']))
+    });
+    
+    let testS = testFilter.data().map(m => {
+        let sources = getSources(m);
+        return sources;
+    });
+
+    let otherHistories = renderHistoryGroups(testFilter, testS);
+
+    otherHistories.append('circle').attr('r', 10).attr('cx', 0).attr('cy', 0);
+    d3.select('.secondary-vis').style('opacity', .1);
+
+    //THIS IS WHERE IT CHANGED
+
+    let historyThatChanged = history.filter(async f=> {
+        let changed = f.sources.filter(async s => {
+            let sou = await s;
+            return sou['value'].changed_from_prev = true;
+        });
+        return changed;
+    });
+
+    historyThatChanged.append('circle').attr('r', 20).attr('cx', 0).attr('cy', 0);
+    d3.select('.secondary-vis').style('opacity', .1);
+
+    let text = history.append('text').text(d => d.version);
+
+    text.style('fill', '#fff')
+    .attr('transform', `translate(25, 0)`);
+
 }
 
 export function removeHistory(){

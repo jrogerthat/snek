@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import * as d3Array from "d3-array";
-import { machineOrHuman } from "../application/generalHelpers";
+import { getSources, machineOrHuman } from "../application/generalHelpers";
 import { versionSingleton } from "../application/versionControlSingleton";
 import { viewSingleton } from "../application/viewSingleton";
 import { removeHistory, renderHistoryHorizontal, renderHistoryVertical } from "./historyVis";
@@ -143,6 +143,7 @@ export function artifactClicked(event, d){
       });
   
       d3.selectAll('.clicked-selected').classed('clicked-selected', false);
+      removeHistory();
     });
   
     let h4 = div.append('h4').text(d['Artifact Type']);
@@ -173,9 +174,6 @@ export function artifactClicked(event, d){
       let hoverLines = d3.selectAll('.link').filter(f=> {
         return selectedIDs.indexOf(f.target.id) > -1}).classed('hover', true);
       
-    //   let antiHover = d3.selectAll('.link').filter((f, i, n) => {
-    //     return d3.select(n[1]).classed('hover') === false;
-    //   }).classed('non-hover', true);
         d3.selectAll('.label-wrap').attr('opacity', 0);
         
         let hoverLabel = shared.append('text').classed('hover-label', true);
@@ -222,29 +220,7 @@ export function artifactClicked(event, d){
 
                 event.target.innerHTML = "Hide Artifact History";
 
-                // let sources = d['Source File'].map( m => {
-               
-                //     let versionsS = versOb.otherVersions().map( async ov => {
-                //         let ob = {}
-                //         let json = await d3.json(`${m.path}${ov}/${ov}${m.file_name}`);
-                //         ob[ov] = json.changed_from_prev === true ? json : null;
-                //         return ob;
-                //     });
-                //     return versionsS;
-                // });
-
-                let sources = versOb.otherVersions().map( ov => {
-                    let topOb = {};
-                    topOb.version = ov;
-                    topOb.sources = d['Source File'].map( async m => {
-                        let ob = {}
-                        let json = await d3.json(`${m.path}${ov}/${ov}${m.file_name}`);
-                        ob.key = m.what;
-                        ob.value = json.changed_from_prev === true ? json : null;
-                        return ob;
-                    });
-                    return topOb;
-                });
+                let sources = getSources(d);
 
                 
                 if(viewOb.currentView() === "human-machine"){
@@ -252,7 +228,6 @@ export function artifactClicked(event, d){
                 }else{
                     renderHistoryVertical(sources);
                 }
-                
 
             }else{
                 event.target.innerHTML = "View Artifact History";
