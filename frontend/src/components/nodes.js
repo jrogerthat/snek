@@ -188,7 +188,6 @@ export function artifactClicked(event, d){
         }
        // hoverLabel.attr('transform', 'translate(100px, 100px)')
         
-
     }).on('mouseout', (event, m)=>{
         
         let param = d3.select(event.target.parentNode).data();
@@ -206,7 +205,6 @@ export function artifactClicked(event, d){
         d3.selectAll('.label-wrap').attr('opacity', 1);
     });
 
-   
     if(d['Source File'] != null){
         let buttonHistory = div.append('button').classed('btn btn-outline-light btn-lg', true).text('View Artifact History');
         buttonHistory.style('margin-top', '25px');
@@ -234,6 +232,7 @@ export function artifactClicked(event, d){
                 }));
 
                 if(viewOb.currentView() === "human-machine"){
+                   
                     renderHistoryHorizontal(chosenSources, otherSources);
                 }else{
                     renderHistoryVertical(chosenSources, otherSources);

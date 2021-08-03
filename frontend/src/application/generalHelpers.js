@@ -34,14 +34,13 @@ export function machineOrHuman(d){
       versOb.changeVersion(d3.select(event.target).text());
       
     });
-
-
 }
 
 export async function getSources(data){
   let versOb = versionSingleton.getInstance();
 
-  return await Promise.all(versOb.otherVersions().map( async ov => {
+  //return await Promise.all(versOb.otherVersions().map( async ov => {
+  return await Promise.all(versOb.allVersions().map( async ov => {
     let topOb = {};
     topOb.version = ov;
   
