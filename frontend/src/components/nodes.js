@@ -214,19 +214,29 @@ export function artifactClicked(event, d){
 
         let viewOb = viewSingleton.getInstance();
 
-        buttonHistory.on('click', (event, h)=>{
+        buttonHistory.on('click', async (event, h)=>{
 
             if(event.target.innerHTML === "View Artifact History"){
 
                 event.target.innerHTML = "Hide Artifact History";
+               
+                let chosenSources = await getSources(d);
 
-                let sources = getSources(d);
+                let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
 
-                
+                  //GETTING DEPENDICIES AND THEIR HISTORY
+                let otherArtifacts = d3.selectAll('.artifact').filter(f=> {
+                    return (f.Dependencies != null && f.Dependencies.includes(parent.data()[0].id)) || (f.Dependencies != null && parent.data()[0].Dependencies.includes(f['Artifact ID']))
+                });
+
+                let otherSources = await Promise.all(otherArtifacts.data().map(async m => {
+                    return {'id': m.id, 'sources': await getSources(m)};
+                }));
+
                 if(viewOb.currentView() === "human-machine"){
-                    renderHistoryHorizontal(sources);
+                    renderHistoryHorizontal(chosenSources, otherSources);
                 }else{
-                    renderHistoryVertical(sources);
+                    renderHistoryVertical(chosenSources, otherSources);
                 }
 
             }else{

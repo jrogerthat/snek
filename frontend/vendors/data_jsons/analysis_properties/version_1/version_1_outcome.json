@@ -4,28 +4,9 @@
     "interface_components": null,
     "has_versions": true,
 
-    "changed_from_prev" : false,
-    "areas_changed": null,
+    "changed_from_prev" : true,
+    "areas_changed": ["outcome"],
 
-    "createdBy": {
-        "id": "005B0000006wvarIAA",
-        "name": "Admin User",
-        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/729B0000000IC2n/T"
-    },
-    "createdDate": "2021-07-26T17:20:37.000Z",
-    "folder": {
-        "id": "00lB0000000TKYMIA4",
-        "label": "Artifact Trace",
-        "url": "/services/data/v52.0/wave/folders/00lB0000000TKYMIA4"
-    },
-    "id": "9B4B0000000CvR2KAK",
-    "label": "Framingham Study",
-    "lastModifiedBy": {
-        "id": "005B0000006wvfPIAQ",
-        "name": "Integration User",
-        "profilePhotoUrl": "https://c.gus.content.force.com/profilephoto/005/T"
-    },
-    "lastModifiedDate": "2021-07-26T17:24:07.000Z",
     "outcome": {
         "failureValue": "No",
         "goal": "Maximize",
