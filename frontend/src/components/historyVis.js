@@ -52,24 +52,6 @@ export function renderHistoryHorizontal(sources){
         .attr("y2", 10);
 }
 
-// function renderHistoryGroups(d3Selection, data){
-
-//     let versOb = versionSingleton.getInstance();
-//     versOb.allVersions();
-
-//     let pathG = d3Selection.append('g').classed('version-path', true);
-
-//     let history = d3Selection.selectAll('g.version_group')
-//         .data(data.filter(f=> f.version != versOb.currentVersion())).join('g')
-//         .classed('version_group', true);
-
-//     let beforeAfter = moveGroups(history);
-//     renderPaths(beforeAfter[0], beforeAfter[1], pathG);
-
-//     return history;
-
-// }
-
 function renderPaths(before, after, pathG){
 
     let first = before.size() > 0 ? before.nodes()[0].getBoundingClientRect().y - d3.select('.clicked-selected').node().getBoundingClientRect().y : 0;
@@ -110,6 +92,16 @@ function moveGroups(groups){
 
 }
 
+function renderCircles(d3Selection, radius){
+
+    let circGroup = d3Selection.filter(f => {
+        let test = f.sources.filter(t=> t.value != null);
+        return test.length > 0;
+    }).selectAll('g.circ-group').data(d => [d]).join('g').classed('circ-group', true);
+
+    circGroup.append('circle').attr('r', radius).attr('cy', 0).attr('cy', 0);
+}
+
 export function renderHistoryVertical(sources, otherSources){
 
     let versOb = versionSingleton.getInstance();
@@ -137,41 +129,24 @@ export function renderHistoryVertical(sources, otherSources){
     let beforeAfterOther = moveGroups(otherGroups);
     renderPaths(beforeAfterOther[0], beforeAfterOther[1], d3.selectAll('.path-wrap'));
 
-    let otherCircGroup = otherGroups.filter(f => {
-        let test = f.sources.filter(t=> t.value != null);
-        return test.length > 0;
-    }).selectAll('g.circ-group').data(d => [d]).join('g').classed('circ-group', true);
+    renderCircles(otherGroups, 10);
+    renderCircles(history, 20);
 
-    otherCircGroup.append('circle').attr('r', 10).attr('cy', 0).attr('cy', 0);
+    // let otherCircGroup = otherGroups.filter(f => {
+    //     let test = f.sources.filter(t=> t.value != null);
+    //     return test.length > 0;
+    // }).selectAll('g.circ-group').data(d => [d]).join('g').classed('circ-group', true);
 
-    let circGroup = history.filter(f => {
-        let test = f.sources.filter(t=> t.value != null);
-        return test.length > 0;
-    }).selectAll('g.circ-group').data(d => [d]).join('g').classed('circ-group', true);
+    // otherCircGroup.append('circle').attr('r', 10).attr('cy', 0).attr('cy', 0);
 
-    circGroup.append('circle').attr('r', 10).attr('cy', 0).attr('cy', 0);
+    // let circGroup = history.filter(f => {
+    //     let test = f.sources.filter(t=> t.value != null);
+    //     return test.length > 0;
+    // }).selectAll('g.circ-group').data(d => [d]).join('g').classed('circ-group', true);
+
+    // circGroup.append('circle').attr('r', 10).attr('cy', 0).attr('cy', 0);
 
     //THIS IS WHERE IT CHANGED
-
-    // let historyThatChanged = history.each(async (f, i, n)=> {
-
-    //     let changed = f.sources.filter(async s => {
-    //         let sou = await s;
-    //         return sou['value'].changed_from_prev === true;
-    //     });
-
-    //     let test = await changed[0];
-      
-    //     if(test.value != null){
-    //         // d3.select(n[i]).append('circle').attr('r', 20).attr('cx', 0).attr('cy', 0);
-    //         // d3.select('.secondary-vis').style('opacity', .1);
-    //     }
-
-
-    // });
-
-//   console.log('history that changed',historyThatChanged);
-
     let text = history.append('text').text(d => d.version);
 
     text.style('fill', '#fff')
