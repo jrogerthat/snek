@@ -1,4 +1,8 @@
-{
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": false,
+    "interface_components": null,
+    "changed_from_prev" : true,
+    "areas_changed": ["createdBy", "createdDate", "id", "input", "label", "lastModifiedBy", "lastModifiedDate", "modelFields"],
     "createdBy": {
         "id": "005B0000006wvfPIAQ",
         "name": "Integration User",

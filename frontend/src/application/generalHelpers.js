@@ -54,6 +54,7 @@ export async function getSources(data){
         }
         return ob;
     }) );
+    topOb.datum = data;
     return topOb;
   }) );
 }

@@ -1,4 +1,4 @@
-{
+{   
     "pipeline_stages": ["analysis/model"],
     "could_pull_from_API": false,
     "interface_components": [

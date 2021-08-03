@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import { getSources } from "../application/generalHelpers";
+import { getSources, machineOrHuman } from "../application/generalHelpers";
 import { versionSingleton } from "../application/versionControlSingleton";
 
 export function renderHistoryHorizontal(sources){
@@ -8,8 +8,10 @@ export function renderHistoryHorizontal(sources){
     versOb.allVersions();
 
     d3.select('.secondary-vis').style('opacity', .1);
+    d3.select('.secondary-vis').style('pointer-events', 'none');
+
     //HIDE CHOSEN CIRCLE
-    d3.select('.clicked-selected').style('opacity', 0);
+   
 
     let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
     let pathG = parent.append('g').classed('version-path', true);
@@ -22,18 +24,20 @@ export function renderHistoryHorizontal(sources){
     let afterHis = history.filter(f => versOb.allVersions().indexOf(f.version) > versionIndex);
 
     beforeHis.style('transform', (d, i, n) => {
-        return `translate(-${((n.length - i) * 170)}px, 10px)`});
+        return `translate(-${((n.length - i) * 180)}px, 10px)`});
 
     afterHis.style('transform', (d, i) => {
         return `translate(${((i) * 150)}px, 10px)`});
     
-   // history.append('circle').attr('r', 20).attr('cx', 0).attr('cy', 0);
-    renderCircles(history, 10);
-    renderTriangles(history);
+    
+    renderCircles(history, 'horizontal');
+    renderTriangles(history, 'horizontal');
 
-    let text = history.append('text').text(d => d.version);
-    text.style('fill', '#fff')
-    .attr('transform', `translate(0, -22), rotate(-40)`);
+    let text = history.filter(f=> {
+        return f.version != versOb.currentVersion();
+    }).append('text').text(d => d.version);
+
+    text.style('fill', '#fff').style('font-size', '10px').attr('transform', `translate(0, -22), rotate(-40)`);
     
     let first = beforeHis.size() > 0 ? beforeHis.nodes()[0].getBoundingClientRect().x - d3.select('.clicked-selected').node().getBoundingClientRect().x : 0;
     let second = afterHis.size() > 0 ? afterHis.nodes()[(afterHis.nodes().length - 1)].getBoundingClientRect().x - d3.select('.clicked-selected').node().getBoundingClientRect().x : 0;
@@ -41,6 +45,7 @@ export function renderHistoryHorizontal(sources){
         d3.select('svg').select('g').attr('transform', 'translate(-100, 0)')
         d3.select('svg').style('width', '1100px');
     }
+
     pathG.append('line')
         .classed('version-line', true)
         .style("stroke", "gray")
@@ -100,17 +105,47 @@ function moveGroups(groups, orient){
 
 }
 
-function renderCircles(d3Selection, radius){
+function renderCircles(d3Selection, orient){
+
+    d3.select('.clicked-selected').style('opacity', 0);
+
+    let versOb = versionSingleton.getInstance();
 
     let circGroup = d3Selection.filter(f => {
         let test = f.sources.filter(t=> t.value != null);
         return test.length > 0;
-    }).selectAll('g.circ-group').data(d => [d]).join('g').classed('circ-group', true);
+    }).selectAll('g.circ-group').data(d => {
+        let start = d.sources.length;
+        let end = d.sources.filter(f=> f.value != null).length;
+        d.radius = end < start ? 10 : 20;
+        return [d]}).join('g').classed('circ-group', true);
 
-    circGroup.append('circle').attr('r', radius).attr('cy', 0).attr('cy', 0);
+    let circles = circGroup.append('circle').attr('r', d=> d.radius).attr('cy', 0);
+    circles.attr('class', machineOrHuman(d3Selection.data()[0].datum));
+
+    if(orient === 'horizontal'){
+        circles.attr('cx', 9);
+        circles.filter(c => {
+            return c.version === versOb.currentVersion();
+        }).attr('cy', 10);
+    
+    }else{
+
+        circles.filter(c => {
+            return c.version === versOb.currentVersion();
+        }).attr('cx', 10);
+ 
+    }
+    
+
+
+    
+    machineOrHuman(d3Selection.data()[0].datum);
 }
 
-function renderTriangles(d3Selection){
+function renderTriangles(d3Selection, orient){
+
+    let versOb = versionSingleton.getInstance();
 
     let triangleGroup = d3Selection.filter(f => {
         let test = f.sources.filter(t=> t.value === null);
@@ -119,12 +154,32 @@ function renderTriangles(d3Selection){
 
     let triangle = triangleGroup.append("polygon")
     .attr("points", (d)=> "0,0 25,0 12,25").join(" ")
-    .attr("stroke","gray")
+    .attr("stroke","#fff")
     .attr("fill", 'none')
     .attr("stroke-width",2)
 
-    triangle
-    .attr('transform', 'translate(0, 10) rotate(-90)');
+    if(orient === 'horizontal'){
+
+        triangle.filter(f=> {
+            return f.version !=  versOb.currentVersion();
+        }).attr('transform', 'translate(0, 10) rotate(-90)');
+
+        triangle.filter(f=>{
+            return f.version === versOb.currentVersion();
+        }).attr('transform', 'translate(0, 20) rotate(-90)');
+
+    }else{
+
+        triangle.filter(f=> {
+            return f.version !=  versOb.currentVersion();
+        }).attr('transform', 'translate(-12, -10) rotate(0)');
+
+        triangle.filter(f=>{
+            return f.version === versOb.currentVersion();
+        }).attr('transform', 'translate(-3, 0) rotate(0)');
+
+    }
+
 
 }
 
@@ -156,8 +211,11 @@ export function renderHistoryVertical(sources, otherSources){
     let beforeAfterOther = moveGroups(otherGroups, 'vertical');
     renderPaths(beforeAfterOther[0], beforeAfterOther[1], d3.selectAll('.path-wrap'));
 
-    renderCircles(otherGroups, 10);
-    renderCircles(history, 20);
+    renderCircles(otherGroups, 'vertical');
+    renderCircles(history, 'vertical');
+
+    renderTriangles(otherGroups, 'vertical');
+    renderTriangles(history, 'vertical');
 
     //THIS IS WHERE IT CHANGED
     let text = history.append('text').text(d => d.version);
@@ -169,6 +227,7 @@ export function renderHistoryVertical(sources, otherSources){
 
 export function removeHistory(){
     d3.select('.secondary-vis').style('opacity', 1);
+    d3.select('.secondary-vis').style('pointer-events', 'all');
     d3.selectAll('.version-path').remove();
     d3.selectAll('.version_group').remove();
     d3.selectAll('.other-history-wrap').remove();

@@ -7,40 +7,72 @@ import { removeHistory, renderHistoryHorizontal, renderHistoryVertical } from ".
 
 const radius = 9;
 
-export function tooltip(event, d){
+export function tooltip(event, d, historyVis){
 
     let tooltip = d3.select('#tooltip');
     tooltip.style('opacity', 1);
     tooltip.style('top', `${event.clientY}px`).style('left', `${event.clientX + 30}px`);
-    if(d['Task'] === null){
 
-        tooltip.html(`
-        <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
-        <h4>${d['Artifact Type']}</h4>
-        <br>
-        `)
+    if(historyVis === false){
 
+        if(d['Task'] === null){
+
+            tooltip.html(`
+            <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
+            <h4>${d['Artifact Type']}</h4>
+            <br>
+            `)
+    
+        }else{
+    
+            tooltip.html(`
+            <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
+            <h4>${d['Artifact Type']}</h4>
+            <br>
+            <ul>
+            <li><h6>${d['Artifact Group']}</h6></li>
+            <li><h6>${d['Transmission Mode']}</h6></li>
+            <li><h6>${d['Task']}</h6></li>
+            <li><h6>${d['Source']}</h6></li>
+            </ul>
+            `)
+        }
+        
     }else{
+        let datum = d3.select(event.target).data()[0];
 
-        tooltip.html(`
-        <h5><b>${d['Stage']}</b>: ${d['Step']}</h5>
-        <h4>${d['Artifact Type']}</h4>
-        <br>
-        <ul>
-        <li><h6>${d['Artifact Group']}</h6></li>
-        <li><h6>${d['Transmission Mode']}</h6></li>
-        <li><h6>${d['Task']}</h6></li>
-        <li><h6>${d['Source']}</h6></li>
-        </ul>
-        `)
+        let html = datum.sources.reduce((ac, n) => {
+            console.log('m', n)
+            let starter = ac + `<h4><span>${n.key}</span>: `
+            let adder = "";
+            if(n.value === null){
+                adder = "did not change."
+            }else{
+                adder = n.value.areas_changed.reduce((t, r)=> t + r + ", ", '');
+            }
+            return starter + adder + "</h4>";
+        }, `<h3>Source Changes:</h3>`);
+
+        console.log('html',html)
+
+
+        tooltip.html(html)
+
+        console.log('THIS WORKS', d, d3.select(event.target).data())
+
     }
+
+
+
 }
 
 export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
-
+    
     nodeGroups.on('mouseover', (event, d)=>{
-        //.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false)
-        if(d3.select(event.target).classed('clicked-selected') === false){
+      
+        let targetSelection = d3.select(event.target);
+     
+        if(targetSelection.data()[0].version === undefined && targetSelection.classed('clicked-selected') === false){
             d3.select(event.target).classed('hover', true);
             d3.select(event.target).attr('r', 15);
         }
@@ -65,11 +97,23 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
                 return f.Source !=  d.id && f.Target != d.id;
             }).classed('non-hover', true);
         }
+        if(targetSelection.data()[0].version === undefined){
 
-        tooltip(event, d);
+            tooltip(event, d, false);
+
+        }else{
+
+            tooltip(event, d, true);
+
+        }
+       
+
+      
        
     }).on('mouseout', (event, d)=>{
-        if(d3.select(event.target).classed('clicked-selected') === false){
+
+        let targetSelection = d3.select(event.target);
+        if(targetSelection.data()[0].version === undefined && targetSelection.classed('clicked-selected') === false){
         d3.select(event.target).classed('hover', false);
         d3.selectAll('.hover').classed('hover', false);
         d3.select(event.target).attr('r', radius);
@@ -112,6 +156,8 @@ export function renderNodes(nodes){
 }
 
 export function artifactClicked(event, d){
+
+    removeHistory();
 
     let versOb = versionSingleton.getInstance();
     let version = versOb.currentVersion();

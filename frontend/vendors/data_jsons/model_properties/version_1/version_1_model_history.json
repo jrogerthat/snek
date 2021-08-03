@@ -1,4 +1,9 @@
-{
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": false,
+    "interface_components": null,
+    "changed_from_prev" : true,
+    "areas_changed": ["histories"],
+
     "histories": [
         {
             "id": "0RmB0000000AuPEKA0",
