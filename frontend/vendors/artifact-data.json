@@ -1,10 +1,10 @@
 [
   {
     "Artifact ID": "1A",
-    "Folder": "static/vendors/",
+    "Folder": "static/vendors/", 
     "Source File": [
-      {"what":"raw file","path":"static/vendors/data_properties/","format":"json","file_name":"_initial_dataset.json"},
-      {"what":"version meta","path":"static/vendors/data_properties/","format":"json","file_name":"_current_data_meta.json"}
+      {"what":"raw file","path":"static/vendors/data_jsons/data_properties/","format":"json","file_name":"_initial_dataset.json"},
+      {"what":"version meta","path":"static/vendors/data_jsons/data_properties/","format":"json","file_name":"_current_data_meta.json"}
     ],
     "Stage": "Preparation",
     "Step": "Data",

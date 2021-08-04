@@ -40,7 +40,7 @@ export function tooltip(event, d, historyVis){
         
     }else{
         let datum = d3.select(event.target).data()[0];
-
+        console.log('datum',datum)
         let html = datum.sources.reduce((ac, n) => {
            
             let starter = ac + `<h4><span>${n.key}</span>: `
@@ -51,14 +51,9 @@ export function tooltip(event, d, historyVis){
                 adder = n.value.areas_changed.reduce((t, r)=> t + r + ", ", '');
             }
             return starter + adder + "</h4>";
-        }, `<h3><span>${datum.version}</span></h3><h3>Source Changes:</h3>`);
-
-        console.log('html',html)
-
+        }, `<h3><span>${datum.version} ${datum.datum.name}</span></h3><h3>Source Changes:</h3>`);
 
         tooltip.html(html)
-
-        console.log('THIS WORKS', d, d3.select(event.target).data())
 
     }
 
@@ -270,7 +265,7 @@ export function artifactClicked(event, d){
 
                   //GETTING DEPENDICIES AND THEIR HISTORY
                 let otherArtifacts = d3.selectAll('.artifact').filter(f=> {
-                    return (f.Dependencies != null && f.Dependencies.includes(parent.data()[0].id)) || (f.Dependencies != null && parent.data()[0].Dependencies.includes(f['Artifact ID']))
+                    return (f.Dependencies != null && f.Dependencies.includes(parent.data()[0].id)) || (parent.data()[0].Dependencies != null && parent.data()[0].Dependencies.includes(f['Artifact ID']))
                 });
 
                 let otherSources = await Promise.all(otherArtifacts.data().map(async m => {
@@ -278,7 +273,6 @@ export function artifactClicked(event, d){
                 }));
 
                 if(viewOb.currentView() === "human-machine"){
-                   
                     renderHistoryHorizontal(chosenSources, otherSources);
                 }else{
                     renderHistoryVertical(chosenSources, otherSources);
