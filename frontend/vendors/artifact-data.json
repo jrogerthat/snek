@@ -3,7 +3,7 @@
     "Artifact ID": "1A",
     "Folder": "static/vendors/",
     "Source File": [
-      {"what":"raw file","path":"static/vendors/data_properties/","format":"csv","file_name":"_farminghamstudy_baseline_no_time - farminghamstudy_baseline.csv"},
+      {"what":"raw file","path":"static/vendors/data_properties/","format":"json","file_name":"_initial_dataset.json"},
       {"what":"version meta","path":"static/vendors/data_properties/","format":"json","file_name":"_current_data_meta.json"}
     ],
     "Stage": "Preparation",

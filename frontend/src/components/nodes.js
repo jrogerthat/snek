@@ -42,7 +42,7 @@ export function tooltip(event, d, historyVis){
         let datum = d3.select(event.target).data()[0];
 
         let html = datum.sources.reduce((ac, n) => {
-            console.log('m', n)
+           
             let starter = ac + `<h4><span>${n.key}</span>: `
             let adder = "";
             if(n.value === null){
@@ -51,7 +51,7 @@ export function tooltip(event, d, historyVis){
                 adder = n.value.areas_changed.reduce((t, r)=> t + r + ", ", '');
             }
             return starter + adder + "</h4>";
-        }, `<h3>Source Changes:</h3>`);
+        }, `<h3><span>${datum.version}</span></h3><h3>Source Changes:</h3>`);
 
         console.log('html',html)
 

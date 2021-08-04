@@ -1,0 +1,8 @@
+{
+    "pipeline_stages": ["preparation/data"],
+    "could_pull_from_API": false,
+    "interface_components": null,
+    "changed_from_prev" : false,
+    "areas_changed": null,
+    "dataset_path": "static/vendors/data_jsons/data_properties/version_3/version_3_farminghamstudy_baseline_no_time - farminghamstudy_baseline.csv"
+}

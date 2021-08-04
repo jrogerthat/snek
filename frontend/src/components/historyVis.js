@@ -29,8 +29,8 @@ export function renderHistoryHorizontal(sources){
     afterHis.style('transform', (d, i) => {
         return `translate(${((i) * 150)}px, 10px)`});
     
-    
-    renderCircles(history, 'horizontal');
+
+    renderCircles(history, 'horizontal', 20);
     renderTriangles(history, 'horizontal');
 
     let text = history.filter(f=> {
@@ -105,7 +105,7 @@ function moveGroups(groups, orient){
 
 }
 
-function renderCircles(d3Selection, orient){
+function renderCircles(d3Selection, orient, radius){
 
     d3.select('.clicked-selected').style('opacity', 0);
 
@@ -117,7 +117,7 @@ function renderCircles(d3Selection, orient){
     }).selectAll('g.circ-group').data(d => {
         let start = d.sources.length;
         let end = d.sources.filter(f=> f.value != null).length;
-        d.radius = end < start ? 10 : 20;
+        d.radius = end < start ? (radius / 2) : (radius);
         return [d]}).join('g').classed('circ-group', true);
 
     let circles = circGroup.append('circle').attr('r', d=> d.radius).attr('cy', 0);
@@ -136,9 +136,6 @@ function renderCircles(d3Selection, orient){
         }).attr('cx', 10);
  
     }
-    
-
-
     
     machineOrHuman(d3Selection.data()[0].datum);
 }
@@ -211,8 +208,8 @@ export function renderHistoryVertical(sources, otherSources){
     let beforeAfterOther = moveGroups(otherGroups, 'vertical');
     renderPaths(beforeAfterOther[0], beforeAfterOther[1], d3.selectAll('.path-wrap'));
 
-    renderCircles(otherGroups, 'vertical');
-    renderCircles(history, 'vertical');
+    renderCircles(otherGroups, 'vertical', 12);
+    renderCircles(history, 'vertical', 20);
 
     renderTriangles(otherGroups, 'vertical');
     renderTriangles(history, 'vertical');
