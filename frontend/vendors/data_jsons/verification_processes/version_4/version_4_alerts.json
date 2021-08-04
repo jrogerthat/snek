@@ -1,0 +1,67 @@
+{   "pipeline_stages": ["deployment/deploy"],
+    "could_pull_from_API": true,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["active","createdDate","deactivateOnTrigger","id","lastModifiedDate","name","owner","recordId","schedule","source","discoveryModelMetrics","thresholds"],
+
+    "active": true,
+    "createdDate": "2021-08-04T20:16:35Z",
+    "deactivateOnTrigger": false,
+    "id": "0AuB0000000CkCVKA0",
+    "lastModifiedDate": "2021-08-04T20:16:35Z",
+    "name": "1ORB0000000L055OAC",
+    "owner": {
+        "id": "005B0000006wvar",
+        "name": "Admin User"
+    },
+    "recordId": "1ORB0000000L055OAC",
+    "schedule": {
+        "details": {
+            "daysOfMonth": [
+                1
+            ],
+            "time": 0
+        },
+        "frequency": "monthly",
+        "frequencyType": "specific"
+    },
+    "source": "discoveryModelMetrics",
+    "thresholds": [
+        {
+            "actions": [
+                {
+                    "configuration": {
+                        "recipients": [
+                            {
+                                "id": "005B0000006wvar",
+                                "displayName": "Admin User",
+                                "type": "user"
+                            }
+                        ]
+                    },
+                    "type": "sendEmail"
+                },
+                {
+                    "configuration": {
+                        "recipients": [
+                            {
+                                "id": "005B0000006wvar",
+                                "displayName": "Admin User",
+                                "type": "user"
+                            }
+                        ]
+                    },
+                    "type": "notifyMe"
+                }
+            ],
+            "conditions": [
+                {
+                    "colName": "Accuracy",
+                    "operation": "lessThan",
+                    "value": "0.8"
+                }
+            ],
+            "type": "condition"
+        }
+    ]
+}

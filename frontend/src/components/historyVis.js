@@ -189,6 +189,10 @@ export function renderHistoryVertical(sources, otherSources){
 
     let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
 
+    parent.append('text').text(t=> {
+        return t.name;
+    }).classed('history-name-text', true).style('fill', '#fff').attr('transform', 'translate(3, 35) rotate(45)')
+
     let pathG = parent.append('g').classed('version-path', true);
 
     let history = parent.selectAll('g.version_group')
@@ -207,14 +211,14 @@ export function renderHistoryVertical(sources, otherSources){
 
         others.append('text').text(t=> {
             return t.name;
-        }).style('fill', '#fff').attr('transform', 'translate(0, 30) rotate(45)')
+        }).classed('history-name-text', true).style('fill', '#fff').attr('transform', 'translate(3, 35) rotate(45)')
     });
 
-    if(otherSources.length > 0){
+ //  if(otherSources.length > 0){
 
         d3.selectAll('.label-wrap').attr('opacity', 0);
 
-    }
+ //   }
 
     let otherGroups = d3.selectAll('.other-history-wrap').selectAll('g.version-group').data(d => d.sources).join('g').classed('version-group', true);
     let beforeAfterOther = moveGroups(otherGroups, 'vertical');
@@ -243,4 +247,5 @@ export function removeHistory(){
     d3.selectAll('.version_group').remove();
     d3.selectAll('.other-history-wrap').remove();
     d3.select('.clicked-selected').style('opacity', 1);
+    d3.selectAll('.history-name-text').remove();
 }

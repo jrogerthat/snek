@@ -333,7 +333,7 @@
   {
     "Artifact ID": "7C",
     "Folder": null,
-    "Source File": null,
+    "Source File": [{"what": "alert", "path": "static/vendors/data_jsons/verification_processes/", "format": "json", "file_name": "_alerts.json"}],
     "Stage": "Deployment",
     "Step": "Deploy",
     "Artifact Group": "Verification Processes",
