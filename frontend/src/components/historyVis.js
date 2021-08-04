@@ -200,9 +200,21 @@ export function renderHistoryVertical(sources, otherSources){
     renderPaths(beforeAfter[0], beforeAfter[1], pathG);
 
     otherSources.map(m => {
-        let hisWrap = d3.selectAll('.artifact').filter(f => f.id === m.id).selectAll('g.other-history-wrap').data([m]).join('g').classed('other-history-wrap', true);
+        let others = d3.selectAll('.artifact').filter(f => f.id === m.id);
+
+        let hisWrap = others.selectAll('g.other-history-wrap').data([m]).join('g').classed('other-history-wrap', true);
         hisWrap.append('g').classed('path-wrap', true);
+
+        others.append('text').text(t=> {
+            return t.name;
+        }).style('fill', '#fff').attr('transform', 'translate(0, 30) rotate(45)')
     });
+
+    if(otherSources.length > 0){
+
+        d3.selectAll('.label-wrap').attr('opacity', 0);
+
+    }
 
     let otherGroups = d3.selectAll('.other-history-wrap').selectAll('g.version-group').data(d => d.sources).join('g').classed('version-group', true);
     let beforeAfterOther = moveGroups(otherGroups, 'vertical');
@@ -219,6 +231,8 @@ export function renderHistoryVertical(sources, otherSources){
 
     text.style('fill', '#fff')
     .attr('transform', `translate(25, 0)`);
+
+    console.log('other groups',otherGroups.data());
 
 }
 

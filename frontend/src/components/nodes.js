@@ -40,7 +40,7 @@ export function tooltip(event, d, historyVis){
         
     }else{
         let datum = d3.select(event.target).data()[0];
-        console.log('datum',datum)
+        
         let html = datum.sources.reduce((ac, n) => {
            
             let starter = ac + `<h4><span>${n.key}</span>: `
