@@ -29,15 +29,14 @@ export function renderHistoryHorizontal(sources){
     afterHis.style('transform', (d, i) => {
         return `translate(${((i) * 150)}px, 10px)`});
     
-
-    renderCircles(history, 'horizontal', 20);
+    renderCircles(history, 'horizontal', 15);
     renderTriangles(history, 'horizontal');
 
-    let text = history.filter(f=> {
-        return f.version != versOb.currentVersion();
-    }).append('text').text(d => d.version);
+    // let text = history.filter(f=> {
+    //     return f.version != versOb.currentVersion();
+    // }).append('text').text(d => d.version);
 
-    text.style('fill', '#fff').style('font-size', '10px').attr('transform', `translate(0, -22), rotate(-40)`);
+    // text.style('fill', '#fff').style('font-size', '10px').attr('transform', `translate(0, -22), rotate(-40)`);
     
     let first = beforeHis.size() > 0 ? beforeHis.nodes()[0].getBoundingClientRect().x - d3.select('.clicked-selected').node().getBoundingClientRect().x : 0;
     let second = afterHis.size() > 0 ? afterHis.nodes()[(afterHis.nodes().length - 1)].getBoundingClientRect().x - d3.select('.clicked-selected').node().getBoundingClientRect().x : 0;

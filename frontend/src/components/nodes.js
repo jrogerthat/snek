@@ -52,7 +52,9 @@ export function tooltip(event, d, historyVis){
                 adder = n.value.areas_changed.reduce((t, r)=> t + r + ", ", '');
             }
             return starter + adder + "</h4>";
-        }, `<h3><span>${datum.version} ${datum.datum.name}</span></h3><h3>Source Changes:</h3>`);
+        }, `<h3>${datum.version}</h3> <h3><span>${datum.datum.name}</span></h3>
+            <br>
+            <h4>Source Changes:</h4>`);
 
         tooltip.html(html)
 
@@ -120,6 +122,14 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
             }
            
 
+
+        }else{
+            let targetSelection = d3.select(event.target);
+            if(targetSelection.data()[0].version === undefined){
+                tooltip(event, d, false);
+            }else{
+                tooltip(event, d, true);
+            }
 
         }
       
@@ -234,7 +244,6 @@ export function artifactClicked(event, d){
     li.append('text').text(t => `${t}: `)
    
     let spanLi = li.selectAll('span.badge').data(l => {
-        console.log('l', l, d);
         let ob = {};
         ob.param = l;
         ob.value = d[l];
