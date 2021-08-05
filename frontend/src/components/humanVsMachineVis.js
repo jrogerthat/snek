@@ -137,7 +137,6 @@ export function renderHumanVsMachine(nodes){
     let noSource = art.data().map(m => m.id);
 
     d3.selectAll('.link').filter(f=> {
-        console.log('f', f.target, noSource);
         return noSource.includes(f.target.id);
     }).classed('nope', true);
 }

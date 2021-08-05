@@ -82,6 +82,7 @@ function moveGroups(groups, orient){
 
     let beforeHis = groups.filter(f => versOb.allVersions().indexOf(f.version) < versionIndex);
     let afterHis = groups.filter(f => versOb.allVersions().indexOf(f.version) > versionIndex);
+    let chosenHis = groups.filter(f => versOb.allVersions().indexOf(f.version) === versionIndex);
 
     if(orient === 'vertical'){
 
@@ -89,7 +90,12 @@ function moveGroups(groups, orient){
             return `translate(10px, -${((n.length - i) * 130)}px)`});
     
         afterHis.style('transform', (d, i) => {
-            return `translate(10px, ${((i + 1) * 150)}px)`});
+            return `translate(10px, ${((i) * 150)}px)`});
+
+        chosenHis.filter(c=> {
+            let test = c.sources.filter(f=> f.value != null)
+            return test.length > 0;
+        }).style('transform', `translate(0, 10px)`);
     
         if(beforeHis.size() > 1){
             d3.select('svg').select('g').attr('transform', 'translate(5, 190)')
@@ -188,10 +194,7 @@ export function renderHistoryVertical(sources, otherSources){
     d3.select('.secondary-vis').style('opacity', .1);
 
     let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
-
-    parent.append('text').text(t=> {
-        return t.name;
-    }).classed('history-name-text', true).style('fill', '#fff').attr('transform', 'translate(3, 35) rotate(45)')
+    console.log('parent',parent)
 
     let pathG = parent.append('g').classed('version-path', true);
 
@@ -208,13 +211,23 @@ export function renderHistoryVertical(sources, otherSources){
 
         let hisWrap = others.selectAll('g.other-history-wrap').data([m]).join('g').classed('other-history-wrap', true);
         hisWrap.append('g').classed('path-wrap', true);
-
-        others.append('text').text(t=> {
-            return t.name;
-        }).classed('history-name-text', true).style('fill', '#fff').attr('transform', 'translate(3, 35) rotate(45)')
+    
     });
 
+    d3.selectAll('.other-history-wrap')
+    .selectAll('text.history-name-text')
+    .data(t => [t])
+    .join('text')
+    .classed('history-name-text', true)
+    .text(t=> t.name)
+    .style('fill', '#fff')
+    .style('font-size', '10px')
+    .attr('transform', 'translate(3, 37) rotate(45)');
 
+    let chosenIds = d3.selectAll('.other-history-wrap').data().map(m=> m.id);
+    let chosenArt = d3.selectAll('.artifact').filter(f=> chosenIds.includes(f.id));
+    chosenArt.selectAll('.main').attr('opacity', .1);
+  
     d3.selectAll('.label-wrap').attr('opacity', 0);
 
     let otherGroups = d3.selectAll('.other-history-wrap').selectAll('g.version-group').data(d => d.sources).join('g').classed('version-group', true);
@@ -227,14 +240,6 @@ export function renderHistoryVertical(sources, otherSources){
     renderTriangles(otherGroups, 'vertical');
     renderTriangles(history, 'vertical');
 
-    //THIS IS WHERE IT CHANGED
-    let text = history.append('text').text(d => d.version);
-
-    text.style('fill', '#fff')
-    .attr('transform', `translate(25, 0)`);
-
-    console.log('other groups',otherGroups.data());
-
 }
 
 export function removeHistory(){
@@ -246,6 +251,4 @@ export function removeHistory(){
     d3.select('.clicked-selected').style('opacity', 1);
     d3.selectAll('.history-name-text').remove();
 
-    let hisBoolOb = hisBoolSingleton.getInstance();
-    hisBoolOb.changeHistoryBool();
 }

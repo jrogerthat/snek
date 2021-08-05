@@ -66,7 +66,6 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
     
     nodeGroups.on('mouseover', (event, d)=>{
 
-
         let hisBoolOb = hisBoolSingleton.getInstance();
         if(!hisBoolOb.isHistoryOn()){
             
@@ -170,8 +169,9 @@ export function renderNodes(nodes){
     let stages = visWrap.selectAll('g.stage').data(artData).join('g').attr('class', d=> d[0]).classed('stage', true);
     let step = stages.selectAll('g.step').data(d=> d3Array.groups(d[1], g=> g.Step)).join('g').attr('class', d=> d[0]).classed('step', true);
     let artifactGroup = step.selectAll('g.artifact').data(d=> d[1]).join('g').classed('artifact', true);
-    let artifactCircle = artifactGroup.selectAll('circle').data(d=> [d]).join('circle').attr('r', radius).attr('cx', 10).attr('cy', 10);
+    let artifactCircle = artifactGroup.selectAll('circle.main').data(d=> [d]).join('circle').attr('r', radius).attr('cx', 10).attr('cy', 10);
     artifactCircle.attr('class', d=> machineOrHuman(d));
+    artifactCircle.classed('main', true);
 
     let xScale = d3.scaleLinear()
         .domain([0, nodes.length])
@@ -190,6 +190,8 @@ export function artifactClicked(event, d){
 
     let versOb = versionSingleton.getInstance();
     let version = versOb.currentVersion();
+
+    let hisBoolOb = hisBoolSingleton.getInstance();
    
     d3.selectAll('.clicked-selected').each((f, i, n)=>{
       d3.select(n[i]).attr('r', radius);
@@ -219,6 +221,8 @@ export function artifactClicked(event, d){
   
       d3.selectAll('.clicked-selected').classed('clicked-selected', false);
       removeHistory();
+      let hisBoolOb = hisBoolSingleton.getInstance();
+      hisBoolOb.changeHistoryBool();
     });
   
     let h4 = div.append('h4').text(d['Artifact Type']);
@@ -231,37 +235,42 @@ export function artifactClicked(event, d){
     li.html(l=> `${l}: <span class="badge bg-secondary">${d[l]}</span>`);
   
     li.selectAll('span').on('mouseover', (event, m)=> {
-      let param = d3.select(event.target.parentNode).data();
-     
-      let what = d[param];
-      let shared = d3.selectAll('.artifact').filter(f=> f[param] === what)
-      let sharedCircle = shared.select('circle');
-   
-      sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('hover', true);
-      sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).attr('r', 12);
-      let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
-      notShared.classed('non-hover', true);
-      notShared.attr('opacity', .2);
 
-      d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', true);
-      let selectedIDs = shared.data().map(s=> s['Artifact ID']);
-      
-      let hoverLines = d3.selectAll('.link').filter(f=> {
-        return selectedIDs.indexOf(f.target.id) > -1}).classed('hover', true);
-      
-        d3.selectAll('.label-wrap').attr('opacity', 0);
+        if(hisBoolOb.isHistoryOn() === false){
+
+            console.log('history not on')
+
+            let param = d3.select(event.target.parentNode).data();
+            
+            let what = d[param];
+            let shared = d3.selectAll('.artifact').filter(f=> f[param] === what)
+            let sharedCircle = shared.select('circle');
         
-        let hoverLabel = shared.append('text').classed('hover-label', true);
-        hoverLabel.text(t=> t['Artifact Type']);
+            sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).classed('hover', true);
+            sharedCircle.filter((f, i, n)=> d3.select(n[i]).classed('clicked-selected') === false).attr('r', 12);
+            let notShared = d3.selectAll('.artifact').filter(f=> f[param] != what).select('circle');
+            notShared.classed('non-hover', true);
+            notShared.attr('opacity', .2);
 
-        let viewOb = viewSingleton.getInstance();
-  
-        if(viewOb.currentView() === 'human-machine'){
-            hoverLabel.style('transform', 'translate(40px, 12px)');
-        }else{
-            hoverLabel.attr('transform', 'translate(40, 40), rotate(45)')
-        }
-       
+            d3.selectAll('.artifact').filter(f=> f.posID === d.posID).select('circle').classed('specific-chosen', true);
+            let selectedIDs = shared.data().map(s=> s['Artifact ID']);
+            
+            let hoverLines = d3.selectAll('.link').filter(f=> {
+                return selectedIDs.indexOf(f.target.id) > -1}).classed('hover', true);
+      
+            d3.selectAll('.label-wrap').attr('opacity', 0);
+            
+            let hoverLabel = shared.append('text').classed('hover-label', true);
+            hoverLabel.text(t=> t['Artifact Type']);
+
+            let viewOb = viewSingleton.getInstance();
+    
+            if(viewOb.currentView() === 'human-machine'){
+                hoverLabel.style('transform', 'translate(40px, 12px)');
+            }else{
+                hoverLabel.attr('transform', 'translate(40, 40), rotate(45)')
+            }
+    }
         
     }).on('mouseout', (event, m)=>{
         
@@ -291,10 +300,9 @@ export function artifactClicked(event, d){
         let viewOb = viewSingleton.getInstance();
 
         buttonHistory.on('click', async (event, h)=>{
-
+            console.log('history button clicked')
             let hisBoolOb = hisBoolSingleton.getInstance();
             hisBoolOb.changeHistoryBool();
-            console.log('switch history', hisBoolOb.isHistoryOn())
 
             if(event.target.innerHTML === "View Artifact History"){
 
@@ -322,6 +330,8 @@ export function artifactClicked(event, d){
             }else{
                 event.target.innerHTML = "View Artifact History";
                 removeHistory();
+                let hisBoolOb = hisBoolSingleton.getInstance();
+                hisBoolOb.changeHistoryBool();
             }
         });
 
