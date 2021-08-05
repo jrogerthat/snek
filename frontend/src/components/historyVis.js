@@ -13,7 +13,6 @@ export function renderHistoryHorizontal(sources){
 
     //HIDE CHOSEN CIRCLE
    
-
     let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
     let pathG = parent.append('g').classed('version-path', true);
 
@@ -62,8 +61,9 @@ function renderPaths(before, after, pathG){
 
     let first = before.size() > 0 ? before.nodes()[0].getBoundingClientRect().y - d3.select('.clicked-selected').node().getBoundingClientRect().y : 0;
     let second = after.size() > 0 ? after.nodes()[(after.nodes().length - 1)].getBoundingClientRect().y - d3.select('.clicked-selected').node().getBoundingClientRect().y : 0;
-        
-    pathG.append('line')
+  
+    pathG
+        .append('line')
         .classed('version-line', true)
         .style("stroke", "gray")
         .style("stroke-width", 1)
@@ -72,6 +72,8 @@ function renderPaths(before, after, pathG){
         .attr("x1", 7)
         .attr("y2", second)
         .attr("x2", 10);
+
+    d3.selectAll('.nope').select('.path-wrap').remove();
 }
 
 function moveGroups(groups, orient){
@@ -194,12 +196,10 @@ export function renderHistoryVertical(sources, otherSources){
     d3.select('.secondary-vis').style('opacity', .1);
 
     let parent = d3.select(d3.select('.clicked-selected').node().parentNode);
-    console.log('parent',parent)
 
     let pathG = parent.append('g').classed('version-path', true);
 
     let history = parent.selectAll('g.version_group')
-       
         .data(sources).join('g')
         .classed('version_group', true);
 
@@ -213,20 +213,30 @@ export function renderHistoryVertical(sources, otherSources){
         hisWrap.append('g').classed('path-wrap', true);
     
     });
+    parent.selectAll('text.history-name-text').data(d=> [d]).join('text')
+        .text(d => d.name)
+        .classed('history-name-text', true)
+        .style('fill', '#fff')
+        .style('font-size', '10px')
+        .attr('transform', 'translate(5, 37) rotate(45)');
 
-    d3.selectAll('.other-history-wrap')
-    .selectAll('text.history-name-text')
-    .data(t => [t])
-    .join('text')
-    .classed('history-name-text', true)
-    .text(t=> t.name)
-    .style('fill', '#fff')
-    .style('font-size', '10px')
-    .attr('transform', 'translate(3, 37) rotate(45)');
+    let textHistory = d3.selectAll('.other-history-wrap')
+        .selectAll('text.history-name-text')
+        .data(t => [t])
+        .join('text')
+        .classed('history-name-text', true)
+        .text(t=> t.sources[0].datum.name)
+        .style('fill', '#fff')
+        .style('font-size', '10px')
+        .attr('transform', 'translate(5, 37) rotate(45)');
+
+    console.log('parent', parent)
 
     let chosenIds = d3.selectAll('.other-history-wrap').data().map(m=> m.id);
     let chosenArt = d3.selectAll('.artifact').filter(f=> chosenIds.includes(f.id));
-    chosenArt.selectAll('.main').attr('opacity', .1);
+   
+    d3.selectAll('.artifact').selectAll('.main').classed('dimmed', true);
+    chosenArt.selectAll('.main').classed('extra-dimmed', true);
   
     d3.selectAll('.label-wrap').attr('opacity', 0);
 
@@ -234,8 +244,8 @@ export function renderHistoryVertical(sources, otherSources){
     let beforeAfterOther = moveGroups(otherGroups, 'vertical');
     renderPaths(beforeAfterOther[0], beforeAfterOther[1], d3.selectAll('.path-wrap'));
 
-    renderCircles(otherGroups, 'vertical', 12);
-    renderCircles(history, 'vertical', 20);
+    renderCircles(otherGroups, 'vertical', 8);
+    renderCircles(history, 'vertical', 15);
 
     renderTriangles(otherGroups, 'vertical');
     renderTriangles(history, 'vertical');
@@ -243,6 +253,7 @@ export function renderHistoryVertical(sources, otherSources){
 }
 
 export function removeHistory(){
+
     d3.select('.secondary-vis').style('opacity', 1);
     d3.select('.secondary-vis').style('pointer-events', 'all');
     d3.selectAll('.version-path').remove();
@@ -250,5 +261,7 @@ export function removeHistory(){
     d3.selectAll('.other-history-wrap').remove();
     d3.select('.clicked-selected').style('opacity', 1);
     d3.selectAll('.history-name-text').remove();
+    d3.selectAll('.dimmed').classed('dimmed', false);
+    d3.selectAll('.extra-dimmed').classed('extra-dimmed', false);
 
 }

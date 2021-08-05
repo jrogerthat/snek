@@ -131,7 +131,7 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
     }).on('mouseout', (event, d)=>{
 
         let hisBoolOb = hisBoolSingleton.getInstance();
-        hisBoolOb.isHistoryOn()
+        console.log('history on',hisBoolOb.isHistoryOn())
         if(hisBoolOb.isHistoryOn() === false){
 
             d3.selectAll('.label-wrap').attr('opacity', 1);
@@ -139,7 +139,6 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
 
         }
  
-
         let targetSelection = d3.select(event.target);
         if(targetSelection.data()[0].version === undefined && targetSelection.classed('clicked-selected') === false){
         d3.select(event.target).classed('hover', false);
@@ -161,7 +160,7 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
 export function renderNodes(nodes){
     const svg = d3.select('#container').select('#wrapper').select('svg');
     let visWrap = svg.append('g');
-    visWrap.attr('transform', 'translate(5,0)');
+    visWrap.attr('transform', 'translate(5,10)');
     let artData = d3Array.groups(nodes, d=> d.Stage);
 
     let secondaryVis = visWrap.append('g').classed('secondary-vis', true);
@@ -232,17 +231,28 @@ export function artifactClicked(event, d){
     let liData = Object.keys(d).filter(f=> f != "name" && f != "id" && f != "posID" && f != "Artifact Type" && f != "Source File");
   
     let li = dataUl.selectAll('li').data(liData).join('li');
-    li.html(l=> `${l}: <span class="badge bg-secondary">${d[l]}</span>`);
-  
-    li.selectAll('span').on('mouseover', (event, m)=> {
+    li.append('text').text(t => `${t}: `)
+   
+    let spanLi = li.selectAll('span.badge').data(l => {
+        console.log('l', l, d);
+        let ob = {};
+        ob.param = l;
+        ob.value = d[l];
+        return [ob];
+    }).join('span').classed('badge bg-secondary', true);
+
+    spanLi.text(t => t.value);
+
+    spanLi.on('mouseover', (event, m)=> {
 
         if(hisBoolOb.isHistoryOn() === false){
 
-            console.log('history not on')
+            console.log('m', m);
 
             let param = d3.select(event.target.parentNode).data();
             
             let what = d[param];
+
             let shared = d3.selectAll('.artifact').filter(f=> f[param] === what)
             let sharedCircle = shared.select('circle');
         
@@ -268,7 +278,7 @@ export function artifactClicked(event, d){
             if(viewOb.currentView() === 'human-machine'){
                 hoverLabel.style('transform', 'translate(40px, 12px)');
             }else{
-                hoverLabel.attr('transform', 'translate(40, 40), rotate(45)')
+                hoverLabel.attr('transform', 'translate(10, 40), rotate(45)')
             }
     }
         

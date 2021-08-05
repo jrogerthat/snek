@@ -81,6 +81,15 @@ g.nope circle{
   //transform: translate(40px, 12px);
 }
 
+.dimmed{
+  opacity: .6 !important;
+}
+
+.extra-dimmed{
+  opacity: 0 !important;
+}
+
+
 .specific-chosen{
   fill: #fff !important;
 }
