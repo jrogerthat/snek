@@ -101,6 +101,13 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
             tooltip(event, d, true);
 
         }
+
+        // let hover = d3.selectAll('circle.hover').each((m, i, n)=>{
+        //     console.log('m', m);
+        //     let test = d3.select(n[i].parentNode).append('text').classed('hover-text', true).text(m.name).style('fill', '#fff');
+        //     test.attr('transform', 'translate(25, 0)')
+        // });
+        // console.log(hover);
        
 
       
@@ -225,7 +232,8 @@ export function artifactClicked(event, d){
         if(viewOb.currentView() === 'human-machine'){
             hoverLabel.style('transform', 'translate(40px, 12px)');
         }else{
-            hoverLabel.style('transform', 'translate(-10px, 30px), rotate(40)')
+            console.log('is this working')
+            hoverLabel.attr('transform', 'translate(40, 40), rotate(45)')
         }
        // hoverLabel.attr('transform', 'translate(100px, 100px)')
         

@@ -120,7 +120,7 @@ function renderCircles(d3Selection, orient, radius){
         d.radius = end < start ? (radius / 2) : (radius);
         return [d]}).join('g').classed('circ-group', true);
 
-    let circles = circGroup.append('circle').attr('r', d=> d.radius).attr('cy', 0);
+    let circles = circGroup.append('circle').attr('r', d=> radius).attr('cy', 0);
     circles.attr('class', machineOrHuman(d3Selection.data()[0].datum));
 
     if(orient === 'horizontal'){
@@ -177,8 +177,6 @@ function renderTriangles(d3Selection, orient){
         }).attr('transform', 'translate(-3, 0) rotate(0)');
 
     }
-
-
 }
 
 export function renderHistoryVertical(sources, otherSources){
@@ -197,7 +195,7 @@ export function renderHistoryVertical(sources, otherSources){
     let pathG = parent.append('g').classed('version-path', true);
 
     let history = parent.selectAll('g.version_group')
-        //.data(sources.filter(f=> f.version != versOb.currentVersion())).join('g')
+       
         .data(sources).join('g')
         .classed('version_group', true);
 
