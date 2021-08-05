@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import { getSources, machineOrHuman } from "../application/generalHelpers";
+import { hisBoolSingleton } from "../application/historyModeSingleton";
 import { versionSingleton } from "../application/versionControlSingleton";
 
 export function renderHistoryHorizontal(sources){
@@ -244,4 +245,7 @@ export function removeHistory(){
     d3.selectAll('.other-history-wrap').remove();
     d3.select('.clicked-selected').style('opacity', 1);
     d3.selectAll('.history-name-text').remove();
+
+    let hisBoolOb = hisBoolSingleton.getInstance();
+    hisBoolOb.changeHistoryBool();
 }

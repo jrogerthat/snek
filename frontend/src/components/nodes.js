@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import * as d3Array from "d3-array";
 import { getSources, machineOrHuman } from "../application/generalHelpers";
+import { hisBoolSingleton } from "../application/historyModeSingleton";
 import { versionSingleton } from "../application/versionControlSingleton";
 import { viewSingleton } from "../application/viewSingleton";
 import { removeHistory, renderHistoryHorizontal, renderHistoryVertical } from "./historyVis";
@@ -64,69 +65,81 @@ export function tooltip(event, d, historyVis){
 export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
     
     nodeGroups.on('mouseover', (event, d)=>{
-      
-        let targetSelection = d3.select(event.target);
+
+
+        let hisBoolOb = hisBoolSingleton.getInstance();
+        if(!hisBoolOb.isHistoryOn()){
+            
+            let targetSelection = d3.select(event.target);
      
-        if(targetSelection.data()[0].version === undefined && targetSelection.classed('clicked-selected') === false){
-            d3.select(event.target).classed('hover', true);
-            d3.select(event.target).attr('r', 15);
-        }
-        
-        if(linkClass === 'link'){
-
-            d3.selectAll(`.${linkClass}`).filter(f=> {
-                return f.target.id === d.id;
-            }).classed('hover', true);
+            if(targetSelection.data()[0].version === undefined && targetSelection.classed('clicked-selected') === false){
+                d3.select(event.target).classed('hover', true);
+                d3.select(event.target).attr('r', 15);
+            }
+            
+            if(linkClass === 'link'){
     
-            d3.selectAll(`.${linkClass}`).filter(f=> {
-                return f.target.id != d.id;
-            }).classed('non-hover', true);
-
-        }else{
-
-            d3.selectAll(`.${linkClass}`).filter(f=> {
-                return f.Source ===  d.id || f.Target === d.id;
-            }).classed('hover', true);
-    
-            d3.selectAll(`.${linkClass}`).filter(f=> {
-                return f.Source !=  d.id && f.Target != d.id;
-            }).classed('non-hover', true);
-        }
-        if(targetSelection.data()[0].version === undefined){
-
-            tooltip(event, d, false);
-
-        }else{
-
-            tooltip(event, d, true);
-
-        }
-
-        let shared = d3.selectAll('.artifact').filter(f=>{
-            return (f.id === d.id) || (d.Dependencies != null && d.Dependencies.includes(f.id)) || (f.Dependencies != null && f.Dependencies.includes(d.id));
-        })
-
-        d3.selectAll('.label-wrap').attr('opacity', 0);
+                d3.selectAll(`.${linkClass}`).filter(f=> {
+                    return f.target.id === d.id;
+                }).classed('hover', true);
         
-        let hoverLabel = shared.append('text').classed('hover-label', true);
-        hoverLabel.text(t=> t['Artifact Type']);
+                d3.selectAll(`.${linkClass}`).filter(f=> {
+                    return f.target.id != d.id;
+                }).classed('non-hover', true);
+    
+            }else{
+    
+                d3.selectAll(`.${linkClass}`).filter(f=> {
+                    return f.Source ===  d.id || f.Target === d.id;
+                }).classed('hover', true);
+        
+                d3.selectAll(`.${linkClass}`).filter(f=> {
+                    return f.Source !=  d.id && f.Target != d.id;
+                }).classed('non-hover', true);
+            }
+            if(targetSelection.data()[0].version === undefined){
+                tooltip(event, d, false);
+            }else{
+                tooltip(event, d, true);
+            }
+    
+            let shared = d3.selectAll('.artifact').filter(f=>{
+                return (f.id === d.id) || (d.Dependencies != null && d.Dependencies.includes(f.id)) || (f.Dependencies != null && f.Dependencies.includes(d.id));
+            })
+    
+            d3.selectAll('.label-wrap').attr('opacity', 0);
+            
+            let hoverLabel = shared.append('text').classed('hover-label', true);
+            hoverLabel.text(t=> t['Artifact Type']);
+    
+            let viewOb = viewSingleton.getInstance();
+      
+            if(viewOb.currentView() === 'human-machine'){
+                hoverLabel.style('transform', 'translate(40px, 12px)');
+            }else{
+                hoverLabel.attr('transform', 'translate(5, 40), rotate(45)')
+            }
+           
 
-        let viewOb = viewSingleton.getInstance();
-  
-        if(viewOb.currentView() === 'human-machine'){
-            hoverLabel.style('transform', 'translate(40px, 12px)');
-        }else{
-            hoverLabel.attr('transform', 'translate(5, 40), rotate(45)')
+
         }
-       
+      
+      
        
 
       
        
     }).on('mouseout', (event, d)=>{
 
-        d3.selectAll('.label-wrap').attr('opacity', 1);
-        d3.selectAll('.hover-label').remove();
+        let hisBoolOb = hisBoolSingleton.getInstance();
+        hisBoolOb.isHistoryOn()
+        if(hisBoolOb.isHistoryOn() === false){
+
+            d3.selectAll('.label-wrap').attr('opacity', 1);
+            d3.selectAll('.hover-label').remove();
+
+        }
+ 
 
         let targetSelection = d3.select(event.target);
         if(targetSelection.data()[0].version === undefined && targetSelection.classed('clicked-selected') === false){
@@ -268,13 +281,20 @@ export function artifactClicked(event, d){
     });
 
     if(d['Source File'] != null){
-        let buttonHistory = div.append('button').classed('btn btn-outline-light btn-lg', true).text('View Artifact History');
+        let buttonHistory = div.append('button')
+        buttonHistory.classed('btn btn-outline-light btn-lg', true)
+        buttonHistory.text('View Artifact History');
+        buttonHistory.attr('id', 'history-button')
         buttonHistory.style('margin-top', '25px');
         buttonHistory.style('margin-bottom', '25px');
 
         let viewOb = viewSingleton.getInstance();
 
         buttonHistory.on('click', async (event, h)=>{
+
+            let hisBoolOb = hisBoolSingleton.getInstance();
+            hisBoolOb.changeHistoryBool();
+            console.log('switch history', hisBoolOb.isHistoryOn())
 
             if(event.target.innerHTML === "View Artifact History"){
 
