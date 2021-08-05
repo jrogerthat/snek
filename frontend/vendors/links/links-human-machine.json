@@ -15,11 +15,6 @@
     "target": "2A"
   },
   {
-    "source": "Human",
-    "subsource": 3,
-    "target": "2B"
-  },
-  {
     "source": "Machine",
     "subsource":0,
     "target": "4A"

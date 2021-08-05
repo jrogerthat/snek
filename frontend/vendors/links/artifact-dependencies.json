@@ -4,7 +4,7 @@
     "Target": "1B"
   },
   {
-    "Source": "2B",
+    "Source": "6A",
     "Target": "1B"
   },
   {
@@ -61,11 +61,11 @@
   },
   {
     "Source": "6E",
-    "Target": "2B"
+    "Target": "6A"
   },
   {
     "Source": "6F",
-    "Target": "2B"
+    "Target": "6A"
   },
   {
     "Source": "6F",

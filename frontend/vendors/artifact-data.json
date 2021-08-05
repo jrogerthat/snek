@@ -52,23 +52,6 @@
     "Has Versions": false
   },
   {
-    "Artifact ID": "2B",
-    "Folder": "static/vendors/data_jsons/analysis_properties/",
-    "Source File": [
-      {"what":"story input","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name":"_story_summary.json"},
-      {"what":"analysis details","path":"static/vendors/data_jsons/analysis_properties/","format":"json","file_name":"_analysis.json"}
-    ], 
-    "Stage": "Preparation",
-    "Step": "Goal",
-    "Artifact Group": "Model Properties",
-    "Artifact Type": "Initial Model Specification",
-    "Source": "autoML process/structure,system/input",
-    "Transmission Mode": "Boundry Crossing/H-M",
-    "Artifact Format": "Specification",
-    "Task": "Steering/Directing",
-    "Dependencies": ["1B"]
-  },
-  {
     "Artifact ID": "3A",
     "Folder": null,
     "Source File": null,
@@ -156,7 +139,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/curating",
-    "Dependencies": ["1A","2B"]
+    "Dependencies": ["1A"]
   },
   {
     "Artifact ID": "5B",

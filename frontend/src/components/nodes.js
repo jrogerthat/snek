@@ -102,14 +102,7 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
 
         }
 
-        // let hover = d3.selectAll('circle.hover').each((m, i, n)=>{
-        //     console.log('m', m);
-        //     let test = d3.select(n[i].parentNode).append('text').classed('hover-text', true).text(m.name).style('fill', '#fff');
-        //     test.attr('transform', 'translate(25, 0)')
-        // });
-        // console.log(hover);
         let shared = d3.selectAll('.artifact').filter(f=>{
-            console.log('f', f);
             return (f.id === d.id) || (d.Dependencies != null && d.Dependencies.includes(f.id)) || (f.Dependencies != null && f.Dependencies.includes(d.id));
         })
 

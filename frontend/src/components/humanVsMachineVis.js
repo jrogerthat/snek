@@ -119,7 +119,6 @@ export function renderHumanVsMachine(nodes){
       let ids = artifacts.data().map(m => m['Artifact ID']);
 
       d3.selectAll('.link').filter(f=> ids.indexOf(ids.indexOf(f.target.id) > -1 )).classed('hover', true);
-
       d3.selectAll('.link').filter(f=> ids.indexOf(f.target.id) === -1).classed('non-hover', true);
 
       }).on('mouseout', (event, d)=> {
@@ -130,5 +129,17 @@ export function renderHumanVsMachine(nodes){
     });
 
     artifactGroup.on('click', (event, d)=> artifactClicked(event, d));
+
+    let art = d3.selectAll('.artifact').filter(f=> {
+      
+        return f['Source File'] === null;
+    }).classed('nope', true);
+
+    let noSource = art.data().map(m => m.id);
+
+    d3.selectAll('.link').filter(f=> {
+        console.log('f', f.target, noSource);
+        return noSource.includes(f.target.id);
+    }).classed('nope', true);
 }
 
