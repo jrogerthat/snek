@@ -1,6 +1,10 @@
 {   "pipeline_stages": ["preparation/data"],
     "could_pull_from_API": true,
     "interface_components":null,
+
+    "changed_from_prev" : true,
+    "areas_changed": ["clientShardsUrl","createdBy","createdDate","currentVersionId","currentVersionUrl","dataRefreshDate","datasetType","folder","id","label","lastAccessedDate","lastModifiedBy","lastModifiedDate","lastQueriedDate","licenseAttributes","name","permissions"],
+
     "clientShardsUrl": "/services/data/v52.0/wave/datasets/0FbB0000000INzcKAG/shards",
     "createdBy": {
         "id": "005B0000006wvarIAA",

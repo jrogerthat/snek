@@ -146,7 +146,8 @@ function renderTriangles(d3Selection, orient){
 
     let triangleGroup = d3Selection.filter(f => {
         let test = f.sources.filter(t=> t.value === null);
-        return test.length > 0;
+        let anti = f.sources.filter(t=> t.value != null);
+        return test.length > 0 && anti.length === 0;
     }).selectAll('g.tri-group').data(d => [d]).join('g').classed('tri-group', true);
 
     let triangle = triangleGroup.append("polygon")
@@ -214,11 +215,8 @@ export function renderHistoryVertical(sources, otherSources){
         }).classed('history-name-text', true).style('fill', '#fff').attr('transform', 'translate(3, 35) rotate(45)')
     });
 
- //  if(otherSources.length > 0){
 
-        d3.selectAll('.label-wrap').attr('opacity', 0);
-
- //   }
+    d3.selectAll('.label-wrap').attr('opacity', 0);
 
     let otherGroups = d3.selectAll('.other-history-wrap').selectAll('g.version-group').data(d => d.sources).join('g').classed('version-group', true);
     let beforeAfterOther = moveGroups(otherGroups, 'vertical');

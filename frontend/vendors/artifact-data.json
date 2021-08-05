@@ -136,7 +136,7 @@
     "Step": "Wrangling",
     "Artifact Group": "Data Properties",
     "Artifact Type": "Cleaning Transformations",
-    "Source": "data/derived,system/processes",
+    "Source": "Human",
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "multi-value/tensor,specification/visualization",
     "Task": "Steering",
@@ -187,7 +187,7 @@
     "Transmission Mode": "Boundry Crossing/H-M",
     "Artifact Format": "specification/workflow,specification/visualization",
     "Task": "informing/descriptive,steering/directing",
-    "Dependencies": ["2A"]
+    "Dependencies": ["1A","1B","2A"]
   },
   {
     "Artifact ID": "6B",
@@ -217,7 +217,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/descriptive",
-    "Dependencies": ["3A"]
+    "Dependencies": ["1A","3A"]
   },
   {
     "Artifact ID": "6D",
@@ -233,7 +233,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "single-value/number,specification/visualization",
     "Task": "informing/descriptive",
-    "Dependencies": ["3A","4A"]
+    "Dependencies": ["1A","3A","4A"]
   },
   {
     "Artifact ID": "6E",
@@ -249,7 +249,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/explanatory",
-    "Dependencies": ["2A"]
+    "Dependencies": ["1A","2A"]
   },
   {
     "Artifact ID": "6F",
@@ -265,7 +265,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "multi-value/list,specification/visualization",
     "Task": "informing/explanatory",
-    "Dependencies": ["2A","3A"]
+    "Dependencies": ["6F","2A","3A"]
   },
   {
     "Artifact ID": "6G",
@@ -360,7 +360,7 @@
     "Transmission Mode": "Boundry Crossing/M-H",
     "Artifact Format": "single-value/textual,report/static",
     "Task": "informing/provenance,sharing/distributed",
-    "Dependencies": null
+    "Dependencies": ["1A", "3A"]
   },
   {
     "Artifact ID": "9A",

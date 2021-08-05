@@ -2,6 +2,9 @@
     "could_pull_from_API": true,
     "interface_components":null,
 
+    "changed_from_prev" : true,
+    "areas_changed":["clientShardsUrl","createdBy","createdDate","currentVersionId","currentVersionUrl","dataRefreshDate","datasetType","folder","id","label","lastAccessedDate","lastModifiedBy","lastModifiedDate","lastQueriedDate","licenseAttributes","name","permissions", "securityCoverageUrl","totalRows","type","url","xmdMain"],
+
     "createdBy": {
         "id": "005B0000006wvfPIAQ",
         "name": "Integration User",

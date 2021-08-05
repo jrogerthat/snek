@@ -1,4 +1,8 @@
-{
+{  "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": false,
+    "interface_components":null,
+    "changed_from_prev" : true,
+    "areas_changed": ["dashboard_components"],     
     "dashboard_components":[
         {"key": "Overview", "path": "static/vendors/images/model_evaluation/version_1_overview.png"},
         {"key": "Model Evaluation", 

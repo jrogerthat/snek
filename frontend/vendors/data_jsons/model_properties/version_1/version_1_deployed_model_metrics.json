@@ -1,4 +1,9 @@
-{
+{   "pipeline_stages": ["analysis/model"],
+    "could_pull_from_API": false,
+    "averageOutcome": 34.95714930085701,
+    "changed_from_prev" : true,
+    "areas_changed": ["liveMetrics", "trainingMetrics"],
+    
     "liveMetrics": {
         "missingColumns": [],
         "outOfBoundsColumns": [],

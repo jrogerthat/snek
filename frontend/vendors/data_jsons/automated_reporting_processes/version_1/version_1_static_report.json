@@ -1,0 +1,9 @@
+{
+    "pipeline_stages": ["communication/dissemination"],
+    "could_pull_from_API": false,
+    "interface_components": null,
+    "changed_from_prev" : true,
+    "areas_changed": ["file_name"],
+    "path": "static/vendors/data_jsons/automated_reporting_processes/",
+    "file_name": "_Farmingham-Study-Generated-Insights.pdf"
+}
