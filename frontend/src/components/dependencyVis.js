@@ -98,5 +98,9 @@ export function renderDependencyVis(nodes){
     });
     
     artifactGroup.on('click', (event, d)=> artifactClicked(event, d));
+
+    let art = d3.selectAll('.artifact').filter(f=> {
+        return f['Source File'] === null;
+    }).classed('nope', true);
 }
 
