@@ -319,7 +319,7 @@ export function artifactClicked(event, d){
         let viewOb = viewSingleton.getInstance();
 
         buttonHistory.on('click', async (event, h)=>{
-            console.log('history button clicked')
+            
             let hisBoolOb = hisBoolSingleton.getInstance();
             hisBoolOb.changeHistoryBool();
 
@@ -365,6 +365,8 @@ export function artifactClicked(event, d){
 
             if(event.target.innerHTML === "See Artifact"){
 
+                div.style('height', `${height + 200}px`);
+
                 d3.select('#wrapper').select('.more-info').select('div.raw-file').remove();
 
                 d3.json(`${b.path}${version}/${version}${b.file_name}`).then(json => {
@@ -382,6 +384,7 @@ export function artifactClicked(event, d){
                 event.target.innerHTML = "Hide Artifact";
             }else{
                 event.target.innerHTML = "See Artifact";
+                div.style('height', `${height}px`);
                 d3.select('.raw-file').remove();
             }
           });
