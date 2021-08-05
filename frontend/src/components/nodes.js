@@ -108,11 +108,32 @@ export function nodeHoverInteraction(nodeGroups, linkClass){//dependent-arc
         //     test.attr('transform', 'translate(25, 0)')
         // });
         // console.log(hover);
+        let shared = d3.selectAll('.artifact').filter(f=>{
+            console.log('f', f);
+            return (f.id === d.id) || (d.Dependencies != null && d.Dependencies.includes(f.id)) || (f.Dependencies != null && f.Dependencies.includes(d.id));
+        })
+
+        d3.selectAll('.label-wrap').attr('opacity', 0);
+        
+        let hoverLabel = shared.append('text').classed('hover-label', true);
+        hoverLabel.text(t=> t['Artifact Type']);
+
+        let viewOb = viewSingleton.getInstance();
+  
+        if(viewOb.currentView() === 'human-machine'){
+            hoverLabel.style('transform', 'translate(40px, 12px)');
+        }else{
+            hoverLabel.attr('transform', 'translate(5, 40), rotate(45)')
+        }
+       
        
 
       
        
     }).on('mouseout', (event, d)=>{
+
+        d3.selectAll('.label-wrap').attr('opacity', 1);
+        d3.selectAll('.hover-label').remove();
 
         let targetSelection = d3.select(event.target);
         if(targetSelection.data()[0].version === undefined && targetSelection.classed('clicked-selected') === false){
@@ -232,10 +253,9 @@ export function artifactClicked(event, d){
         if(viewOb.currentView() === 'human-machine'){
             hoverLabel.style('transform', 'translate(40px, 12px)');
         }else{
-            console.log('is this working')
             hoverLabel.attr('transform', 'translate(40, 40), rotate(45)')
         }
-       // hoverLabel.attr('transform', 'translate(100px, 100px)')
+       
         
     }).on('mouseout', (event, m)=>{
         
