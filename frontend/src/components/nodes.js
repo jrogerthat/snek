@@ -10,11 +10,23 @@ const radius = 9;
 
 export function tooltip(event, d, historyVis){
 
+    let viewOb = viewSingleton.getInstance();
+    viewOb.currentView()
+
     let tooltip = d3.select('#tooltip');
     tooltip.style('opacity', 1);
-    tooltip.style('top', `${event.clientY}px`).style('left', `${event.clientX + 30}px`);
+
+
 
     if(historyVis === false){
+
+       // tooltip.style('top', `${event.clientY}px`).style('left', `${event.clientX + 30}px`);
+
+       if(viewOb.currentView() === 'human-machine'){
+        tooltip.style('top', `${event.clientY}px`).style('left', `${event.clientX + 30}px`);
+    }else{
+        tooltip.style('top', `${(event.clientY + 120)}px`).style('left', `${event.clientX - 30}px`);
+    }
 
         if(d['Task'] === null){
 
@@ -41,6 +53,8 @@ export function tooltip(event, d, historyVis){
         
     }else{
         let datum = d3.select(event.target).data()[0];
+
+        tooltip.style('top', `${event.clientY}px`).style('left', `${event.clientX + 30}px`);
         
         let html = datum.sources.reduce((ac, n) => {
            
@@ -256,7 +270,6 @@ export function artifactClicked(event, d){
 
         if(hisBoolOb.isHistoryOn() === false){
 
-            console.log('m', m);
 
             let param = d3.select(event.target.parentNode).data();
             
